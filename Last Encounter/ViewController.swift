@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     @IBAction func onTappedBattleMenu(sender: UITapGestureRecognizer) {
         for label in labelsArray{
             if CGRectContainsPoint(label.frame, sender.locationInView(menuView)) {
-                
+                print("Label \(label) tapped")
             }
         }
     }
