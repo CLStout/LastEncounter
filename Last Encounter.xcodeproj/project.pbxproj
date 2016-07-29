@@ -12,7 +12,6 @@
 		57C109831D4BA7BF009AE2D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C109811D4BA7BF009AE2D8 /* Main.storyboard */; };
 		57C109851D4BA7BF009AE2D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57C109841D4BA7BF009AE2D8 /* Assets.xcassets */; };
 		57C109881D4BA7BF009AE2D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C109861D4BA7BF009AE2D8 /* LaunchScreen.storyboard */; };
-		57C109901D4BE2DC009AE2D8 /* Villain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C1098F1D4BE2DC009AE2D8 /* Villain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		57C109841D4BA7BF009AE2D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57C109871D4BA7BF009AE2D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57C109891D4BA7BF009AE2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57C1098F1D4BE2DC009AE2D8 /* Villain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Villain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +57,6 @@
 				57C1097D1D4BA7BF009AE2D8 /* AppDelegate.swift */,
 				57C1097F1D4BA7BF009AE2D8 /* ViewController.swift */,
 				57C109811D4BA7BF009AE2D8 /* Main.storyboard */,
-				57C1098F1D4BE2DC009AE2D8 /* Villain.swift */,
 				57C109841D4BA7BF009AE2D8 /* Assets.xcassets */,
 				57C109861D4BA7BF009AE2D8 /* LaunchScreen.storyboard */,
 				57C109891D4BA7BF009AE2D8 /* Info.plist */,
@@ -140,7 +137,6 @@
 			files = (
 				57C109801D4BA7BF009AE2D8 /* ViewController.swift in Sources */,
 				57C1097E1D4BA7BF009AE2D8 /* AppDelegate.swift in Sources */,
-				57C109901D4BE2DC009AE2D8 /* Villain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +286,7 @@
 				57C1098E1D4BA7BF009AE2D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
