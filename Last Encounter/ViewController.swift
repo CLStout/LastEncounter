@@ -56,61 +56,53 @@ class ViewController: UIViewController {
                                 case 4:
                                     print("Stat 0")
                                 default:
-                                    print("Something went wrong")
+                                    print("Something went wrong - sub 0 switch")
                                 }
                             case submenuLabel1:
                                 print("Submenu1")
-                                switch s {
-                                case submenuLabel0:
-                                    print("Submenu 1")
-                                    switch sublabelState {
-                                    case 1:
-                                        print("Attack 1")
-                                    case 2 :
-                                        print("Magic 1")
-                                    case 3:
-                                        print("Item 1")
-                                    case 4:
-                                        print("Stat 1")
-                                    default:
-                                        print("Something went wrong")
-                                    }
+                                print("Submenu 1")
+                                switch sublabelState {
+                                case 1:
+                                    print("Attack 1")
+                                case 2 :
+                                    print("Magic 1")
+                                case 3:
+                                    print("Item 1")
+                                case 4:
+                                    print("Stat 1")
+                                default:
+                                    print("Something went wrong - sub 1 switch")
+                                }
                             case submenuLabel2:
                                 print("Submenu2")
-                                switch s {
-                                case submenuLabel0:
-                                    print("Submenu 2")
-                                    switch sublabelState {
-                                    case 1:
-                                        print("Attack 2")
-                                    case 2 :
-                                        print("Magic 2")
-                                    case 3:
-                                        print("Item 2")
-                                    case 4:
-                                        print("Stat 2")
-                                    default:
-                                        print("Something went wrong")
-                                    }
+                                switch sublabelState {
+                                case 1:
+                                    print("Attack 2")
+                                case 2 :
+                                    print("Magic 2")
+                                case 3:
+                                    print("Item 2")
+                                case 4:
+                                    print("Stat 2")
+                                default:
+                                    print("Something went wrong - sub 2 switch")
+                                }
                             case submenuLabel3:
                                 print("Submenu3")
-                                switch s {
-                                case submenuLabel0:
-                                    print("Submenu 3")
-                                    switch sublabelState {
-                                    case 1:
-                                        print("Attack 3")
-                                    case 2 :
-                                        print("Magic 3")
-                                    case 3:
-                                        print("Item 3")
-                                    case 4:
-                                        print("Stat 3")
-                                    default:
-                                        print("Something went wrong")
-                                    }
+                                switch sublabelState {
+                                case 1:
+                                    print("Attack 3")
+                                case 2 :
+                                    print("Magic 3")
+                                case 3:
+                                    print("Item 3")
+                                case 4:
+                                    print("Stat 3")
+                                default:
+                                    print("Something went wrong - sub 3 switch")
+                                }
                             default:
-                                print("Something went wrong")
+                                print("Something went wrong - sub selector switch")
                             }
                         }
                     }
@@ -124,7 +116,6 @@ class ViewController: UIViewController {
                         case attackLabel:
                             print("Attack submenu to open")
                             sublabelState = 1
-                            
                         case magicLabel:
                             print("Magic submenu to open")
                             sublabelState = 2
@@ -135,14 +126,12 @@ class ViewController: UIViewController {
                             print("Stats submenu to open")
                             sublabelState = 4
                         default:
-                            print("Something went wrong")
+                            print("Something went wrong - menu switch")
                         }
                     }
                 }
+                print(String(sublabelState))
             }
         }
-        print(String(sublabelState))
     }
-    
 }
-
