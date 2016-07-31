@@ -2,13 +2,16 @@
 //  ViewController.swift
 //  Last Encounter
 //
-//  Created by Stanley Stout on 7/29/16.
+//  Created by Chris Stout on 7/29/16.
 //  Copyright © 2016 Chris Stout. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    //Outlets for labels in the action menu and status labels
     
     @IBOutlet weak var attackLabel: UILabel!
     @IBOutlet weak var magicLabel: UILabel!
@@ -20,10 +23,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var submenuLabel3: UILabel!
     @IBOutlet weak var menuView: UIView!
     
+    
+    //variables for
     var sublabelState = 0
     var labelsArray : [UILabel]!
     var subMenuArray : [UILabel]!
     var mainMenuArray : [UILabel]!
+    let player = villain()
+    let enemy = villain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +42,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //Menu code
     @IBAction func onTappedBattleMenu(sender: UITapGestureRecognizer) {
         for label in labelsArray{
             if CGRectContainsPoint(label.frame, sender.locationInView(menuView)) {
@@ -49,8 +57,10 @@ class ViewController: UIViewController {
                                 switch sublabelState {
                                 case 1:
                                     print("Attack 0")
+                                    attackAction(player, attacked: enemy, type: 0)
                                 case 2 :
                                     print("Magic 0")
+                                    magicAction(player, attacked: enemy, type: 0)
                                 case 3:
                                     print("Item 0")
                                 case 4:
@@ -64,8 +74,10 @@ class ViewController: UIViewController {
                                 switch sublabelState {
                                 case 1:
                                     print("Attack 1")
+                                    attackAction(player, attacked: enemy, type: 1)
                                 case 2 :
                                     print("Magic 1")
+                                    magicAction(player, attacked: enemy, type: 1)
                                 case 3:
                                     print("Item 1")
                                 case 4:
@@ -78,8 +90,10 @@ class ViewController: UIViewController {
                                 switch sublabelState {
                                 case 1:
                                     print("Attack 2")
+                                    attackAction(player, attacked: enemy, type: 2)
                                 case 2 :
                                     print("Magic 2")
+                                    magicAction(player, attacked: enemy, type: 2)
                                 case 3:
                                     print("Item 2")
                                 case 4:
@@ -92,8 +106,10 @@ class ViewController: UIViewController {
                                 switch sublabelState {
                                 case 1:
                                     print("Attack 3")
+                                    attackAction(player, attacked: enemy, type: 3)
                                 case 2 :
                                     print("Magic 3")
+                                    magicAction(player, attacked: enemy, type: 3)
                                 case 3:
                                     print("Item 3")
                                 case 4:
@@ -103,6 +119,9 @@ class ViewController: UIViewController {
                                 }
                             default:
                                 print("Something went wrong - sub selector switch")
+                            }
+                            //Enemy attacks upon action (Determined by RNG)
+                            if sublabelState != 0 {
                             }
                         }
                     }
@@ -115,16 +134,32 @@ class ViewController: UIViewController {
                         switch m {
                         case attackLabel:
                             print("Attack submenu to open")
+                            submenuLabel0.text = "Attack 0"
+                            submenuLabel1.text = "Attack 1"
+                            submenuLabel2.text = "Attack 2"
+                            submenuLabel3.text = "Attack 3"
                             sublabelState = 1
                         case magicLabel:
                             print("Magic submenu to open")
+                            submenuLabel0.text = "Magic 0"
+                            submenuLabel1.text = "Magic 1"
+                            submenuLabel2.text = "Magic 2"
+                            submenuLabel3.text = "Magic 3"
                             sublabelState = 2
                         case itemLabel:
                             print("Item submenu to open")
+                            submenuLabel0.text = "Item 0"
+                            submenuLabel1.text = "Item 1"
+                            submenuLabel2.text = "Item 2"
+                            submenuLabel3.text = "Item 3"
                             sublabelState = 3
                         case statsLabel:
                             print("Stats submenu to open")
-                            sublabelState = 4
+                            submenuLabel0.text = "Stat 0"
+                            submenuLabel1.text = "Stat 1"
+                            submenuLabel2.text = "Stat 2"
+                            submenuLabel3.text = "Stat 3"
+                            sublabelState = 0
                         default:
                             print("Something went wrong - menu switch")
                         }
@@ -134,4 +169,16 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
+    //Functions for attack and magic actions (allows both characters to use them)
+    func attackAction (attacker: villain, attacked: villain, type: Int){
+            print("\(attacker) attacked \(attacked) : type \(type)")
+    }
+    
+    func magicAction (attacker: villain, attacked: villain, type: Int){
+        print("\(attacker) attacked \(attacked) : type \(type)")
+    }
+    
+    
 }
