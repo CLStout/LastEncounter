@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     var labelsArray : [UILabel]!
     var subMenuArray : [UILabel]!
     var mainMenuArray : [UILabel]!
+    var enoughMana = true
     let player = villain()
     let enemy = villain()
     
@@ -122,6 +123,47 @@ class ViewController: UIViewController {
                             }
                             //Enemy attacks upon action (Determined by RNG)
                             if sublabelState != 0 {
+                                if enoughMana == true {
+                                    let aiTurn = arc4random_uniform(8)
+                                    switch aiTurn{
+                                    case 0:
+                                        attackAction(enemy, attacked: player, type: 0)
+                                    case 1:
+                                        attackAction(enemy, attacked: player, type: 1)
+                                    case 2:
+                                        attackAction(enemy, attacked: player, type: 2)
+                                    case 3:
+                                        attackAction(enemy, attacked: player, type: 3)
+                                    case 4:
+                                        if enemy.mana >= 2{
+                                            magicAction(enemy, attacked: player, type: 0)
+                                        }else{
+                                            attackAction(enemy, attacked: player, type: 0)
+                                        }
+                                    case 5:
+                                        if enemy.mana >= 4{
+                                            magicAction(enemy, attacked: player, type: 1)
+                                        }else{
+                                            attackAction(enemy, attacked: player, type: 1)
+                                        }
+                                    case 6:
+                                        if enemy.mana >= 6{
+                                            magicAction(enemy, attacked: player, type: 2)
+                                        }else{
+                                            attackAction(enemy, attacked: player, type: 2)
+                                        }
+                                    case 7:
+                                        if enemy.mana >= 4{
+                                            magicAction(enemy, attacked: player, type: 3)
+                                        }else{
+                                            attackAction(enemy, attacked: player, type: 3)
+                                        }
+                                    default:
+                                        print("Something went wrong - AI Switch")
+                                    }
+                                }else {
+                                    enoughMana = true
+                                }
                             }
                         }
                     }
@@ -134,17 +176,17 @@ class ViewController: UIViewController {
                         switch m {
                         case attackLabel:
                             print("Attack submenu to open")
-                            submenuLabel0.text = "Attack 0"
-                            submenuLabel1.text = "Attack 1"
-                            submenuLabel2.text = "Attack 2"
-                            submenuLabel3.text = "Attack 3"
+                            submenuLabel0.text = "Bash"
+                            submenuLabel1.text = "Stab"
+                            submenuLabel2.text = "Swing"
+                            submenuLabel3.text = "Pierce"
                             sublabelState = 1
                         case magicLabel:
                             print("Magic submenu to open")
-                            submenuLabel0.text = "Magic 0"
-                            submenuLabel1.text = "Magic 1"
-                            submenuLabel2.text = "Magic 2"
-                            submenuLabel3.text = "Magic 3"
+                            submenuLabel0.text = "Wind-2"
+                            submenuLabel1.text = "Light-4"
+                            submenuLabel2.text = "Fire-6"
+                            submenuLabel3.text = "Water-4"
                             sublabelState = 2
                         case itemLabel:
                             print("Item submenu to open")
@@ -155,10 +197,10 @@ class ViewController: UIViewController {
                             sublabelState = 3
                         case statsLabel:
                             print("Stats submenu to open")
-                            submenuLabel0.text = "Stat 0"
-                            submenuLabel1.text = "Stat 1"
-                            submenuLabel2.text = "Stat 2"
-                            submenuLabel3.text = "Stat 3"
+                            submenuLabel0.text = "Att: \(player.attack)"
+                            submenuLabel1.text = "Mag: \(player.magic)"
+                            submenuLabel2.text = "Def: \(player.defense)"
+                            submenuLabel3.text = ""
                             sublabelState = 0
                         default:
                             print("Something went wrong - menu switch")
@@ -166,19 +208,95 @@ class ViewController: UIViewController {
                     }
                 }
                 print(String(sublabelState))
+                if enemy.health <= 0 {
+                    playerWins()
+                } else if player.health <= 0 {
+                    playerLose()
+                }else{
+                    print("Rewrite the in game health/mana display")
+                }
             }
         }
     }
     
     
     //Functions for attack and magic actions (allows both characters to use them)
-    func attackAction (attacker: villain, attacked: villain, type: Int){
+    func attackAction (attacker: villain, attacked: villain, type: Double){
             print("\(attacker) attacked \(attacked) : type \(type)")
+        let hitChance = arc4random_uniform(UInt32(type) + 1)
+        var damage = 0.0
+        if hitChance == 0 {
+            switch type {
+            case 0:
+                damage = Double(attacker.attack) * 0.8 - Double(attacked.defense) * 0.6
+            case 1:
+                damage = Double(attacker.attack) * 0.6 - Double(attacked.defense) * 0.2
+            case 2:
+                damage = Double(attacker.attack) * 0.9 - Double(attacked.defense) * 0.4
+            case 3:
+                damage = Double(attacker.attack)  - Double(attacked.defense) * 0.1
+            default:
+                print("Something went wrong - attack switch")
+            }
+            attacked.health -= Int(damage)
+        } else {
+            print("Missed")
+        }
+        print("Player HP: \(String(player.health))")
+        print("Enemy HP: \(String(enemy.health))")
     }
     
     func magicAction (attacker: villain, attacked: villain, type: Int){
         print("\(attacker) attacked \(attacked) : type \(type)")
+        enoughMana = true
+        var damage = 0.0
+        switch type {
+        case 0:
+            if attacker.mana >= 2{
+                attacker.mana -= 2
+                damage = Double(attacker.magic) * 0.5 - Double(attacked.defense) * 0.2
+            }else{
+                enoughMana = false
+            }
+        case 1:
+            if attacker.mana >= 4{
+                attacker.mana -= 4
+                damage = Double(attacker.magic) * 0.7 - Double(attacked.defense) * 0.2
+            }else{
+                enoughMana = false
+            }
+        case 2:
+            if attacker.mana >= 6{
+                attacker.mana -= 6
+                damage = Double(attacker.magic) * 0.9 - Double(attacked.defense) * 0.2
+            }else{
+                enoughMana = false
+            }
+        case 3:
+            if attacker.mana >= 4{
+                attacker.mana -= 4
+                attacker.health += attacker.magic * 6 / 10
+            }else{
+                enoughMana = false
+            }
+        default:
+            print("Something went wrong - magic switch")
+        }
+        attacked.health -= Int(damage)
+        print("Player HP: \(String(player.health))")
+        print("Enemy HP: \(String(enemy.health))")
+        print("Player MP: \(String(player.mana))")
+        print("Enemy MP: \(String(enemy.mana))")
     }
     
+    //functions to be finished later - Segue for game over or for victory
+    //called when player or enemy HP hits 0
     
+    func playerLose() {
+        print("You lose")
+    }
+    
+    func playerWins(){
+        print("You win")
+    }
 }
