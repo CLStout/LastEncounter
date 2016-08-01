@@ -10,8 +10,13 @@ import UIKit
 
 class GameOverViewController: UIViewController {
 
+    
+    @IBOutlet weak var resetLabel: NSLayoutConstraint!
+    @IBOutlet weak var gameOverView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
+    
+    
 }

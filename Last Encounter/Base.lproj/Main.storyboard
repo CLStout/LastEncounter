@@ -959,6 +959,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gameOverView" destination="gx5-jD-3xW" id="AqQ-oE-RfI"/>
+                        <outlet property="resetLabel" destination="5Gi-Hc-3zR" id="SE0-wP-lo4"/>
                         <segue destination="31r-xl-fcP" kind="showDetail" identifier="titleScreenSegue" id="cTc-7O-7sJ"/>
                     </connections>
                 </viewController>
