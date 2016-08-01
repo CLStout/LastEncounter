@@ -336,9 +336,11 @@ class ViewController: UIViewController {
     
     func playerLose() {
         print("You lose")
+        performSegueWithIdentifier("lossSegue", sender: nil)
     }
     
     func playerWins(){
         print("You win")
+        performSegueWithIdentifier("victorySegue", sender: nil)
     }
 }
