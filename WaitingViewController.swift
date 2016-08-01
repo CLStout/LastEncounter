@@ -80,4 +80,8 @@ class WaitingViewController: UIViewController {
         updateTurnLabel()
         checkIfBattle()
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! ViewController
+        dvc.player = self.player
+    }
 }
