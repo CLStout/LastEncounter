@@ -100,4 +100,12 @@ class AllocationViewController: UIViewController {
                 print("Still Points Left")
             }
         }
+        else{
+            print("Still Points Left")
+        }
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! WaitingViewController
+        dvc.player = self.Villain
+    }
+}

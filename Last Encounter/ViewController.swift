@@ -39,8 +39,8 @@ class ViewController: UIViewController {
     var subMenuArray : [UILabel]!
     var mainMenuArray : [UILabel]!
     var enoughMana = true
-    let player = villain()
-    let enemy = villain()
+    var player = villain()
+    var enemy = villain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         labelsArray = [attackLabel, magicLabel, itemLabel, statsLabel, submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
         
         let rounds = player.health + player.mana + player.attack + player.defense + player.magic - 50
-        for _ in 1...rounds{
+        for _ in 0...rounds{
             let enemyBoost = arc4random_uniform(5)
             switch enemyBoost{
             case 0:
@@ -246,14 +246,15 @@ class ViewController: UIViewController {
                     }
                 }
                 print(String(sublabelState))
+                playerManaLabel.text = String(player.mana)
+                enemyManaLabel.text = String(enemy.mana)
                 playerHealthLabel.text = String(player.health)
+                enemyHealthLabel.text = String(enemy.health)
                 if enemy.health <= 0 {
                     playerWins()
                 } else if player.health <= 0 {
-                    enemyHealthLabel.text = String(enemy.health)
                     playerLose()
                 }else{
-                    enemyHealthLabel.text = String(enemy.health)
                     print("Rewrite the in game health/mana display")
                 }
             }
@@ -264,9 +265,9 @@ class ViewController: UIViewController {
     //Functions for attack and magic actions (allows both characters to use them)
     func attackAction (attacker: villain, attacked: villain, type: Double){
         print("\(attacker) attacked \(attacked) : type \(type)")
-        let hitChance = arc4random_uniform(UInt32(type) + 1)
+        let hitChance = arc4random_uniform(UInt32(type) + 4)
         var damage = 0.0
-        if hitChance == 0 {
+        if hitChance <= 4 {
             switch type {
             case 0:
                 damage = Double(attacker.attack) * 0.8 - Double(attacked.defense) * 0.6
