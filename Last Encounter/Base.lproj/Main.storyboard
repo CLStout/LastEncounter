@@ -54,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Bdk-Rg-eM2" firstAttribute="centerX" secondItem="dZa-GY-XXJ" secondAttribute="centerX" id="I8Z-6a-tX1"/>
                             <constraint firstItem="e8C-ZS-f0m" firstAttribute="centerX" secondItem="dZa-GY-XXJ" secondAttribute="centerX" id="Nol-8N-x0R"/>
@@ -353,7 +353,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="H5H-ui-n8H" firstAttribute="leading" secondItem="e9I-Or-qLV" secondAttribute="trailing" constant="5" id="05R-Ep-IZl"/>
                             <constraint firstItem="YGF-TR-S4d" firstAttribute="top" secondItem="0B9-iw-BWP" secondAttribute="bottom" constant="24" id="0B6-8z-Ebx"/>
@@ -649,7 +649,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1099" y="560"/>
+            <point key="canvasLocation" x="2747" y="-88"/>
         </scene>
         <!--Waiting View Controller-->
         <scene sceneID="nvy-Wa-wyB">
@@ -676,16 +676,6 @@
                                     <segue destination="Ro4-QL-6bJ" kind="show" id="ECk-0U-g9y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6m-m3-5qn">
-                                <rect key="frame" x="20" y="117" width="112" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="112" id="zoQ-EN-cNh"/>
-                                    <constraint firstAttribute="height" constant="25" id="zu4-hI-mnF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Train Health"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j8-MR-KLI">
                                 <rect key="frame" x="20" y="331" width="123" height="25"/>
                                 <constraints>
@@ -695,6 +685,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Train Defense"/>
+                                <connections>
+                                    <action selector="onTappedTrainDefense:" destination="f6e-tB-Sov" eventType="touchUpInside" id="Z87-jr-rDr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qn-OY-93J">
                                 <rect key="frame" x="20" y="279" width="104" height="25"/>
@@ -705,22 +698,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Train Magic"/>
+                                <connections>
+                                    <action selector="onTappedTrainMagic:" destination="f6e-tB-Sov" eventType="touchUpInside" id="Idh-Od-5z3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9Q-ar-UaI">
-                                <rect key="frame" x="20" y="175" width="107" height="25"/>
+                                <rect key="frame" x="20" y="169" width="107" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="RGM-OS-OFE"/>
                                     <constraint firstAttribute="width" constant="107" id="ti2-Z9-luo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Train Speed"/>
+                                <state key="normal" title="Train Mana"/>
+                                <connections>
+                                    <action selector="onTappedTrainMana:" destination="f6e-tB-Sov" eventType="touchUpInside" id="6nb-PN-aOQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zZ-Oy-Jin">
-                                <rect key="frame" x="20" y="227" width="126" height="25"/>
+                                <rect key="frame" x="20" y="221" width="126" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Train Strength"/>
+                                <state key="normal" title="Train Attack"/>
+                                <connections>
+                                    <action selector="onTappedTrainAttack:" destination="f6e-tB-Sov" eventType="touchUpInside" id="vZ7-fZ-QeF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Prepare For The Heroes By Training to Become More Powerful" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NX8-oZ-azg">
                                 <rect key="frame" x="20" y="20" width="160" height="100"/>
@@ -755,23 +757,33 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYk-Bb-5NN">
+                                <rect key="frame" x="8" y="125" width="151" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="9JB-cZ-tq8"/>
+                                    <constraint firstAttribute="height" constant="25" id="9lK-sc-5Sn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Train Health"/>
+                                <connections>
+                                    <action selector="onTappedTrainHealth:" destination="f6e-tB-Sov" eventType="touchUpInside" id="7JA-al-vgU"/>
+                                    <action selector="onTappedTrainMana:" destination="f6e-tB-Sov" eventType="touchUpInside" id="e9P-Du-5mI"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="r9Q-ar-UaI" firstAttribute="top" secondItem="X6m-m3-5qn" secondAttribute="bottom" constant="27" id="1Di-99-46V"/>
                             <constraint firstItem="5zZ-Oy-Jin" firstAttribute="top" secondItem="r9Q-ar-UaI" secondAttribute="bottom" constant="27" id="1US-gk-qka"/>
-                            <constraint firstItem="r9Q-ar-UaI" firstAttribute="top" secondItem="X6m-m3-5qn" secondAttribute="bottom" constant="27" id="1gQ-xu-QH7"/>
                             <constraint firstItem="0j8-MR-KLI" firstAttribute="top" secondItem="9qn-OY-93J" secondAttribute="bottom" constant="27" id="4aV-t5-njY"/>
                             <constraint firstItem="0j8-MR-KLI" firstAttribute="top" secondItem="9qn-OY-93J" secondAttribute="bottom" constant="27" id="7PA-Cm-ZmF"/>
                             <constraint firstItem="9qn-OY-93J" firstAttribute="top" secondItem="5zZ-Oy-Jin" secondAttribute="bottom" constant="27" id="AaX-5J-V2k"/>
                             <constraint firstItem="Mqb-Q5-qYE" firstAttribute="centerX" secondItem="Wx7-fg-VxN" secondAttribute="centerX" id="AeE-yO-I0f"/>
                             <constraint firstItem="5zZ-Oy-Jin" firstAttribute="leading" secondItem="Wx7-fg-VxN" secondAttribute="leadingMargin" id="HAq-1P-tqe"/>
-                            <constraint firstItem="X6m-m3-5qn" firstAttribute="leading" secondItem="Wx7-fg-VxN" secondAttribute="leadingMargin" id="NF1-vX-RYf"/>
                             <constraint firstItem="ZSQ-rr-Trv" firstAttribute="top" secondItem="7Ks-ma-03g" secondAttribute="bottom" constant="37" id="NfD-2q-sLl"/>
                             <constraint firstItem="ZSQ-rr-Trv" firstAttribute="trailing" secondItem="Wx7-fg-VxN" secondAttribute="trailingMargin" id="SSL-jZ-jKZ"/>
                             <constraint firstItem="9qn-OY-93J" firstAttribute="top" secondItem="5zZ-Oy-Jin" secondAttribute="bottom" constant="27" id="X7q-7O-IqP"/>
                             <constraint firstItem="NX8-oZ-azg" firstAttribute="leading" secondItem="Wx7-fg-VxN" secondAttribute="leadingMargin" id="egd-G7-mZu"/>
-                            <constraint firstItem="X6m-m3-5qn" firstAttribute="top" secondItem="NX8-oZ-azg" secondAttribute="bottom" constant="3" id="fi3-v4-mui"/>
                             <constraint firstItem="5zZ-Oy-Jin" firstAttribute="top" secondItem="r9Q-ar-UaI" secondAttribute="bottom" constant="27" id="lmY-eW-Wfy"/>
                             <constraint firstItem="ZSQ-rr-Trv" firstAttribute="top" secondItem="7Ks-ma-03g" secondAttribute="bottom" constant="37" id="oga-2h-rCF"/>
                             <constraint firstItem="r9Q-ar-UaI" firstAttribute="leading" secondItem="Wx7-fg-VxN" secondAttribute="leadingMargin" id="pCk-L5-7lB"/>
@@ -782,6 +794,7 @@
                     </view>
                     <connections>
                         <outlet property="warningLabel" destination="Mqb-Q5-qYE" id="8YD-xL-lyc"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToBattle" id="EpY-06-r5K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6I-gQ-jop" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -842,7 +855,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ae0-Ju-Ldw" id="S4t-lM-Yrl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
