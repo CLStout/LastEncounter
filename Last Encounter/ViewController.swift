@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var menuView: UIView!
     
     
+    
+    
     //variables for
     var sublabelState = 0
     var labelsArray : [UILabel]!
