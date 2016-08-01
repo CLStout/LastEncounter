@@ -768,7 +768,6 @@
                                 <state key="normal" title="Train Health"/>
                                 <connections>
                                     <action selector="onTappedTrainHealth:" destination="f6e-tB-Sov" eventType="touchUpInside" id="7JA-al-vgU"/>
-                                    <action selector="onTappedTrainMana:" destination="f6e-tB-Sov" eventType="touchUpInside" id="e9P-Du-5mI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qn-OY-93J">
