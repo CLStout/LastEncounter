@@ -24,6 +24,7 @@ class AllocationViewController: UIViewController {
     var strength = 10
     var magic = 10
     var defense = 10
+    var Villain = villain()
     
     func increase (var stat: Int, display: UILabel) -> Int{
         if points == 0{
@@ -88,6 +89,11 @@ class AllocationViewController: UIViewController {
     }
     @IBAction func doneButton(sender: AnyObject) {
             if points == 0 {
+                Villain.health = health
+                Villain.mana = speed
+                Villain.attack = strength
+                Villain.magic = magic
+                Villain.defense = defense
                 performSegueWithIdentifier("doneSeg", sender: nil)
             }
             else{
