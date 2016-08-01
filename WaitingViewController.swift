@@ -10,7 +10,7 @@ import UIKit
 
 class WaitingViewController: UIViewController {
     
-    let player = villain()
+    var player = villain()
     @IBOutlet weak var warningLabel: UILabel!
     
     override func viewDidLoad() {
