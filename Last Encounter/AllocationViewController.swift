@@ -89,11 +89,11 @@ class AllocationViewController: UIViewController {
     }
     @IBAction func doneButton(sender: AnyObject) {
             if points == 0 {
-                villain().health = health
-                villain().mana = speed
-                villain().attack = strength
-                villain().magic = magic
-                villain().defense = defense
+                Villain.health = health
+                Villain.mana = speed
+                Villain.attack = strength
+                Villain.magic = magic
+                Villain.defense = defense
                 performSegueWithIdentifier("doneSeg", sender: nil)
             }
             else{
