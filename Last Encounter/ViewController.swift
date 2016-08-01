@@ -249,13 +249,12 @@ class ViewController: UIViewController {
                 playerManaLabel.text = String(player.mana)
                 enemyManaLabel.text = String(enemy.mana)
                 playerHealthLabel.text = String(player.health)
+                enemyHealthLabel.text = String(enemy.health)
                 if enemy.health <= 0 {
                     playerWins()
                 } else if player.health <= 0 {
-                    enemyHealthLabel.text = String(enemy.health)
                     playerLose()
                 }else{
-                    enemyHealthLabel.text = String(enemy.health)
                     print("Rewrite the in game health/mana display")
                 }
             }
@@ -266,9 +265,9 @@ class ViewController: UIViewController {
     //Functions for attack and magic actions (allows both characters to use them)
     func attackAction (attacker: villain, attacked: villain, type: Double){
         print("\(attacker) attacked \(attacked) : type \(type)")
-        let hitChance = arc4random_uniform(UInt32(type) + 1)
+        let hitChance = arc4random_uniform(UInt32(type) + 4)
         var damage = 0.0
-        if hitChance == 0 {
+        if hitChance <= 4 {
             switch type {
             case 0:
                 damage = Double(attacker.attack) * 0.8 - Double(attacked.defense) * 0.6
