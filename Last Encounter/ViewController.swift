@@ -48,7 +48,10 @@ class ViewController: UIViewController {
         mainMenuArray = [attackLabel, magicLabel, itemLabel, statsLabel]
         labelsArray = [attackLabel, magicLabel, itemLabel, statsLabel, submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
         
-        let rounds = player.health + player.mana + player.attack + player.defense + player.magic - 50
+        var rounds = player.health + player.mana + player.attack + player.defense + player.magic - 75
+        if rounds <= 0{
+            rounds = 1
+        }
         for _ in 0...rounds{
             let enemyBoost = arc4random_uniform(5)
             switch enemyBoost{
