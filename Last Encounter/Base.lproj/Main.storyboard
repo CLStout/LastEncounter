@@ -486,12 +486,6 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="000/000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QID-K8-vNT">
-                                        <rect key="frame" x="94" y="116" width="112" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Mana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4P-lb-GxE">
                                         <rect key="frame" x="112" y="186" width="76" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -500,6 +494,12 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="000/000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQR-Si-gup">
                                         <rect key="frame" x="94" y="224" width="112" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="000/000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QID-K8-vNT">
+                                        <rect key="frame" x="94" y="116" width="112" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -621,9 +621,15 @@
                     </view>
                     <connections>
                         <outlet property="attackLabel" destination="qsk-G4-pCn" id="yM5-hn-aBK"/>
+                        <outlet property="enemyHealthLabel" destination="GK2-qy-VAi" id="EL4-31-05j"/>
+                        <outlet property="enemyManaLabel" destination="oTl-Ys-o92" id="xVf-xW-Htc"/>
+                        <outlet property="enemyNameLabel" destination="5uI-q7-iAo" id="32l-7d-V67"/>
                         <outlet property="itemLabel" destination="R4d-md-Uhn" id="NNI-tZ-Sy2"/>
                         <outlet property="magicLabel" destination="qrQ-QM-qiL" id="IMI-oL-E6s"/>
                         <outlet property="menuView" destination="kZY-gT-vGS" id="jwy-Qv-D9Z"/>
+                        <outlet property="playerHealthLabel" destination="QID-K8-vNT" id="yKD-Kx-Emu"/>
+                        <outlet property="playerManaLabel" destination="pQR-Si-gup" id="ela-id-elP"/>
+                        <outlet property="playerNameLabel" destination="Vnt-sD-2yb" id="32n-hA-GrZ"/>
                         <outlet property="statsLabel" destination="Y2Y-qw-qYy" id="eeV-Y6-WSg"/>
                         <outlet property="submenuLabel0" destination="Tpf-kk-8R1" id="FLD-rM-1nc"/>
                         <outlet property="submenuLabel1" destination="MLs-EK-XdF" id="Is3-qY-yz7"/>
@@ -836,7 +842,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ae0-Ju-Ldw" id="S4t-lM-Yrl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

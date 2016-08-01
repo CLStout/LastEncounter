@@ -22,6 +22,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var submenuLabel2: UILabel!
     @IBOutlet weak var submenuLabel3: UILabel!
     @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var playerNameLabel: UILabel!
+    @IBOutlet weak var playerHealthLabel: UILabel!
+    @IBOutlet weak var playerManaLabel: UILabel!
+    @IBOutlet weak var enemyNameLabel: UILabel!
+    @IBOutlet weak var enemyHealthLabel: UILabel!
+    @IBOutlet weak var enemyManaLabel: UILabel!
+    
     
     
     
@@ -40,9 +47,38 @@ class ViewController: UIViewController {
         subMenuArray = [submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
         mainMenuArray = [attackLabel, magicLabel, itemLabel, statsLabel]
         labelsArray = [attackLabel, magicLabel, itemLabel, statsLabel, submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
+        
+        let rounds = player.health + player.mana + player.attack + player.defense + player.magic
+        for _ in 1...rounds{
+            let enemyBoost = arc4random_uniform(5)
+            switch enemyBoost{
+            case 0:
+                enemy.health += 1
+                print("Health added")
+            case 1:
+                enemy.mana += 1
+                print("Mana added")
+            case 2:
+                enemy.attack += 1
+                print("Attack added")
+            case 3:
+                enemy.magic += 1
+                print("Magic added")
+            case 4:
+                enemy.defense += 1
+                print("Defense added")
+            default:
+                print("Something went wrong - enemy stat switch")
+            }
+        }
+        
         for label in subMenuArray {
             label.hidden = true
         }
+        playerHealthLabel.text = String(player.health)
+        enemyHealthLabel.text = String(enemy.health)
+        playerManaLabel.text = String(player.mana)
+        enemyManaLabel.text = String(enemy.mana)
     }
     
     //Menu code
@@ -210,11 +246,14 @@ class ViewController: UIViewController {
                     }
                 }
                 print(String(sublabelState))
+                playerHealthLabel.text = String(player.health)
                 if enemy.health <= 0 {
                     playerWins()
                 } else if player.health <= 0 {
+                    enemyHealthLabel.text = String(enemy.health)
                     playerLose()
                 }else{
+                    enemyHealthLabel.text = String(enemy.health)
                     print("Rewrite the in game health/mana display")
                 }
             }
@@ -224,7 +263,7 @@ class ViewController: UIViewController {
     
     //Functions for attack and magic actions (allows both characters to use them)
     func attackAction (attacker: villain, attacked: villain, type: Double){
-            print("\(attacker) attacked \(attacked) : type \(type)")
+        print("\(attacker) attacked \(attacked) : type \(type)")
         let hitChance = arc4random_uniform(UInt32(type) + 1)
         var damage = 0.0
         if hitChance == 0 {
