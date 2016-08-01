@@ -12,11 +12,13 @@ class WaitingViewController: UIViewController {
     
     var tillNextHero = 0
     @IBOutlet weak var warningLabel: UILabel!
+    var Villain = villain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if tillNextHero == 0 {
             tillNextHero = resetHeroTimer()
+            print(Villain.health)
         }
         updateTurnLabel()
     }
