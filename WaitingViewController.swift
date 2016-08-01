@@ -81,7 +81,17 @@ class WaitingViewController: UIViewController {
         checkIfBattle()
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dvc = segue.destinationViewController as! ViewController
-        dvc.player = self.player
+        if (segue.identifier == "goToBattle"){
+            let dvc = segue.destinationViewController as! ViewController
+            dvc.player = self.player
+        }
+        else{
+            let dvc = segue.destinationViewController as! equipViewController
+            dvc.player = self.player
+        }
+        
     }
+    
 }
+
+

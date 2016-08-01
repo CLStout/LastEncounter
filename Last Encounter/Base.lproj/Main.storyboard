@@ -680,7 +680,7 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Change Equipment"/>
                                 <connections>
-                                    <segue destination="Ro4-QL-6bJ" kind="show" id="ECk-0U-g9y"/>
+                                    <segue destination="Ro4-QL-6bJ" kind="show" id="fUc-Zy-bUL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j8-MR-KLI">
@@ -818,10 +818,10 @@
             </objects>
             <point key="canvasLocation" x="2037" y="-96"/>
         </scene>
-        <!--View Controller-->
+        <!--Equip View Controller-->
         <scene sceneID="Ape-yl-dl4">
             <objects>
-                <viewController id="Ro4-QL-6bJ" sceneMemberID="viewController">
+                <viewController id="Ro4-QL-6bJ" customClass="equipViewController" customModule="Last_Encounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NuI-xz-V2B"/>
                         <viewControllerLayoutGuide type="bottom" id="kSi-x2-Cq5"/>
@@ -912,7 +912,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ru-Do-GSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2037" y="688"/>
+            <point key="canvasLocation" x="2037" y="755"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

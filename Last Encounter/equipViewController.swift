@@ -16,4 +16,10 @@ class equipViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            let dvc = segue.destinationViewController as! WaitingViewController
+            dvc.player = self.player
+        }
 }
