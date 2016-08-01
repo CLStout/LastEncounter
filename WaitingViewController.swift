@@ -26,8 +26,8 @@ class WaitingViewController: UIViewController {
     }
     
     func resetHeroTimer()->Int{
-        let var1 = arc4random_uniform(2) + 1
-        let var2 = arc4random_uniform(2)
+        let var1 = arc4random_uniform(3) + 1
+        let var2 = arc4random_uniform(3)
         let setup = var1 + var2
         let timer = Int(setup)
         return timer
