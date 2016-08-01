@@ -873,7 +873,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ae0-Ju-Ldw" id="S4t-lM-Yrl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -944,10 +944,14 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="9LK-M3-Z7t" firstAttribute="centerX" secondItem="gx5-jD-3xW" secondAttribute="centerX" id="5Gi-Hc-3zR"/>
                                     <constraint firstItem="gXm-Li-CcZ" firstAttribute="centerX" secondItem="gx5-jD-3xW" secondAttribute="centerX" id="YrC-QD-J1C"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fFz-NH-oJ3" appends="YES" id="FQM-x7-FSQ"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -959,12 +963,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gameOverView" destination="gx5-jD-3xW" id="AqQ-oE-RfI"/>
-                        <outlet property="resetLabel" destination="5Gi-Hc-3zR" id="SE0-wP-lo4"/>
+                        <outlet property="gameOverView" destination="gx5-jD-3xW" id="Zkp-a5-zL3"/>
+                        <outlet property="resetLabel" destination="9LK-M3-Z7t" id="4tv-99-GO3"/>
                         <segue destination="31r-xl-fcP" kind="showDetail" identifier="titleScreenSegue" id="cTc-7O-7sJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bz-Bf-Gl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fFz-NH-oJ3">
+                    <connections>
+                        <action selector="tapGameOverScreen:" destination="Aoe-vS-kF4" id="Kp6-27-jWI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1362" y="755"/>
         </scene>
@@ -997,10 +1006,14 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="hWG-9W-Vnu" firstAttribute="centerX" secondItem="jr6-Z7-57Y" secondAttribute="centerX" id="1MN-9Y-oFG"/>
                                     <constraint firstItem="4en-l4-HSQ" firstAttribute="centerX" secondItem="jr6-Z7-57Y" secondAttribute="centerX" id="9bF-rI-UCm"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1VM-wO-6kM" appends="YES" id="RNs-O8-DnX"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1012,15 +1025,22 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="continueLabel" destination="4en-l4-HSQ" id="Rwb-Q5-tv4"/>
+                        <outlet property="victoryView" destination="jr6-Z7-57Y" id="jGy-oF-8FB"/>
                         <segue destination="f6e-tB-Sov" kind="show" identifier="returnToWaitingSegue" id="umP-MB-wZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21n-ga-bP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1VM-wO-6kM">
+                    <connections>
+                        <action selector="tapContinueButton:" destination="NWN-kD-lCb" id="Lwm-JH-bTs"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2747" y="755"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="byp-yw-rNa"/>
+        <segue reference="umP-MB-wZX"/>
     </inferredMetricsTieBreakers>
 </document>

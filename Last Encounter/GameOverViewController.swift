@@ -11,12 +11,16 @@ import UIKit
 class GameOverViewController: UIViewController {
 
     
-    @IBOutlet weak var resetLabel: NSLayoutConstraint!
+    @IBOutlet weak var resetLabel: UILabel!
     @IBOutlet weak var gameOverView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    
+    @IBAction func tapGameOverScreen(sender: AnyObject) {
+        if CGRectContainsPoint(resetLabel.frame, sender.locationInView(gameOverView)){
+            performSegueWithIdentifier("titleScreenSegue", sender: nil)
+        }
+    }
 }
