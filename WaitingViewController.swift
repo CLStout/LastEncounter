@@ -10,19 +10,19 @@ import UIKit
 
 class WaitingViewController: UIViewController {
     
-    var tillNextHero = 0
+    let player = villain()
     @IBOutlet weak var warningLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if tillNextHero == 0 {
-            tillNextHero = resetHeroTimer()
+        if player.tillNextHero == 0 {
+            player.tillNextHero = resetHeroTimer()
         }
         updateTurnLabel()
     }
     
     func updateTurnLabel(){
-        warningLabel.text = "The Next Hero Will Be Here In \(tillNextHero) Turn(s)!"
+        warningLabel.text = "The Next Hero Will Be Here In \(player.tillNextHero) Turn(s)!"
     }
     
     func resetHeroTimer()->Int{
@@ -34,16 +34,16 @@ class WaitingViewController: UIViewController {
     }
     
     func checkIfBattle(){
-        if (tillNextHero == 0){
+        if (player.tillNextHero == 0){
                 performSegueWithIdentifier("goToBattle", sender: nil)
         }
     }
     
-    let player = villain()
+
     
     @IBAction func onTappedTrainHealth(sender: AnyObject) {
-        player.health = player.health + 1
-        tillNextHero = tillNextHero - 1
+        player.health += 1
+        player.tillNextHero -= 1
         
         updateTurnLabel()
         checkIfBattle()
@@ -51,7 +51,7 @@ class WaitingViewController: UIViewController {
     
     @IBAction func onTappedTrainMana(sender: AnyObject) {
         player.mana += 1
-        tillNextHero -= 1
+        player.tillNextHero -= 1
         
         updateTurnLabel()
         checkIfBattle()
@@ -59,7 +59,7 @@ class WaitingViewController: UIViewController {
     
     @IBAction func onTappedTrainAttack(sender: AnyObject) {
         player.attack += 1
-        tillNextHero -= 1
+        player.tillNextHero -= 1
         
         updateTurnLabel()
         checkIfBattle()
@@ -67,7 +67,7 @@ class WaitingViewController: UIViewController {
     
     @IBAction func onTappedTrainMagic(sender: AnyObject) {
         player.magic += 1
-        tillNextHero -= 1
+        player.tillNextHero -= 1
         
         updateTurnLabel()
         checkIfBattle()
@@ -75,7 +75,7 @@ class WaitingViewController: UIViewController {
     
     @IBAction func onTappedTrainDefense(sender: AnyObject) {
         player.defense += 1
-        tillNextHero -= 1
+        player.tillNextHero -= 1
         
         updateTurnLabel()
         checkIfBattle()
