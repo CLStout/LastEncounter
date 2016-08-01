@@ -39,8 +39,8 @@ class ViewController: UIViewController {
     var subMenuArray : [UILabel]!
     var mainMenuArray : [UILabel]!
     var enoughMana = true
-    let player = villain()
-    let enemy = villain()
+    var player = villain()
+    var enemy = villain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         labelsArray = [attackLabel, magicLabel, itemLabel, statsLabel, submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
         
         let rounds = player.health + player.mana + player.attack + player.defense + player.magic - 50
-        for _ in 1...rounds{
+        for _ in 0...rounds{
             let enemyBoost = arc4random_uniform(5)
             switch enemyBoost{
             case 0:
@@ -246,6 +246,8 @@ class ViewController: UIViewController {
                     }
                 }
                 print(String(sublabelState))
+                playerManaLabel.text = String(player.mana)
+                enemyManaLabel.text = String(enemy.mana)
                 playerHealthLabel.text = String(player.health)
                 if enemy.health <= 0 {
                     playerWins()

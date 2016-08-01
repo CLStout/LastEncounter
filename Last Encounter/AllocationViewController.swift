@@ -88,16 +88,20 @@ class AllocationViewController: UIViewController {
         defense = decrease(defense, display: defensePoints)
     }
     @IBAction func doneButton(sender: AnyObject) {
-            if points == 0 {
-                Villain.health = health
-                Villain.mana = speed
-                Villain.attack = strength
-                Villain.magic = magic
-                Villain.defense = defense
-                performSegueWithIdentifier("doneSeg", sender: nil)
-            }
-            else{
-                print("Still Points Left")
-            }
+        if points == 0 {
+            Villain.health = health
+            Villain.mana = speed
+            Villain.attack = strength
+            Villain.magic = magic
+            Villain.defense = defense
+            performSegueWithIdentifier("doneSeg", sender: nil)
+        }
+        else{
+            print("Still Points Left")
         }
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! WaitingViewController
+        dvc.player = self.Villain
+    }
+}

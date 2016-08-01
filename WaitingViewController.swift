@@ -39,7 +39,7 @@ class WaitingViewController: UIViewController {
         }
     }
     
-    let player = villain()
+    var player = villain()
     
     @IBAction func onTappedTrainHealth(sender: AnyObject) {
         player.health = player.health + 1
@@ -79,5 +79,9 @@ class WaitingViewController: UIViewController {
         
         updateTurnLabel()
         checkIfBattle()
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! ViewController
+        dvc.player = self.player
     }
 }
