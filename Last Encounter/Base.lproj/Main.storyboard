@@ -642,6 +642,8 @@
                         <outlet property="submenuLabel1" destination="MLs-EK-XdF" id="Is3-qY-yz7"/>
                         <outlet property="submenuLabel2" destination="DLT-iZ-ftv" id="Saw-wy-bey"/>
                         <outlet property="submenuLabel3" destination="rAX-hX-YVZ" id="ob1-wa-Qmf"/>
+                        <segue destination="NWN-kD-lCb" kind="show" identifier="victorySegue" id="Xei-vr-2nZ"/>
+                        <segue destination="Aoe-vS-kF4" kind="show" id="W2w-KL-MXd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -872,7 +874,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ae0-Ju-Ldw" id="S4t-lM-Yrl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -914,8 +916,100 @@
             </objects>
             <point key="canvasLocation" x="2037" y="755"/>
         </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="tEV-6c-AsS">
+            <objects>
+                <viewController id="Aoe-vS-kF4" customClass="GameOverViewController" customModule="Last_Encounter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fsM-Ra-82Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="pJB-r6-Gsd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yf8-eR-Lx7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gx5-jD-3xW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LK-M3-Z7t">
+                                        <rect key="frame" x="195" y="274" width="210" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXm-Li-CcZ">
+                                        <rect key="frame" x="195" y="215" width="210" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="31r-xl-fcP" kind="showDetail" identifier="titleScreenSegue" id="cTc-7O-7sJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Bz-Bf-Gl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1362" y="755"/>
+        </scene>
+        <!--Victory View Controller-->
+        <scene sceneID="ZU3-dJ-6iP">
+            <objects>
+                <viewController id="NWN-kD-lCb" customClass="VictoryViewController" customModule="Last_Encounter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fhL-h7-XtS"/>
+                        <viewControllerLayoutGuide type="bottom" id="x1d-JP-kJO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Z7-xN-K3P">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jr6-Z7-57Y">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4en-l4-HSQ">
+                                        <rect key="frame" x="214" y="274" width="172" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="You win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWG-9W-Vnu">
+                                        <rect key="frame" x="214" y="215" width="172" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hWG-9W-Vnu" firstAttribute="centerX" secondItem="jr6-Z7-57Y" secondAttribute="centerX" id="1MN-9Y-oFG"/>
+                                    <constraint firstItem="4en-l4-HSQ" firstAttribute="centerX" secondItem="jr6-Z7-57Y" secondAttribute="centerX" id="9bF-rI-UCm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="x1d-JP-kJO" firstAttribute="top" secondItem="jr6-Z7-57Y" secondAttribute="bottom" id="97J-84-Zfl"/>
+                            <constraint firstItem="jr6-Z7-57Y" firstAttribute="top" secondItem="0Z7-xN-K3P" secondAttribute="topMargin" id="9SO-zm-O53"/>
+                            <constraint firstItem="jr6-Z7-57Y" firstAttribute="leading" secondItem="0Z7-xN-K3P" secondAttribute="leadingMargin" constant="-20" id="sei-RF-aJI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jr6-Z7-57Y" secondAttribute="trailing" constant="-20" id="w8T-5Q-778"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="f6e-tB-Sov" kind="show" identifier="returnToWaitingSegue" id="umP-MB-wZX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21n-ga-bP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2747" y="755"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="byp-yw-rNa"/>
+        <segue reference="umP-MB-wZX"/>
     </inferredMetricsTieBreakers>
 </document>
