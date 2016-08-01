@@ -99,10 +99,6 @@ class AllocationViewController: UIViewController {
             else{
                 print("Still Points Left")
             }
-        }
-        else{
-            print("Still Points Left")
-        }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dvc = segue.destinationViewController as! WaitingViewController

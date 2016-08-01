@@ -16,8 +16,8 @@ class WaitingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if tillNextHero == 0 {
-            tillNextHero = resetHeroTimer()
+        if player.tillNextHero == 0 {
+            player.tillNextHero = resetHeroTimer()
             print(Villain.health)
         }
         updateTurnLabel()
@@ -41,46 +41,35 @@ class WaitingViewController: UIViewController {
         }
     }
     
-
+    func helper1(){
+        player.tillNextHero -= 1
+        updateTurnLabel()
+        checkIfBattle()
+    }
     
     @IBAction func onTappedTrainHealth(sender: AnyObject) {
         player.health += 1
-        player.tillNextHero -= 1
-        
-        updateTurnLabel()
-        checkIfBattle()
+        helper1()
     }
     
     @IBAction func onTappedTrainMana(sender: AnyObject) {
         player.mana += 1
-        player.tillNextHero -= 1
-        
-        updateTurnLabel()
-        checkIfBattle()
+        helper1()
     }
     
     @IBAction func onTappedTrainAttack(sender: AnyObject) {
         player.attack += 1
-        player.tillNextHero -= 1
-        
-        updateTurnLabel()
-        checkIfBattle()
+        helper1()
     }
     
     @IBAction func onTappedTrainMagic(sender: AnyObject) {
         player.magic += 1
-        player.tillNextHero -= 1
-        
-        updateTurnLabel()
-        checkIfBattle()
+        helper1()
     }
     
     @IBAction func onTappedTrainDefense(sender: AnyObject) {
         player.defense += 1
-        player.tillNextHero -= 1
-        
-        updateTurnLabel()
-        checkIfBattle()
+        helper1()
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "goToBattle"){
