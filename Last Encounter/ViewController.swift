@@ -35,9 +35,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var enemyManaLabel: UILabel!
     
     
-    let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "Literally Retarded", "Really Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Sexually Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous"]
+    let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "verry dum", "Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Gender Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous", "Nasty", "/b/tard", "Rare", "Nice", "Dank"]
     
-    let enemyNameNoun = ["Goblin", "Kid", "Teen", "Adult", "Old Person", "Alex from MM", "Zebra", "Orc", "Attack Helicopter", "Obama", "Naruto", "Weeaboo", "Shitlorde", "Yasoob from MM", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan"]
+    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Helicopter", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Meme", "Suh Dude"]
     
     
     //variables for
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
         mainMenuArray = [attackLabel, magicLabel, itemLabel, statsLabel]
         labelsArray = [attackLabel, magicLabel, itemLabel, statsLabel, submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
         
-        var rounds = player.health + player.mana + player.attack + player.defense + player.magic - 75
+        var rounds = player.health + player.mana + player.attack + player.defense + player.magic - 50
         if rounds <= 0{
             rounds = 1
             
