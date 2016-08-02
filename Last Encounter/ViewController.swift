@@ -53,6 +53,8 @@ class ViewController: UIViewController {
     var background : AVAudioPlayer?
     var hitting : AVAudioPlayer?
     var status : String!
+    var changeP : Int!
+    var changeE : Int!
     
     func playerHealthBar(){
                 let fractionalProgress = Float(player.health) / totalHealthP
@@ -269,6 +271,8 @@ class ViewController: UIViewController {
                         }
                     }
                 }
+                player.health = changeP
+                enemy.health = changeE
                 
                 if player.health == Int(totalHealthP){
                     status = "Alright"
@@ -415,8 +419,42 @@ class ViewController: UIViewController {
         enemyHealthBar()
         playerManaBar()
         enemyManaBar()
-        let hit = arc4random_uniform(1)
-        if hit == 0{
+        
+        //addition
+        if player.health < changeP{
+            let damage = changeP - player.health
+            print("Enemy hit you for \(damage) health")
+        }
+        else if player.health == changeP{
+            print("You blocked the attack")
+        }
+        else if player.health > changeP{
+            let heal = player.health - changeP
+            print("You healed for \(heal) health")
+        }
+        
+        if enemy.health < changeE{
+            let damage = changeE - enemy.health
+            print("You hit enemy for \(damage) health")
+        }
+        else if player.health == changeP{
+            print("Enemy blocked the attack")
+        }
+        else if player.health > changeP{
+            let heal = enemy.health - changeE
+            print("Enemy healed for \(heal) health")
+        }
+        //end
+        
+        //safety
+        if player.health > Int(totalHealthP){
+            player.health = Int(totalHealthP)
+        }
+        if enemy.health > Int(totalHealthE){
+            enemy.health = Int(totalHealthE)
+        }
+        //end
+        
             let path = NSBundle.mainBundle().pathForResource("Attack1.wav", ofType:nil)!
             let url = NSURL(fileURLWithPath: path)
             
@@ -428,20 +466,8 @@ class ViewController: UIViewController {
             } catch {
                 // couldn't load file :(
             }
-        }
-        else if hit == 1{
-            let path = NSBundle.mainBundle().pathForResource("Attack1.wav", ofType:nil)!
-            let url = NSURL(fileURLWithPath: path)
-            
-            do {
-                let sound = try AVAudioPlayer(contentsOfURL: url)
-                hitting = sound
-                sound.play()
-                sound.volume = 0.5
-            } catch {
-                // couldn't load file :(
-            }
-        }
+        sleep(UInt32(0.8))
+
     }
     
     //functions to be finished later - Segue for game over or for victory
