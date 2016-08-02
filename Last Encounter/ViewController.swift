@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
     
     //Outlets for labels in the action menu and status labels
     
+    @IBOutlet weak var progressViewHealthE: UIProgressView!
+    @IBOutlet weak var progressViewHealthP: UIProgressView!
+    @IBOutlet weak var progressViewManaP: UIProgressView!
+    @IBOutlet weak var progressViewManaE: UIProgressView!
     @IBOutlet weak var attackLabel: UILabel!
     @IBOutlet weak var magicLabel: UILabel!
     @IBOutlet weak var itemLabel: UILabel!
@@ -41,9 +46,60 @@ class ViewController: UIViewController {
     var enoughMana = true
     var player = villain()
     var enemy = villain()
+    var totalHealthP : Float!
+    var totalHealthE : Float!
+    var totalManaP : Float!
+    var totalManaE : Float!
+    var background : AVAudioPlayer?
+    var hitting : AVAudioPlayer?
+    var status : String!
     
+    func playerHealthBar(){
+                let fractionalProgress = Float(player.health) / totalHealthP
+                let animated = player.health != 0
+                
+                progressViewHealthP.setProgress(fractionalProgress, animated: animated)
+    }
+    
+    func playerManaBar(){
+        let fractionalProgress = Float(player.mana) / totalManaP
+        let animated = player.mana != 0
+        
+        progressViewManaP.setProgress(fractionalProgress, animated: animated)
+    }
+    
+    func enemyHealthBar(){
+        let fractionalProgress = Float(enemy.health) / totalHealthE
+        let animated = enemy.health != 0
+        
+        progressViewHealthE.setProgress(fractionalProgress, animated: animated)
+    }
+    
+    func enemyManaBar(){
+        let fractionalProgress = Float(enemy.mana) / totalManaE
+        let animated = enemy.mana != 0
+        
+        progressViewManaE.setProgress(fractionalProgress, animated: animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let path = NSBundle.mainBundle().pathForResource("Battle.wav", ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            background = sound
+            sound.play()
+            sound.volume = 1
+        } catch {
+            // couldn't load file :(
+        }
+        
+        totalHealthP = Float(player.health)
+        totalHealthE = Float(enemy.health)
+        totalManaP = Float(player.mana)
+        totalManaE = Float(enemy.mana)
         subMenuArray = [submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
         mainMenuArray = [attackLabel, magicLabel, itemLabel, statsLabel]
         labelsArray = [attackLabel, magicLabel, itemLabel, statsLabel, submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
@@ -51,7 +107,10 @@ class ViewController: UIViewController {
         var rounds = player.health + player.mana + player.attack + player.defense + player.magic - 75
         if rounds <= 0{
             rounds = 1
+            
         }
+        
+        
         for _ in 0...rounds{
             let enemyBoost = arc4random_uniform(5)
             switch enemyBoost{
@@ -73,15 +132,16 @@ class ViewController: UIViewController {
             default:
                 print("Something went wrong - enemy stat switch")
             }
+            totalHealthE = Float(enemy.health)
         }
         
         for label in subMenuArray {
             label.hidden = true
         }
-        playerHealthLabel.text = String(player.health)
-        enemyHealthLabel.text = String(enemy.health)
-        playerManaLabel.text = String(player.mana)
-        enemyManaLabel.text = String(enemy.mana)
+        playerManaLabel.text = String(player.mana) + " / " + String(Int(totalManaP))
+        enemyManaLabel.text = String(enemy.mana) + " / " + String(Int(totalManaE))
+        playerHealthLabel.text = String(player.health) + " / " + String(Int(totalHealthP))
+        enemyHealthLabel.text = String(enemy.health) + " / " + String(Int(totalHealthE))
     }
     
     //Menu code
@@ -209,6 +269,21 @@ class ViewController: UIViewController {
                         }
                     }
                 }
+                
+                if player.health == Int(totalHealthP){
+                    status = "Alright"
+                }
+                else if player.health <= Int(totalHealthP) && player.health >= Int(totalHealthP / 2){
+                    status = "Could be better"
+                }
+                else if player.health < Int(totalHealthP / 2) && player.health > 5{
+                    status = "Not doing so hot"
+                }
+                else{
+                    status = "Dude, Your Screwed"
+                }
+
+                
                 for m in mainMenuArray {
                     if label == m {
                         for s in subMenuArray {
@@ -231,17 +306,17 @@ class ViewController: UIViewController {
                             sublabelState = 2
                         case itemLabel:
                             print("Item submenu to open")
-                            submenuLabel0.text = "Item 0"
-                            submenuLabel1.text = "Item 1"
-                            submenuLabel2.text = "Item 2"
-                            submenuLabel3.text = "Item 3"
+                            submenuLabel0.text = ""
+                            submenuLabel1.text = ""
+                            submenuLabel2.text = ""
+                            submenuLabel3.text = ""
                             sublabelState = 3
                         case statsLabel:
                             print("Stats submenu to open")
                             submenuLabel0.text = "Att: \(player.attack)"
                             submenuLabel1.text = "Mag: \(player.magic)"
                             submenuLabel2.text = "Def: \(player.defense)"
-                            submenuLabel3.text = ""
+                            submenuLabel3.text = "\(status)"
                             sublabelState = 0
                         default:
                             print("Something went wrong - menu switch")
@@ -249,10 +324,10 @@ class ViewController: UIViewController {
                     }
                 }
                 print(String(sublabelState))
-                playerManaLabel.text = String(player.mana)
-                enemyManaLabel.text = String(enemy.mana)
-                playerHealthLabel.text = String(player.health)
-                enemyHealthLabel.text = String(enemy.health)
+                playerManaLabel.text = String(player.mana) + " / " + String(Int(totalManaP))
+                enemyManaLabel.text = String(enemy.mana) + " / " + String(Int(totalManaE))
+                playerHealthLabel.text = String(player.health) + " / " + String(Int(totalHealthP))
+                enemyHealthLabel.text = String(enemy.health) + " / " + String(Int(totalHealthE))
                 if enemy.health <= 0 {
                     playerWins()
                 } else if player.health <= 0 {
@@ -289,6 +364,10 @@ class ViewController: UIViewController {
         }
         print("Player HP: \(String(player.health))")
         print("Enemy HP: \(String(enemy.health))")
+        playerHealthBar()
+        enemyHealthBar()
+        playerManaBar()
+        enemyManaBar()
     }
     
     func magicAction (attacker: villain, attacked: villain, type: Int){
@@ -332,6 +411,37 @@ class ViewController: UIViewController {
         print("Enemy HP: \(String(enemy.health))")
         print("Player MP: \(String(player.mana))")
         print("Enemy MP: \(String(enemy.mana))")
+        playerHealthBar()
+        enemyHealthBar()
+        playerManaBar()
+        enemyManaBar()
+        let hit = arc4random_uniform(1)
+        if hit == 0{
+            let path = NSBundle.mainBundle().pathForResource("Attack1.wav", ofType:nil)!
+            let url = NSURL(fileURLWithPath: path)
+            
+            do {
+                let sound = try AVAudioPlayer(contentsOfURL: url)
+                hitting = sound
+                sound.play()
+                sound.volume = 0.5
+            } catch {
+                // couldn't load file :(
+            }
+        }
+        else if hit == 1{
+            let path = NSBundle.mainBundle().pathForResource("Attack1.wav", ofType:nil)!
+            let url = NSURL(fileURLWithPath: path)
+            
+            do {
+                let sound = try AVAudioPlayer(contentsOfURL: url)
+                hitting = sound
+                sound.play()
+                sound.volume = 0.5
+            } catch {
+                // couldn't load file :(
+            }
+        }
     }
     
     //functions to be finished later - Segue for game over or for victory
@@ -340,10 +450,31 @@ class ViewController: UIViewController {
     func playerLose() {
         print("You lose")
         performSegueWithIdentifier("lossSegue", sender: nil)
+        if background != nil {
+            background!.stop()
+            background = nil
+        }
     }
     
     func playerWins(){
         print("You win")
         performSegueWithIdentifier("victorySegue", sender: nil)
+        player.health = Int(totalHealthP)
+        player.mana = Int(totalManaP)
+        if background != nil {
+            background!.stop()
+            background = nil
+        }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "victorysegue"){
+            let dvc = segue.destinationViewController as! VictoryViewController
+            dvc.player = self.player
+        }
+        else if (segue.identifier == "losssegue"){
+            let dvc = segue.destinationViewController as! GameOverViewController
+            dvc.player = self.player
+        }
+        
     }
 }
