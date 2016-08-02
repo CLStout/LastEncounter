@@ -148,6 +148,8 @@ class ViewController: UIViewController {
     
     //Menu code
     @IBAction func onTappedBattleMenu(sender: UITapGestureRecognizer) {
+        changeE = enemy.health
+        changeP = player.health
         for label in labelsArray{
             if CGRectContainsPoint(label.frame, sender.locationInView(menuView)) {
                 print("Label \(label.text) tapped")
@@ -271,8 +273,6 @@ class ViewController: UIViewController {
                         }
                     }
                 }
-                player.health = changeP
-                enemy.health = changeE
                 
                 if player.health == Int(totalHealthP){
                     status = "Alright"
@@ -466,7 +466,7 @@ class ViewController: UIViewController {
             } catch {
                 // couldn't load file :(
             }
-        sleep(UInt32(0.8))
+
 
     }
     
