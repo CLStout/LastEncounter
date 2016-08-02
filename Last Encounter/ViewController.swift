@@ -89,7 +89,7 @@ class ViewController: UIViewController {
             let sound = try AVAudioPlayer(contentsOfURL: url)
             background = sound
             sound.play()
-            sound.volume = 0.5
+            sound.volume = 1
         } catch {
             // couldn't load file :(
         }
@@ -427,7 +427,7 @@ class ViewController: UIViewController {
             let dvc = segue.destinationViewController as! VictoryViewController
             dvc.player = self.player
         }
-        else{
+        else if (segue.identifier == "losssegue"){
             let dvc = segue.destinationViewController as! GameOverViewController
             dvc.player = self.player
         }
