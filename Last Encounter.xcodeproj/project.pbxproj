@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		45C0E9241D504B2900CE1B3B /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0E9231D504B2900CE1B3B /* TitleViewController.swift */; };
+		45C0E93F1D5119AB00CE1B3B /* Attack1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45C0E9381D5119AB00CE1B3B /* Attack1.wav */; };
+		45C0E9401D5119AB00CE1B3B /* Attack2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45C0E9391D5119AB00CE1B3B /* Attack2.wav */; };
+		45C0E9411D5119AB00CE1B3B /* Battle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45C0E93A1D5119AB00CE1B3B /* Battle.wav */; };
+		45C0E9421D5119AB00CE1B3B /* Intro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45C0E93B1D5119AB00CE1B3B /* Intro.mp3 */; };
+		45C0E9431D5119AB00CE1B3B /* Lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45C0E93C1D5119AB00CE1B3B /* Lose.wav */; };
+		45C0E9441D5119AB00CE1B3B /* Waiting.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45C0E93D1D5119AB00CE1B3B /* Waiting.wav */; };
+		45C0E9451D5119AB00CE1B3B /* Win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 45C0E93E1D5119AB00CE1B3B /* Win.wav */; };
 		57C1097E1D4BA7BF009AE2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C1097D1D4BA7BF009AE2D8 /* AppDelegate.swift */; };
 		57C109801D4BA7BF009AE2D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C1097F1D4BA7BF009AE2D8 /* ViewController.swift */; };
 		57C109831D4BA7BF009AE2D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C109811D4BA7BF009AE2D8 /* Main.storyboard */; };
@@ -17,19 +24,19 @@
 		57C109961D4EF04A009AE2D8 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C109951D4EF04A009AE2D8 /* WaitingViewController.swift */; };
 		57C109981D4FC72C009AE2D8 /* VictoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C109971D4FC72C009AE2D8 /* VictoryViewController.swift */; };
 		57C1099A1D4FC766009AE2D8 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C109991D4FC766009AE2D8 /* GameOverViewController.swift */; };
-		CD06917A1D50E4DC004A85D0 /* Battle.wav in Resources */ = {isa = PBXBuildFile; fileRef = CD0691731D50E4DC004A85D0 /* Battle.wav */; };
-		CD06917B1D50E4DC004A85D0 /* Intro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD0691741D50E4DC004A85D0 /* Intro.mp3 */; };
-		CD06917C1D50E4DC004A85D0 /* Lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = CD0691751D50E4DC004A85D0 /* Lose.wav */; };
-		CD06917D1D50E4DC004A85D0 /* Waiting.wav in Resources */ = {isa = PBXBuildFile; fileRef = CD0691761D50E4DC004A85D0 /* Waiting.wav */; };
-		CD06917E1D50E4DC004A85D0 /* Win.wav in Resources */ = {isa = PBXBuildFile; fileRef = CD0691771D50E4DC004A85D0 /* Win.wav */; };
-		CD06917F1D50E4DC004A85D0 /* Attack1.wav in Resources */ = {isa = PBXBuildFile; fileRef = CD0691781D50E4DC004A85D0 /* Attack1.wav */; };
-		CD0691801D50E4DC004A85D0 /* Attack2.wav in Resources */ = {isa = PBXBuildFile; fileRef = CD0691791D50E4DC004A85D0 /* Attack2.wav */; };
 		CD8812BB1D4F9AA100E4319E /* villain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8812BA1D4F9AA100E4319E /* villain.swift */; };
 		CDDB3BFE1D4FC1D400BEDBDB /* equipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDB3BFD1D4FC1D400BEDBDB /* equipViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		45C0E9231D504B2900CE1B3B /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		45C0E9381D5119AB00CE1B3B /* Attack1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Attack1.wav; path = ../Desktop/Music/Attack1.wav; sourceTree = "<group>"; };
+		45C0E9391D5119AB00CE1B3B /* Attack2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Attack2.wav; path = ../Desktop/Music/Attack2.wav; sourceTree = "<group>"; };
+		45C0E93A1D5119AB00CE1B3B /* Battle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Battle.wav; path = ../Desktop/Music/Battle.wav; sourceTree = "<group>"; };
+		45C0E93B1D5119AB00CE1B3B /* Intro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Intro.mp3; path = ../Desktop/Music/Intro.mp3; sourceTree = "<group>"; };
+		45C0E93C1D5119AB00CE1B3B /* Lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Lose.wav; path = ../Desktop/Music/Lose.wav; sourceTree = "<group>"; };
+		45C0E93D1D5119AB00CE1B3B /* Waiting.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Waiting.wav; path = ../Desktop/Music/Waiting.wav; sourceTree = "<group>"; };
+		45C0E93E1D5119AB00CE1B3B /* Win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Win.wav; path = ../Desktop/Music/Win.wav; sourceTree = "<group>"; };
 		57C1097A1D4BA7BF009AE2D8 /* Last Encounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Last Encounter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C1097D1D4BA7BF009AE2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57C1097F1D4BA7BF009AE2D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,13 +48,6 @@
 		57C109951D4EF04A009AE2D8 /* WaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WaitingViewController.swift; path = ../WaitingViewController.swift; sourceTree = "<group>"; };
 		57C109971D4FC72C009AE2D8 /* VictoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoryViewController.swift; sourceTree = "<group>"; };
 		57C109991D4FC766009AE2D8 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
-		CD0691731D50E4DC004A85D0 /* Battle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Battle.wav; path = ../Downloads/Music/Battle.wav; sourceTree = "<group>"; };
-		CD0691741D50E4DC004A85D0 /* Intro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Intro.mp3; path = ../Downloads/Music/Intro.mp3; sourceTree = "<group>"; };
-		CD0691751D50E4DC004A85D0 /* Lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Lose.wav; path = ../Downloads/Music/Lose.wav; sourceTree = "<group>"; };
-		CD0691761D50E4DC004A85D0 /* Waiting.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Waiting.wav; path = ../Downloads/Music/Waiting.wav; sourceTree = "<group>"; };
-		CD0691771D50E4DC004A85D0 /* Win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Win.wav; path = ../Downloads/Music/Win.wav; sourceTree = "<group>"; };
-		CD0691781D50E4DC004A85D0 /* Attack1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Attack1.wav; path = ../Downloads/Music/Attack1.wav; sourceTree = "<group>"; };
-		CD0691791D50E4DC004A85D0 /* Attack2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Attack2.wav; path = ../Downloads/Music/Attack2.wav; sourceTree = "<group>"; };
 		CD8812BA1D4F9AA100E4319E /* villain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = villain.swift; path = ../villain.swift; sourceTree = "<group>"; };
 		CDDB3BFD1D4FC1D400BEDBDB /* equipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = equipViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,13 +66,13 @@
 		45C0E9351D504DBE00CE1B3B /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				CD0691751D50E4DC004A85D0 /* Lose.wav */,
-				CD0691771D50E4DC004A85D0 /* Win.wav */,
-				CD0691781D50E4DC004A85D0 /* Attack1.wav */,
-				CD0691791D50E4DC004A85D0 /* Attack2.wav */,
-				CD0691731D50E4DC004A85D0 /* Battle.wav */,
-				CD0691741D50E4DC004A85D0 /* Intro.mp3 */,
-				CD0691761D50E4DC004A85D0 /* Waiting.wav */,
+				45C0E9391D5119AB00CE1B3B /* Attack2.wav */,
+				45C0E93B1D5119AB00CE1B3B /* Intro.mp3 */,
+				45C0E93A1D5119AB00CE1B3B /* Battle.wav */,
+				45C0E9381D5119AB00CE1B3B /* Attack1.wav */,
+				45C0E93D1D5119AB00CE1B3B /* Waiting.wav */,
+				45C0E93E1D5119AB00CE1B3B /* Win.wav */,
+				45C0E93C1D5119AB00CE1B3B /* Lose.wav */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -172,16 +172,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C0E9421D5119AB00CE1B3B /* Intro.mp3 in Resources */,
+				45C0E9451D5119AB00CE1B3B /* Win.wav in Resources */,
+				45C0E9411D5119AB00CE1B3B /* Battle.wav in Resources */,
+				45C0E93F1D5119AB00CE1B3B /* Attack1.wav in Resources */,
+				45C0E9401D5119AB00CE1B3B /* Attack2.wav in Resources */,
 				57C109881D4BA7BF009AE2D8 /* LaunchScreen.storyboard in Resources */,
-				CD0691801D50E4DC004A85D0 /* Attack2.wav in Resources */,
-				CD06917E1D50E4DC004A85D0 /* Win.wav in Resources */,
-				CD06917C1D50E4DC004A85D0 /* Lose.wav in Resources */,
-				CD06917B1D50E4DC004A85D0 /* Intro.mp3 in Resources */,
 				57C109851D4BA7BF009AE2D8 /* Assets.xcassets in Resources */,
-				CD06917D1D50E4DC004A85D0 /* Waiting.wav in Resources */,
-				CD06917A1D50E4DC004A85D0 /* Battle.wav in Resources */,
-				CD06917F1D50E4DC004A85D0 /* Attack1.wav in Resources */,
 				57C109831D4BA7BF009AE2D8 /* Main.storyboard in Resources */,
+				45C0E9431D5119AB00CE1B3B /* Lose.wav in Resources */,
+				45C0E9441D5119AB00CE1B3B /* Waiting.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
