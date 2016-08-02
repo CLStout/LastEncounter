@@ -376,6 +376,9 @@ class ViewController: UIViewController {
             default:
                 print("Something went wrong - attack switch")
             }
+            if damage <= 0{
+                damage = 1
+            }
             attacked.health -= Int(damage)
         } else {
             print("Missed")
@@ -423,6 +426,9 @@ class ViewController: UIViewController {
             }
         default:
             print("Something went wrong - magic switch")
+        }
+        if damage <= 0{
+            damage = 1
         }
         attacked.health -= Int(damage)
         print("Player HP: \(String(player.health))")
