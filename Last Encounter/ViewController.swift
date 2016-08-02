@@ -35,7 +35,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var enemyManaLabel: UILabel!
     
     
+    let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "Literally Retarded", "Really Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Sexually Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous"]
     
+    let enemyNameNoun = ["Goblin", "Kid", "Teen", "Adult", "Old Person", "Alex from MM", "Zebra", "Orc", "Attack Helicopter", "Obama", "Naruto", "Weeaboo", "Shitlorde", "Yasoob from MM", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan"]
     
     
     //variables for
@@ -83,6 +85,15 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //set enemy name
+        var adjChoice = Int(arc4random_uniform(UInt32(enemyNameAdj.count)))
+        var nounChoice = Int(arc4random_uniform(UInt32(enemyNameNoun.count)))
+        
+        var setEnemyName = enemyNameAdj[adjChoice] + " " + enemyNameNoun[nounChoice]
+        enemyNameLabel.text = setEnemyName
+        
         
         let path = NSBundle.mainBundle().pathForResource("Battle.wav", ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
