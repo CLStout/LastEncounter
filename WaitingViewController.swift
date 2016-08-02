@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import AVFoundation
 
 class WaitingViewController: UIViewController {
     
+    var background : AVAudioPlayer?
     var player = villain()
     @IBOutlet weak var warningLabel: UILabel!
     var Villain = villain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let path = NSBundle.mainBundle().pathForResource("Waiting.wav", ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            background = sound
+            sound.play()
+            sound.volume = 1
+        } catch {
+            // couldn't load file :(
+        }
+        
         if player.tillNextHero == 0 {
             player.tillNextHero = resetHeroTimer()
             print(Villain.health)
@@ -38,6 +53,10 @@ class WaitingViewController: UIViewController {
     func checkIfBattle(){
         if (player.tillNextHero == 0){
                 performSegueWithIdentifier("goToBattle", sender: nil)
+            if background != nil {
+                background!.stop()
+                background = nil
+            }
         }
     }
     

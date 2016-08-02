@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title View Controller-->
         <scene sceneID="ieN-G1-am1">
             <objects>
-                <viewController id="31r-xl-fcP" sceneMemberID="viewController">
+                <viewController id="31r-xl-fcP" customClass="TitleViewController" customModule="Last_Encounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ddh-8P-cOc"/>
                         <viewControllerLayoutGuide type="bottom" id="7fa-8P-cys"/>
