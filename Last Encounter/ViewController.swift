@@ -51,6 +51,7 @@ class ViewController: UIViewController {
     var totalManaP : Float!
     var totalManaE : Float!
     var background : AVAudioPlayer?
+    var hitting : AVAudioPlayer?
     
     func playerHealthBar(){
                 let fractionalProgress = Float(player.health) / totalHealthP
@@ -398,6 +399,33 @@ class ViewController: UIViewController {
         enemyHealthBar()
         playerManaBar()
         enemyManaBar()
+        let hit = arc4random_uniform(1)
+        if hit == 0{
+            let path = NSBundle.mainBundle().pathForResource("Attack1.wav", ofType:nil)!
+            let url = NSURL(fileURLWithPath: path)
+            
+            do {
+                let sound = try AVAudioPlayer(contentsOfURL: url)
+                hitting = sound
+                sound.play()
+                sound.volume = 0.5
+            } catch {
+                // couldn't load file :(
+            }
+        }
+        else if hit == 1{
+            let path = NSBundle.mainBundle().pathForResource("Attack1.wav", ofType:nil)!
+            let url = NSURL(fileURLWithPath: path)
+            
+            do {
+                let sound = try AVAudioPlayer(contentsOfURL: url)
+                hitting = sound
+                sound.play()
+                sound.volume = 0.5
+            } catch {
+                // couldn't load file :(
+            }
+        }
     }
     
     //functions to be finished later - Segue for game over or for victory
