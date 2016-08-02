@@ -971,9 +971,6 @@
                                     <constraint firstItem="9LK-M3-Z7t" firstAttribute="centerX" secondItem="gx5-jD-3xW" secondAttribute="centerX" id="5Gi-Hc-3zR"/>
                                     <constraint firstItem="gXm-Li-CcZ" firstAttribute="centerX" secondItem="gx5-jD-3xW" secondAttribute="centerX" id="YrC-QD-J1C"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="fFz-NH-oJ3" appends="YES" id="FQM-x7-FSQ"/>
-                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -985,15 +982,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gameOverView" destination="gx5-jD-3xW" id="Zkp-a5-zL3"/>
-                        <outlet property="resetLabel" destination="9LK-M3-Z7t" id="4tv-99-GO3"/>
+                        <outlet property="gameOverViewController" destination="gx5-jD-3xW" id="iCr-Ka-hbg"/>
+                        <outlet property="resetButton" destination="9LK-M3-Z7t" id="BxT-ff-gKt"/>
                         <segue destination="31r-xl-fcP" kind="showDetail" identifier="titleScreenSegue" id="cTc-7O-7sJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bz-Bf-Gl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="fFz-NH-oJ3">
                     <connections>
-                        <action selector="tapGameOverScreen:" destination="Aoe-vS-kF4" id="Kp6-27-jWI"/>
+                        <action selector="tapGameOverScreen:" destination="Aoe-vS-kF4" id="m66-Uy-42o"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

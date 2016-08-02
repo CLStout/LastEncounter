@@ -11,6 +11,10 @@ import AVFoundation
 
 class GameOverViewController: UIViewController {
     
+    
+    @IBOutlet weak var resetButton: UILabel!
+    @IBOutlet weak var gameOverViewController: UIView!
+    
     var background : AVAudioPlayer?
     var player = villain()
     
@@ -27,6 +31,12 @@ class GameOverViewController: UIViewController {
             sound.volume = 0.5
         } catch {
             // couldn't load file :(
+        }
+    }
+    
+    @IBAction func tapGameOverScreen(sender: AnyObject) {
+        if CGRectContainsPoint(resetButton.frame, sender.locationInView(gameOverViewController)){
+            performSegueWithIdentifier("titleScreenSegue", sender: nil)
         }
     }
     
