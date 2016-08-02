@@ -363,11 +363,11 @@ class ViewController: UIViewController {
         if hitChance <= 4 {
             switch type {
             case 0:
-                damage = Double(attacker.attack) * 0.8 - Double(attacked.defense) * 0.6
+                damage = Double(attacker.attack) * 0.8 - Double(attacked.defense) * 0.5
             case 1:
-                damage = Double(attacker.attack) * 0.6 - Double(attacked.defense) * 0.2
+                damage = Double(attacker.attack) * 0.6 - Double(attacked.defense) * 0.1
             case 2:
-                damage = Double(attacker.attack) * 0.9 - Double(attacked.defense) * 0.4
+                damage = Double(attacker.attack) * 0.9 - Double(attacked.defense) * 0.3
             case 3:
                 damage = Double(attacker.attack)  - Double(attacked.defense) * 0.1
             default:
@@ -407,7 +407,7 @@ class ViewController: UIViewController {
         case 2:
             if attacker.mana >= 6{
                 attacker.mana -= 6
-                damage = Double(attacker.magic) * 0.7 - Double(attacked.defense) * 0.2
+                damage = Double(attacker.magic) * 0.6 - Double(attacked.defense) * 0.2
             }else{
                 enoughMana = false
             }
