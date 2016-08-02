@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -49,6 +50,7 @@ class ViewController: UIViewController {
     var totalHealthE : Float!
     var totalManaP : Float!
     var totalManaE : Float!
+    var background : AVAudioPlayer?
     
     func playerHealthBar(){
                 let fractionalProgress = Float(player.health) / totalHealthP
@@ -79,6 +81,19 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let path = NSBundle.mainBundle().pathForResource("Battle.wav", ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            background = sound
+            sound.play()
+            sound.volume = 0.5
+        } catch {
+            // couldn't load file :(
+        }
+        
         totalHealthP = Float(player.health)
         totalHealthE = Float(enemy.health)
         totalManaP = Float(player.mana)
@@ -121,10 +136,10 @@ class ViewController: UIViewController {
         for label in subMenuArray {
             label.hidden = true
         }
-        playerHealthLabel.text = String(player.health)
-        enemyHealthLabel.text = String(enemy.health)
-        playerManaLabel.text = String(player.mana)
-        enemyManaLabel.text = String(enemy.mana)
+        playerManaLabel.text = String(player.mana) + " / " + String(Int(totalManaP))
+        enemyManaLabel.text = String(enemy.mana) + " / " + String(Int(totalManaE))
+        playerHealthLabel.text = String(player.health) + " / " + String(Int(totalHealthP))
+        enemyHealthLabel.text = String(enemy.health) + " / " + String(Int(totalHealthE))
     }
     
     //Menu code
@@ -292,10 +307,10 @@ class ViewController: UIViewController {
                     }
                 }
                 print(String(sublabelState))
-                playerManaLabel.text = String(player.mana)
-                enemyManaLabel.text = String(enemy.mana)
-                playerHealthLabel.text = String(player.health)
-                enemyHealthLabel.text = String(enemy.health)
+                playerManaLabel.text = String(player.mana) + " / " + String(Int(totalManaP))
+                enemyManaLabel.text = String(enemy.mana) + " / " + String(Int(totalManaE))
+                playerHealthLabel.text = String(player.health) + " / " + String(Int(totalHealthP))
+                enemyHealthLabel.text = String(enemy.health) + " / " + String(Int(totalHealthE))
                 if enemy.health <= 0 {
                     playerWins()
                 } else if player.health <= 0 {
@@ -391,6 +406,10 @@ class ViewController: UIViewController {
     func playerLose() {
         print("You lose")
         performSegueWithIdentifier("lossSegue", sender: nil)
+        if background != nil {
+            background!.stop()
+            background = nil
+        }
     }
     
     func playerWins(){
@@ -398,9 +417,20 @@ class ViewController: UIViewController {
         performSegueWithIdentifier("victorySegue", sender: nil)
         player.health = Int(totalHealthP)
         player.mana = Int(totalManaP)
+        if background != nil {
+            background!.stop()
+            background = nil
+        }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "victorysegue"){
             let dvc = segue.destinationViewController as! VictoryViewController
             dvc.player = self.player
         }
+        else{
+            let dvc = segue.destinationViewController as! GameOverViewController
+            dvc.player = self.player
+        }
+        
+    }
 }

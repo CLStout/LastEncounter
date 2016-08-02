@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class AllocationViewController: UIViewController {
     
@@ -25,6 +26,7 @@ class AllocationViewController: UIViewController {
     var magic = 10
     var defense = 10
     var Villain = villain()
+    var background : AVAudioPlayer?
     
     func increase (var stat: Int, display: UILabel) -> Int{
         if points == 0{
@@ -55,6 +57,7 @@ class AllocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     @IBAction func onTappedIncreaseHealth(sender: AnyObject) {
@@ -95,6 +98,10 @@ class AllocationViewController: UIViewController {
                 Villain.magic = magic
                 Villain.defense = defense
                 performSegueWithIdentifier("doneSeg", sender: nil)
+                if background != nil {
+                    background!.stop()
+                    background = nil
+                }
             }
             else{
                 print("Still Points Left")

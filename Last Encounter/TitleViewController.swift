@@ -1,5 +1,5 @@
 //
-//  LoseViewController.swift
+//  TitleViewController.swift
 //  Last Encounter
 //
 //  Created by Zachary Rutherford on 8/1/16.
@@ -9,10 +9,12 @@
 import UIKit
 import AVFoundation
 
-class GameOverViewController: UIViewController {
+class TitleViewController: UIViewController {
     
     var background : AVAudioPlayer?
-    var player = villain()
+    
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,5 +31,8 @@ class GameOverViewController: UIViewController {
             // couldn't load file :(
         }
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! AllocationViewController
+        dvc.background = self.background
+    }
 }
