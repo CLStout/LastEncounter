@@ -10,6 +10,9 @@ import UIKit
 
 class VictoryViewController: UIViewController {
 
+    var player = villain()
+    
+    
     @IBOutlet weak var continueLabel: UILabel!
     @IBOutlet weak var victoryView: UIView!
     
@@ -21,5 +24,10 @@ class VictoryViewController: UIViewController {
         if CGRectContainsPoint(continueLabel.frame, sender.locationInView(victoryView)){
             performSegueWithIdentifier("returnToWaitingSegue", sender: nil)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! WaitingViewController
+        dvc.player = self.player
     }
 }

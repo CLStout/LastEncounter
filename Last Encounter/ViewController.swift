@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     
     //Outlets for labels in the action menu and status labels
     
+    @IBOutlet weak var progressViewHealthE: UIProgressView!
+    @IBOutlet weak var progressViewHealthP: UIProgressView!
+    @IBOutlet weak var progressViewManaP: UIProgressView!
+    @IBOutlet weak var progressViewManaE: UIProgressView!
     @IBOutlet weak var attackLabel: UILabel!
     @IBOutlet weak var magicLabel: UILabel!
     @IBOutlet weak var itemLabel: UILabel!
@@ -41,9 +45,44 @@ class ViewController: UIViewController {
     var enoughMana = true
     var player = villain()
     var enemy = villain()
+    var totalHealthP : Float!
+    var totalHealthE : Float!
+    var totalManaP : Float!
+    var totalManaE : Float!
     
+    func playerHealthBar(){
+                let fractionalProgress = Float(player.health) / totalHealthP
+                let animated = player.health != 0
+                
+                progressViewHealthP.setProgress(fractionalProgress, animated: animated)
+    }
+    
+    func playerManaBar(){
+        let fractionalProgress = Float(player.mana) / totalManaP
+        let animated = player.mana != 0
+        
+        progressViewManaP.setProgress(fractionalProgress, animated: animated)
+    }
+    
+    func enemyHealthBar(){
+        let fractionalProgress = Float(enemy.health) / totalHealthE
+        let animated = enemy.health != 0
+        
+        progressViewHealthE.setProgress(fractionalProgress, animated: animated)
+    }
+    
+    func enemyManaBar(){
+        let fractionalProgress = Float(enemy.mana) / totalManaE
+        let animated = enemy.mana != 0
+        
+        progressViewManaE.setProgress(fractionalProgress, animated: animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        totalHealthP = Float(player.health)
+        totalHealthE = Float(enemy.health)
+        totalManaP = Float(player.mana)
+        totalManaE = Float(enemy.mana)
         subMenuArray = [submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
         mainMenuArray = [attackLabel, magicLabel, itemLabel, statsLabel]
         labelsArray = [attackLabel, magicLabel, itemLabel, statsLabel, submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
@@ -51,7 +90,10 @@ class ViewController: UIViewController {
         var rounds = player.health + player.mana + player.attack + player.defense + player.magic - 75
         if rounds <= 0{
             rounds = 1
+            
         }
+        
+        
         for _ in 0...rounds{
             let enemyBoost = arc4random_uniform(5)
             switch enemyBoost{
@@ -73,6 +115,7 @@ class ViewController: UIViewController {
             default:
                 print("Something went wrong - enemy stat switch")
             }
+            totalHealthE = Float(enemy.health)
         }
         
         for label in subMenuArray {
@@ -289,6 +332,10 @@ class ViewController: UIViewController {
         }
         print("Player HP: \(String(player.health))")
         print("Enemy HP: \(String(enemy.health))")
+        playerHealthBar()
+        enemyHealthBar()
+        playerManaBar()
+        enemyManaBar()
     }
     
     func magicAction (attacker: villain, attacked: villain, type: Int){
@@ -332,6 +379,10 @@ class ViewController: UIViewController {
         print("Enemy HP: \(String(enemy.health))")
         print("Player MP: \(String(player.mana))")
         print("Enemy MP: \(String(enemy.mana))")
+        playerHealthBar()
+        enemyHealthBar()
+        playerManaBar()
+        enemyManaBar()
     }
     
     //functions to be finished later - Segue for game over or for victory
@@ -345,5 +396,11 @@ class ViewController: UIViewController {
     func playerWins(){
         print("You win")
         performSegueWithIdentifier("victorySegue", sender: nil)
+        player.health = Int(totalHealthP)
+        player.mana = Int(totalManaP)
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            let dvc = segue.destinationViewController as! VictoryViewController
+            dvc.player = self.player
+        }
 }
