@@ -52,6 +52,7 @@ class ViewController: UIViewController {
     var totalManaE : Float!
     var background : AVAudioPlayer?
     var hitting : AVAudioPlayer?
+    var status : String!
     
     func playerHealthBar(){
                 let fractionalProgress = Float(player.health) / totalHealthP
@@ -268,6 +269,21 @@ class ViewController: UIViewController {
                         }
                     }
                 }
+                
+                if player.health == Int(totalHealthP){
+                    status = "Alright"
+                }
+                else if player.health <= Int(totalHealthP) && player.health >= Int(totalHealthP / 2){
+                    status = "Could be better"
+                }
+                else if player.health < Int(totalHealthP / 2) && player.health > 5{
+                    status = "Not doing so hot"
+                }
+                else{
+                    status = "Dude, Your Screwed"
+                }
+
+                
                 for m in mainMenuArray {
                     if label == m {
                         for s in subMenuArray {
@@ -290,17 +306,17 @@ class ViewController: UIViewController {
                             sublabelState = 2
                         case itemLabel:
                             print("Item submenu to open")
-                            submenuLabel0.text = "Item 0"
-                            submenuLabel1.text = "Item 1"
-                            submenuLabel2.text = "Item 2"
-                            submenuLabel3.text = "Item 3"
+                            submenuLabel0.text = ""
+                            submenuLabel1.text = ""
+                            submenuLabel2.text = ""
+                            submenuLabel3.text = ""
                             sublabelState = 3
                         case statsLabel:
                             print("Stats submenu to open")
                             submenuLabel0.text = "Att: \(player.attack)"
                             submenuLabel1.text = "Mag: \(player.magic)"
                             submenuLabel2.text = "Def: \(player.defense)"
-                            submenuLabel3.text = ""
+                            submenuLabel3.text = "\(status)"
                             sublabelState = 0
                         default:
                             print("Something went wrong - menu switch")
