@@ -35,9 +35,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var enemyManaLabel: UILabel!
     
     
-    let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "Literally Retarded", "Really Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Sexually Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous"]
+    let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "verry dum", "Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Gender Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous", "Nasty", "/b/tard", "Rare", "Nice", "Dank"]
     
-    let enemyNameNoun = ["Goblin", "Kid", "Teen", "Adult", "Old Person", "Alex from MM", "Zebra", "Orc", "Attack Helicopter", "Obama", "Naruto", "Weeaboo", "Shitlorde", "Yasoob from MM", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan"]
+    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Helicopter", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Meme", "Suh Dude"]
     
     
     //variables for
@@ -55,6 +55,8 @@ class ViewController: UIViewController {
     var background : AVAudioPlayer?
     var hitting : AVAudioPlayer?
     var status : String!
+    var changeP : Int!
+    var changeE : Int!
     
     func playerHealthBar(){
                 let fractionalProgress = Float(player.health) / totalHealthP
@@ -115,7 +117,7 @@ class ViewController: UIViewController {
         mainMenuArray = [attackLabel, magicLabel, itemLabel, statsLabel]
         labelsArray = [attackLabel, magicLabel, itemLabel, statsLabel, submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
         
-        var rounds = player.health + player.mana + player.attack + player.defense + player.magic - 75
+        var rounds = player.health + player.mana + player.attack + player.defense + player.magic - 50
         if rounds <= 0{
             rounds = 1
             
@@ -157,6 +159,8 @@ class ViewController: UIViewController {
     
     //Menu code
     @IBAction func onTappedBattleMenu(sender: UITapGestureRecognizer) {
+        changeE = enemy.health
+        changeP = player.health
         for label in labelsArray{
             if CGRectContainsPoint(label.frame, sender.locationInView(menuView)) {
                 print("Label \(label.text) tapped")
@@ -426,8 +430,42 @@ class ViewController: UIViewController {
         enemyHealthBar()
         playerManaBar()
         enemyManaBar()
-        let hit = arc4random_uniform(1)
-        if hit == 0{
+        
+        //addition
+        if player.health < changeP{
+            let damage = changeP - player.health
+            print("Enemy hit you for \(damage) health")
+        }
+        else if player.health == changeP{
+            print("You blocked the attack")
+        }
+        else if player.health > changeP{
+            let heal = player.health - changeP
+            print("You healed for \(heal) health")
+        }
+        
+        if enemy.health < changeE{
+            let damage = changeE - enemy.health
+            print("You hit enemy for \(damage) health")
+        }
+        else if player.health == changeP{
+            print("Enemy blocked the attack")
+        }
+        else if player.health > changeP{
+            let heal = enemy.health - changeE
+            print("Enemy healed for \(heal) health")
+        }
+        //end
+        
+        //safety
+        if player.health > Int(totalHealthP){
+            player.health = Int(totalHealthP)
+        }
+        if enemy.health > Int(totalHealthE){
+            enemy.health = Int(totalHealthE)
+        }
+        //end
+        
             let path = NSBundle.mainBundle().pathForResource("Attack1.wav", ofType:nil)!
             let url = NSURL(fileURLWithPath: path)
             
@@ -439,20 +477,8 @@ class ViewController: UIViewController {
             } catch {
                 // couldn't load file :(
             }
-        }
-        else if hit == 1{
-            let path = NSBundle.mainBundle().pathForResource("Attack1.wav", ofType:nil)!
-            let url = NSURL(fileURLWithPath: path)
-            
-            do {
-                let sound = try AVAudioPlayer(contentsOfURL: url)
-                hitting = sound
-                sound.play()
-                sound.volume = 0.5
-            } catch {
-                // couldn't load file :(
-            }
-        }
+
+
     }
     
     //functions to be finished later - Segue for game over or for victory
