@@ -378,21 +378,21 @@ class ViewController: UIViewController {
         case 0:
             if attacker.mana >= 2{
                 attacker.mana -= 2
-                damage = Double(attacker.magic) * 0.5 - Double(attacked.defense) * 0.2
+                damage = Double(attacker.magic) * 0.4 - Double(attacked.defense) * 0.2
             }else{
                 enoughMana = false
             }
         case 1:
             if attacker.mana >= 4{
                 attacker.mana -= 4
-                damage = Double(attacker.magic) * 0.7 - Double(attacked.defense) * 0.2
+                damage = Double(attacker.magic) * 0.5 - Double(attacked.defense) * 0.2
             }else{
                 enoughMana = false
             }
         case 2:
             if attacker.mana >= 6{
                 attacker.mana -= 6
-                damage = Double(attacker.magic) * 0.9 - Double(attacked.defense) * 0.2
+                damage = Double(attacker.magic) * 0.7 - Double(attacked.defense) * 0.2
             }else{
                 enoughMana = false
             }
@@ -467,11 +467,11 @@ class ViewController: UIViewController {
         }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "victorysegue"){
+        if (segue.identifier == "victorySegue"){
             let dvc = segue.destinationViewController as! VictoryViewController
             dvc.player = self.player
         }
-        else if (segue.identifier == "losssegue"){
+        else if (segue.identifier == "lossSegue"){
             let dvc = segue.destinationViewController as! GameOverViewController
             dvc.player = self.player
         }
