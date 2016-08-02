@@ -34,7 +34,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var enemyHealthLabel: UILabel!
     @IBOutlet weak var enemyManaLabel: UILabel!
     
-    
     let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "verry dum", "Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Gender Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous", "Nasty", "/b/tard", "Rare", "Nice", "Dank"]
     
     let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Helicopter", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Meme", "Suh Dude"]
@@ -88,6 +87,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        playerNameLabel.text = player.name
         
         //set enemy name
         var adjChoice = Int(arc4random_uniform(UInt32(enemyNameAdj.count)))
