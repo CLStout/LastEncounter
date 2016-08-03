@@ -48,7 +48,7 @@ class WaitingViewController: UIViewController {
     }
     
     func updateLevelLabel(){
-        let currentLevel = (player.health + player.mana + player.attack + player.magic + player.defense) - 69
+        var currentLevel = (player.health + player.mana + player.attack + player.magic + player.defense) - 69
         levelLabel.text = "Level " + String(currentLevel)
     }
     
@@ -75,7 +75,7 @@ class WaitingViewController: UIViewController {
     }
     
     func decideMinigame(){
-        let minigameChoice = arc4random_uniform(2)
+        var minigameChoice = arc4random_uniform(2)
         //var minigameChoice = 0
             if(minigameChoice == 0){
                 performSegueWithIdentifier("tapSegue", sender: nil)
@@ -99,8 +99,8 @@ class WaitingViewController: UIViewController {
         updateTurnLabel()
         decideMinigame()
         updateLevelLabel()
-        //checkIfBattle()
         
+        //checkIfBattle() this is old. It used to send you into a battle instantly when the hero was 0 turns away but it would cause issues with the minigames.
     }
     
     @IBAction func onTappedTrainHealth(sender: AnyObject) {

@@ -18,7 +18,7 @@ class VictoryViewController: UIViewController {
     var player = villain()
     var Villain = villain()
     var tillNextHero = 0
-    var autism = 0
+
     
     
     override func viewDidLoad() {
