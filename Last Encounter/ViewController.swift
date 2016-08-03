@@ -148,6 +148,7 @@ class ViewController: UIViewController {
             default:
                 print("Something went wrong - enemy stat switch")
             }
+            enemy.health += 5
             totalHealthE = Float(enemy.health)
             totalManaE = Float(enemy.mana)
             
@@ -401,35 +402,35 @@ class ViewController: UIViewController {
         case 0:
             if attacker.mana >= 2{
                 attacker.mana -= 2
-                damage = Double(attacker.magic) * 0.4 - Double(attacked.defense) * 0.2
+                damage = Double(attacker.magic) * 0.3 - Double(attacked.defense) * 0.2
             }else{
                 enoughMana = false
             }
         case 1:
             if attacker.mana >= 4{
                 attacker.mana -= 4
-                damage = Double(attacker.magic) * 0.5 - Double(attacked.defense) * 0.2
+                damage = Double(attacker.magic) * 0.4 - Double(attacked.defense) * 0.2
             }else{
                 enoughMana = false
             }
         case 2:
             if attacker.mana >= 6{
                 attacker.mana -= 6
-                damage = Double(attacker.magic) * 0.6 - Double(attacked.defense) * 0.2
+                damage = Double(attacker.magic) * 0.5 - Double(attacked.defense) * 0.2
             }else{
                 enoughMana = false
             }
         case 3:
             if attacker.mana >= 4{
                 attacker.mana -= 4
-                attacker.health += attacker.magic * 6 / 10
+                attacker.health += attacker.magic * 5 / 10
             }else{
                 enoughMana = false
             }
         default:
             print("Something went wrong - magic switch")
         }
-        if damage <= 0{
+        if damage <= 0 && type != 3{
             damage = 1
         }
         attacked.health -= Int(damage)
