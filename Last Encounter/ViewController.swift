@@ -99,7 +99,6 @@ class ViewController: UIViewController {
         var setEnemyName = enemyNameAdj[adjChoice] + " " + enemyNameNoun[nounChoice]
         enemyNameLabel.text = setEnemyName
         
-        
         let path = NSBundle.mainBundle().pathForResource("Battle.wav", ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
         
