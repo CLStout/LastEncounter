@@ -11,13 +11,17 @@ import AVFoundation
 
 class WaitingViewController: UIViewController {
     
+    @IBOutlet weak var levelLabel: UILabel!
     var background : AVAudioPlayer?
     var player = villain()
     @IBOutlet weak var warningLabel: UILabel!
     var Villain = villain()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateLevelLabel()
         
         let path = NSBundle.mainBundle().pathForResource("Waiting.wav", ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
@@ -42,6 +46,11 @@ class WaitingViewController: UIViewController {
         warningLabel.text = "The Next Hero Will Be Here In \(player.tillNextHero) Turn(s)!"
     }
     
+    func updateLevelLabel(){
+        var currentLevel = (player.health + player.mana + player.attack + player.magic + player.defense) - 69
+        levelLabel.text = "Level " + String(currentLevel)
+    }
+    
     func resetHeroTimer()->Int{
         let var1 = arc4random_uniform(3) + 1
         let var2 = arc4random_uniform(3)
@@ -64,6 +73,7 @@ class WaitingViewController: UIViewController {
         player.tillNextHero -= 1
         updateTurnLabel()
         checkIfBattle()
+        updateLevelLabel()
     }
     
     @IBAction func onTappedTrainHealth(sender: AnyObject) {
