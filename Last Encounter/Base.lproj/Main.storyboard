@@ -29,7 +29,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="AjB-W5-MS4" kind="show" id="8O7-AN-KAt"/>
+                                    <action selector="beginButton:" destination="31r-xl-fcP" eventType="touchUpInside" id="t9i-bV-dmZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8C-ZS-f0m">
@@ -42,6 +42,9 @@
                                 <state key="normal" title="How To Play">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="howToPlayButton:" destination="31r-xl-fcP" eventType="touchUpInside" id="kx5-j7-43e"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="The Last Encounter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdk-Rg-eM2">
                                 <rect key="frame" x="88" y="28" width="424" height="324"/>
@@ -61,6 +64,10 @@
                             <constraint firstItem="sNG-8n-d0r" firstAttribute="centerX" secondItem="dZa-GY-XXJ" secondAttribute="centerX" id="VEF-gX-er7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="6C7-EK-eot" kind="show" identifier="begin" id="jYI-Np-Ek4"/>
+                        <segue destination="AjB-W5-MS4" kind="show" identifier="howToPlay" id="WPg-no-hjb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecw-bW-5Z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,7 +76,7 @@
         <!--About Game View Controller-->
         <scene sceneID="1eV-qz-MP4">
             <objects>
-                <viewController title="About Game View Controller" id="AjB-W5-MS4" sceneMemberID="viewController">
+                <viewController title="About Game View Controller" id="AjB-W5-MS4" customClass="AboutGameViewController" customModule="Last_Encounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C8O-ei-W7H"/>
                         <viewControllerLayoutGuide type="bottom" id="ecg-eN-ahT"/>
@@ -117,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Roz-Od-eiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="702"/>
+            <point key="canvasLocation" x="707" y="712"/>
         </scene>
         <!--Allocation View Controller-->
         <scene sceneID="0We-Pg-ryy">
@@ -1017,7 +1024,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ae0-Ju-Ldw" id="S4t-lM-Yrl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1189,7 +1196,7 @@
         <image name="mana" width="200" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dgT-jz-yEV"/>
+        <segue reference="cTc-7O-7sJ"/>
         <segue reference="umP-MB-wZX"/>
     </inferredMetricsTieBreakers>
 </document>

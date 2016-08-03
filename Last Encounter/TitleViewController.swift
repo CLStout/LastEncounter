@@ -19,6 +19,7 @@ class TitleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if background == nil{
         let path = NSBundle.mainBundle().pathForResource("Waiting.wav", ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
         
@@ -30,9 +31,32 @@ class TitleViewController: UIViewController {
         } catch {
             // couldn't load file :(
         }
+        }
     }
+    
+    @IBAction func beginButton(sender: AnyObject) {
+        performSegueWithIdentifier("begin", sender: nil)
+    }
+    
+    
+    @IBAction func howToPlayButton(sender: AnyObject) {
+        performSegueWithIdentifier("howToPlay", sender: nil)
+    }
+    
+    
+    
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dvc = segue.destinationViewController as! AllocationViewController
-        dvc.background = self.background
+        if (segue.identifier == "begin"){
+            let dvc = segue.destinationViewController as! AllocationViewController
+            dvc.background = self.background
+        }
+        else{
+            let dvc = segue.destinationViewController as! AboutGameViewController
+            dvc.background = self.background
+        }
     }
+
 }
+
