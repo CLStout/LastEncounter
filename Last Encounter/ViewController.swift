@@ -34,9 +34,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var enemyHealthLabel: UILabel!
     @IBOutlet weak var enemyManaLabel: UILabel!
     
-    let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "verry dum", "Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Gender Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous", "Nasty", "/b/tard", "Rare", "Nice", "Dank"]
+    let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "verry dum", "Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Gender Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous", "Nasty", "/b/tard", "Rare", "Nice", "Dank", "Crummy", "Lonely", "Giant", "Cheeky", "Memey", "Canadian"]
     
-    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Heli", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Memer", "Suh Dude", "Dragon", "Feminist", "Pokemanz", "Blogger", "Pope",  "Pedobear", "Reuben", "Waifu", "Merchant", "Potter", "Death", "Harish", "Monkey", "Mask Salesman", "Breadfish", "Landshark", "Body pillow", "Big Mac", "MatPat", "Commie", "Russian", "Meme", "Redditor", "Admin", "133t h5x0r", "Edgelord", "Lord Gaben", "Middleschooler"]
+    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Heli", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Memer", "Suh Dude", "Dragon", "Feminist", "Pokemanz", "Blogger", "Pope",  "Pedobear", "Reuben", "Waifu", "Merchant", "Potter", "Death", "Harish", "Monkey", "Mask Salesman", "Breadfish", "Landshark", "Body pillow", "Big Mac", "MatPat", "Commie", "Russian", "Meme", "Redditor", "Admin", "133t h4x0r", "Edgelord", "Lord Gaben", "Middleschooler", "Ankelshanker", "Sandwich", "Giant"]
     
     
     //variables for
@@ -58,10 +58,10 @@ class ViewController: UIViewController {
     var changeE : Int!
     
     func playerHealthBar(){
-                let fractionalProgress = Float(player.health) / totalHealthP
-                let animated = player.health != 0
-                
-                progressViewHealthP.setProgress(fractionalProgress, animated: animated)
+        let fractionalProgress = Float(player.health) / totalHealthP
+        let animated = player.health != 0
+        
+        progressViewHealthP.setProgress(fractionalProgress, animated: animated)
     }
     
     func playerManaBar(){
@@ -124,10 +124,7 @@ class ViewController: UIViewController {
         var rounds = player.health + player.mana + player.attack + player.defense + player.magic - 50
         if rounds <= 0{
             rounds = 1
-            
         }
-        
-        
         for _ in 0...rounds{
             let enemyBoost = arc4random_uniform(5)
             switch enemyBoost{
@@ -150,10 +147,12 @@ class ViewController: UIViewController {
                 print("Something went wrong - enemy stat switch")
             }
             
-            totalHealthE = Float(enemy.health)
-            totalManaE = Float(enemy.mana)
+            
             
         }
+        enemy.health += 5
+        totalHealthE = Float(enemy.health)
+        totalManaE = Float(enemy.mana)
         
         for label in subMenuArray {
             label.hidden = true
@@ -304,7 +303,7 @@ class ViewController: UIViewController {
                 else{
                     status = "Dude, Your Screwed"
                 }
-
+                
                 
                 for m in mainMenuArray {
                     if label == m {
@@ -479,19 +478,19 @@ class ViewController: UIViewController {
         }
         //end
         
-            let path = NSBundle.mainBundle().pathForResource("Attack1.wav", ofType:nil)!
-            let url = NSURL(fileURLWithPath: path)
-            
-            do {
-                let sound = try AVAudioPlayer(contentsOfURL: url)
-                hitting = sound
-                sound.play()
-                sound.volume = 0.5
-            } catch {
-                // couldn't load file :(
-            }
-
-
+        let path = NSBundle.mainBundle().pathForResource("Attack1.wav", ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            hitting = sound
+            sound.play()
+            sound.volume = 0.5
+        } catch {
+            // couldn't load file :(
+        }
+        
+        
     }
     
     //functions to be finished later - Segue for game over or for victory
