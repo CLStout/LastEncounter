@@ -12,6 +12,16 @@ class DiceViewController: UIViewController {
 
     var player = villain()
     
+    
+    
+    @IBOutlet weak var sixCount: UILabel!
+    @IBOutlet weak var fiveCount: UILabel!
+    @IBOutlet weak var fourCount: UILabel!
+    @IBOutlet weak var threeCount: UILabel!
+    @IBOutlet weak var twoCount: UILabel!
+    @IBOutlet weak var oneCount: UILabel!
+    @IBOutlet weak var resultImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
