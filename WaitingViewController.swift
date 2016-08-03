@@ -37,7 +37,8 @@ class WaitingViewController: UIViewController {
         }
         
         if player.tillNextHero == 0 {
-            player.tillNextHero = resetHeroTimer()
+            //player.tillNextHero = resetHeroTimer()
+            
             print(Villain.health)
         }
         updateTurnLabel()
@@ -70,6 +71,10 @@ class WaitingViewController: UIViewController {
         }
     }
     
+    @IBAction func onTappedToBattle(sender: AnyObject) {
+        performSegueWithIdentifier("goToBattle", sender: nil)
+    }
+    
     func decideMinigame(){
         //var minigameChoice = arc4random_uniform(2)
         var minigameChoice = 0
@@ -94,39 +99,50 @@ class WaitingViewController: UIViewController {
     func helper1(){
         player.tillNextHero -= 1
         updateTurnLabel()
-        checkIfBattle()
-        updateLevelLabel()
         decideMinigame()
+        updateLevelLabel()
+        //checkIfBattle()
+        
     }
     
     @IBAction func onTappedTrainHealth(sender: AnyObject) {
+        if (player.tillNextHero > 0){
         player.health += 1
         player.statToUpgrade = "health"
         helper1()
+        }
     }
     
     @IBAction func onTappedTrainMana(sender: AnyObject) {
+        if (player.tillNextHero > 0){
         player.mana += 1
         player.statToUpgrade = "mana"
         helper1()
+        }
     }
     
     @IBAction func onTappedTrainAttack(sender: AnyObject) {
+        if (player.tillNextHero > 0){
         player.attack += 1
         player.statToUpgrade = "attack"
         helper1()
+        }
     }
     
     @IBAction func onTappedTrainMagic(sender: AnyObject) {
+        if (player.tillNextHero > 0){
         player.magic += 1
         player.statToUpgrade = "magic"
         helper1()
+        }
     }
     
     @IBAction func onTappedTrainDefense(sender: AnyObject) {
+        if (player.tillNextHero > 0){
         player.defense += 1
         player.statToUpgrade = "defense"
         helper1()
+        }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "goToBattle"){

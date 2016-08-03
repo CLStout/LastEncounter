@@ -17,6 +17,6 @@ class villain: NSObject {
     var mana = 10
     var magic  = 10;
     var defense = 10;
-    var tillNextHero = 0;
+    var tillNextHero = 3;
     
 }
