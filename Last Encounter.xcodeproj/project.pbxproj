@@ -29,6 +29,9 @@
 		57C109981D4FC72C009AE2D8 /* VictoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C109971D4FC72C009AE2D8 /* VictoryViewController.swift */; };
 		57C1099A1D4FC766009AE2D8 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C109991D4FC766009AE2D8 /* GameOverViewController.swift */; };
 		CD8812BB1D4F9AA100E4319E /* villain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8812BA1D4F9AA100E4319E /* villain.swift */; };
+		CDD425241D524EC5004B44EE /* DiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD425231D524EC5004B44EE /* DiceViewController.swift */; };
+		CDD425261D524EF8004B44EE /* TapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD425251D524EF8004B44EE /* TapViewController.swift */; };
+		CDD425281D524F2C004B44EE /* BrickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD425271D524F2C004B44EE /* BrickViewController.swift */; };
 		CDDB3BFE1D4FC1D400BEDBDB /* equipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDB3BFD1D4FC1D400BEDBDB /* equipViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 		57C109971D4FC72C009AE2D8 /* VictoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoryViewController.swift; sourceTree = "<group>"; };
 		57C109991D4FC766009AE2D8 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		CD8812BA1D4F9AA100E4319E /* villain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = villain.swift; path = ../villain.swift; sourceTree = "<group>"; };
+		CDD425231D524EC5004B44EE /* DiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceViewController.swift; sourceTree = "<group>"; };
+		CDD425251D524EF8004B44EE /* TapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapViewController.swift; sourceTree = "<group>"; };
+		CDD425271D524F2C004B44EE /* BrickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickViewController.swift; sourceTree = "<group>"; };
 		CDDB3BFD1D4FC1D400BEDBDB /* equipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = equipViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,9 @@
 				57C1097D1D4BA7BF009AE2D8 /* AppDelegate.swift */,
 				57C1097F1D4BA7BF009AE2D8 /* ViewController.swift */,
 				57C109811D4BA7BF009AE2D8 /* Main.storyboard */,
+				CDD425271D524F2C004B44EE /* BrickViewController.swift */,
+				CDD425251D524EF8004B44EE /* TapViewController.swift */,
+				CDD425231D524EC5004B44EE /* DiceViewController.swift */,
 				57C109991D4FC766009AE2D8 /* GameOverViewController.swift */,
 				57C109971D4FC72C009AE2D8 /* VictoryViewController.swift */,
 				CDDB3BFD1D4FC1D400BEDBDB /* equipViewController.swift */,
@@ -209,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57C109961D4EF04A009AE2D8 /* WaitingViewController.swift in Sources */,
+				CDD425241D524EC5004B44EE /* DiceViewController.swift in Sources */,
 				57C109801D4BA7BF009AE2D8 /* ViewController.swift in Sources */,
 				57C109981D4FC72C009AE2D8 /* VictoryViewController.swift in Sources */,
 				57C109941D4EE851009AE2D8 /* AllocationViewController.swift in Sources */,
@@ -217,6 +227,8 @@
 				57C1097E1D4BA7BF009AE2D8 /* AppDelegate.swift in Sources */,
 				CD8812BB1D4F9AA100E4319E /* villain.swift in Sources */,
 				CDDB3BFE1D4FC1D400BEDBDB /* equipViewController.swift in Sources */,
+				CDD425281D524F2C004B44EE /* BrickViewController.swift in Sources */,
+				CDD425261D524EF8004B44EE /* TapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
