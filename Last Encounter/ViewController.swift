@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "verry dum", "Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Gender Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous", "Nasty", "/b/tard", "Rare", "Nice", "Dank", "Crummy", "Lonely", "Giant", "Cheeky", "Memey", "Canadian"]
     
-    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Heli", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Memer", "Suh Dude", "Dragon", "Feminist", "Pokemanz", "Blogger", "Pope",  "Pedobear", "Reuben", "Waifu", "Merchant", "Potter", "Death", "Harish", "Monkey", "Mask Salesman", "Breadfish", "Landshark", "Body pillow", "Big Mac", "MatPat", "Commie", "Russian", "Meme", "Redditor", "Admin", "133t h4x0r", "Edgelord", "Lord Gaben", "Middleschooler", "Ankelshanker", "Sandwich", "Giant"]
+    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Heli", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Memer", "Suh Dude", "Dragon", "Feminist", "Pokemanz", "Blogger", "Pope",  "Pedobear", "Reuben", "Waifu", "Merchant", "Potter", "Death", "Harish", "Monkey", "Mask Salesman", "Breadfish", "Landshark", "Body pillow", "Big Mac", "MatPat", "Commie", "Russian", "Meme", "Redditor", "Admin", "133t h4x0r", "Edgelord", "Lord Gaben", "Middleschooler", "Ankelshanker", "Sandwich", "Giant", "Skelaton"]
     
     
     //variables for
@@ -430,7 +430,7 @@ class ViewController: UIViewController {
         default:
             print("Something went wrong - magic switch")
         }
-        if damage <= 0 && type != 3{
+        if damage <= 0 && type != 3 && enoughMana == true{
             damage = 1
         }
         attacked.health -= Int(damage)
