@@ -69,11 +69,32 @@ class WaitingViewController: UIViewController {
         }
     }
     
+    func decideMinigame(){
+        var minigameChoice = arc4random_uniform(2)
+            if(minigameChoice == 0){
+                //minigame0
+                
+            }
+            else if(minigameChoice == 1){
+                //minigame1
+                
+            }
+            else if(minigameChoice == 2){
+                //minigame2
+                
+            }
+            else {
+                //fallback?
+                print("NORMIES ON MY BOARD REEEEE")
+        }
+    }
+    
     func helper1(){
         player.tillNextHero -= 1
         updateTurnLabel()
         checkIfBattle()
         updateLevelLabel()
+        decideMinigame()
     }
     
     @IBAction func onTappedTrainHealth(sender: AnyObject) {
