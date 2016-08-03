@@ -19,7 +19,7 @@ class TitleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let path = NSBundle.mainBundle().pathForResource("Intro.mp3", ofType:nil)!
+        let path = NSBundle.mainBundle().pathForResource("Waiting.wav", ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
         
         do {

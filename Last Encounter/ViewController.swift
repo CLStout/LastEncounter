@@ -149,7 +149,6 @@ class ViewController: UIViewController {
             default:
                 print("Something went wrong - enemy stat switch")
             }
-            enemy.health += 5
             totalHealthE = Float(enemy.health)
             totalManaE = Float(enemy.mana)
             
