@@ -12,6 +12,7 @@ import AVFoundation
 class AllocationViewController: UIViewController {
     
     
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var alloPoints: UILabel!
     @IBOutlet weak var healthPoints: UILabel!
     @IBOutlet weak var speedPoints: UILabel!
@@ -91,7 +92,8 @@ class AllocationViewController: UIViewController {
         defense = decrease(defense, display: defensePoints)
     }
     @IBAction func doneButton(sender: AnyObject) {
-            if points == 0 {
+            if points == 0 && nameTextField.text != "" {
+                Villain.name = nameTextField.text!
                 Villain.health = health
                 Villain.mana = speed
                 Villain.attack = strength
@@ -104,7 +106,7 @@ class AllocationViewController: UIViewController {
                 }
             }
             else{
-                print("Still Points Left")
+                print("Still Points Left Or ")
             }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -9,7 +9,8 @@
 import UIKit
 
 class villain: NSObject {
-
+    
+    var name = ""
     var health = 10;
     var attack = 10;
     var mana = 10
