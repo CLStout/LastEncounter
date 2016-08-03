@@ -97,8 +97,8 @@ class ViewController: UIViewController {
         print(enemyNameNoun.count)
         
         var setEnemyName = enemyNameAdj[adjChoice] + " " + enemyNameNoun[nounChoice]
-        enemyNameLabel.text = setEnemyName
-        
+        //enemyNameLabel.text = setEnemyName
+        enemyNameLabel.text = "Enemy Enemy ASDF ASDF Enemy"
         
         let path = NSBundle.mainBundle().pathForResource("Battle.wav", ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
