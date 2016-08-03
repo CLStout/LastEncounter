@@ -149,6 +149,8 @@ class ViewController: UIViewController {
                 print("Something went wrong - enemy stat switch")
             }
             totalHealthE = Float(enemy.health)
+            totalManaE = Float(enemy.mana)
+            
         }
         
         for label in subMenuArray {
