@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "verry dum", "Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Gender Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous", "Nasty", "/b/tard", "Rare", "Nice", "Dank"]
     
-    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Helicopter", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Meme", "Suh Dude"]
+    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Heli", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Memer", "Suh Dude", "Dragon", "Feminist", "Pokemanz", "Blogger", "Pope",  "Pedobear", "Reuben", "Waifu", "Merchant", "Potter", "Death", "Harish", "Monkey", "Mask Salesman", "Breadfish", "Landshark", "Body pillow", "Big Mac", "MatPat", "Commie", "Russian", "Meme", "Redditor", "Admin", "133t h5x0r", "Edgelord", "Lord Gaben", "Middleschooler"]
     
     
     //variables for
@@ -92,6 +92,9 @@ class ViewController: UIViewController {
         //set enemy name
         var adjChoice = Int(arc4random_uniform(UInt32(enemyNameAdj.count)))
         var nounChoice = Int(arc4random_uniform(UInt32(enemyNameNoun.count)))
+        
+        print(enemyNameAdj.count)
+        print(enemyNameNoun.count)
         
         var setEnemyName = enemyNameAdj[adjChoice] + " " + enemyNameNoun[nounChoice]
         enemyNameLabel.text = setEnemyName
@@ -363,15 +366,18 @@ class ViewController: UIViewController {
         if hitChance <= 4 {
             switch type {
             case 0:
-                damage = Double(attacker.attack) * 0.8 - Double(attacked.defense) * 0.6
+                damage = Double(attacker.attack) * 0.8 - Double(attacked.defense) * 0.5
             case 1:
-                damage = Double(attacker.attack) * 0.6 - Double(attacked.defense) * 0.2
+                damage = Double(attacker.attack) * 0.6 - Double(attacked.defense) * 0.1
             case 2:
-                damage = Double(attacker.attack) * 0.9 - Double(attacked.defense) * 0.4
+                damage = Double(attacker.attack) * 0.9 - Double(attacked.defense) * 0.3
             case 3:
                 damage = Double(attacker.attack)  - Double(attacked.defense) * 0.1
             default:
                 print("Something went wrong - attack switch")
+            }
+            if damage <= 0{
+                damage = 1
             }
             attacked.health -= Int(damage)
         } else {
@@ -407,7 +413,7 @@ class ViewController: UIViewController {
         case 2:
             if attacker.mana >= 6{
                 attacker.mana -= 6
-                damage = Double(attacker.magic) * 0.7 - Double(attacked.defense) * 0.2
+                damage = Double(attacker.magic) * 0.6 - Double(attacked.defense) * 0.2
             }else{
                 enoughMana = false
             }
@@ -420,6 +426,9 @@ class ViewController: UIViewController {
             }
         default:
             print("Something went wrong - magic switch")
+        }
+        if damage <= 0{
+            damage = 1
         }
         attacked.health -= Int(damage)
         print("Player HP: \(String(player.health))")
