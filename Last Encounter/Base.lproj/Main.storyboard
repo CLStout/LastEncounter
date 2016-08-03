@@ -717,7 +717,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zZ-Oy-Jin">
-                                <rect key="frame" x="200" y="205" width="200" height="100"/>
+                                <rect key="frame" x="200" y="227" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="123" id="1Qd-b0-9LF"/>
                                     <constraint firstAttribute="width" constant="107" id="5Wr-ih-47c"/>
@@ -731,7 +731,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select a stat to upgrade!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NX8-oZ-azg">
-                                <rect key="frame" x="20" y="205" width="188" height="100"/>
+                                <rect key="frame" x="20" y="226" width="188" height="100"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="k1i-EK-Ror"/>
@@ -741,8 +741,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="The Next Hero Will Be Here In 3 Turns" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqb-Q5-qYE">
-                                <rect key="frame" x="175" y="507" width="250" height="62"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="The Next Hero Will Be Here In 3 Turns" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqb-Q5-qYE">
+                                <rect key="frame" x="390" y="218" width="190" height="118"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="JYq-JE-I2i"/>
@@ -753,7 +753,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qn-OY-93J">
-                                <rect key="frame" x="200" y="300" width="200" height="100"/>
+                                <rect key="frame" x="200" y="335" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="104" id="4of-jr-1d9"/>
                                     <constraint firstAttribute="height" constant="30" id="7RZ-gV-hWC"/>
@@ -772,22 +772,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j8-MR-KLI">
-                                <rect key="frame" x="200" y="391" width="200" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Vrf-cs-j7M"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="ee3-g6-0yT"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="123" id="wSz-Qe-LVd"/>
-                                    <constraint firstAttribute="width" constant="123" id="wbf-sp-hbP"/>
-                                </constraints>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="defense"/>
-                                <connections>
-                                    <action selector="onTappedTrainDefense:" destination="f6e-tB-Sov" eventType="touchUpInside" id="Z87-jr-rDr"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9Q-ar-UaI">
-                                <rect key="frame" x="200" y="110" width="200" height="100"/>
+                                <rect key="frame" x="200" y="119" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5Qw-KI-4jM"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="123" id="5Sj-QK-JZ7"/>
@@ -812,6 +798,20 @@
                                 <state key="normal" image="health"/>
                                 <connections>
                                     <action selector="onTappedTrainHealth:" destination="f6e-tB-Sov" eventType="touchUpInside" id="7JA-al-vgU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j8-MR-KLI">
+                                <rect key="frame" x="200" y="452" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Vrf-cs-j7M"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="ee3-g6-0yT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="123" id="wSz-Qe-LVd"/>
+                                    <constraint firstAttribute="width" constant="123" id="wbf-sp-hbP"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="defense"/>
+                                <connections>
+                                    <action selector="onTappedTrainDefense:" destination="f6e-tB-Sov" eventType="touchUpInside" id="Z87-jr-rDr"/>
                                 </connections>
                             </button>
                         </subviews>
