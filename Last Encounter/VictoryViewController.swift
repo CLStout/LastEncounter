@@ -19,6 +19,7 @@ class VictoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        player.heroesMassacred += 1
     }
     
     @IBAction func tapContinueButton(sender: AnyObject) {
