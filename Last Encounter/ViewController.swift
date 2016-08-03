@@ -90,13 +90,13 @@ class ViewController: UIViewController {
         playerNameLabel.text = player.name
         
         //set enemy name
-        var adjChoice = Int(arc4random_uniform(UInt32(enemyNameAdj.count)))
-        var nounChoice = Int(arc4random_uniform(UInt32(enemyNameNoun.count)))
+        let adjChoice = Int(arc4random_uniform(UInt32(enemyNameAdj.count)))
+        let nounChoice = Int(arc4random_uniform(UInt32(enemyNameNoun.count)))
         
         print(enemyNameAdj.count)
         print(enemyNameNoun.count)
         
-        var setEnemyName = enemyNameAdj[adjChoice] + " " + enemyNameNoun[nounChoice]
+        let setEnemyName = enemyNameAdj[adjChoice] + " " + enemyNameNoun[nounChoice]
         enemyNameLabel.text = setEnemyName
         
         let songSelect = arc4random_uniform(7)

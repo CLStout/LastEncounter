@@ -38,8 +38,7 @@ class WaitingViewController: UIViewController {
         
         if player.tillNextHero == 0 {
             //player.tillNextHero = resetHeroTimer()
-            
-            print(Villain.health)
+            //this is old. Calculation is now handled in the VictoryViewController due to errors reguarding minigames
         }
         updateTurnLabel()
     }
@@ -49,7 +48,7 @@ class WaitingViewController: UIViewController {
     }
     
     func updateLevelLabel(){
-        var currentLevel = (player.health + player.mana + player.attack + player.magic + player.defense) - 69
+        let currentLevel = (player.health + player.mana + player.attack + player.magic + player.defense) - 69
         levelLabel.text = "Level " + String(currentLevel)
     }
     
@@ -76,8 +75,8 @@ class WaitingViewController: UIViewController {
     }
     
     func decideMinigame(){
-        //var minigameChoice = arc4random_uniform(2)
-        var minigameChoice = 0
+        let minigameChoice = arc4random_uniform(2)
+        //var minigameChoice = 0
             if(minigameChoice == 0){
                 performSegueWithIdentifier("tapSegue", sender: nil)
                 
@@ -91,8 +90,7 @@ class WaitingViewController: UIViewController {
                 
             }
             else {
-                //fallback?
-                print("NORMIES ON MY BOARD REEEEE")
+                //Dan and Yasoob both deserve a raise
         }
     }
     
