@@ -10,6 +10,8 @@ import UIKit
 
 class BrickViewController: UIViewController {
 
+    var player = villain()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

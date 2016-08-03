@@ -10,6 +10,8 @@ import UIKit
 
 class DiceViewController: UIViewController {
 
+    var player = villain()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

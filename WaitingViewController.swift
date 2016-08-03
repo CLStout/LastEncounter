@@ -16,6 +16,7 @@ class WaitingViewController: UIViewController {
     var player = villain()
     @IBOutlet weak var warningLabel: UILabel!
     var Villain = villain()
+    var statToUpgrade = ""
     
     
     override func viewDidLoad() {
@@ -70,17 +71,18 @@ class WaitingViewController: UIViewController {
     }
     
     func decideMinigame(){
-        var minigameChoice = arc4random_uniform(2)
+        //var minigameChoice = arc4random_uniform(2)
+        var minigameChoice = 0
             if(minigameChoice == 0){
-                //minigame0
+                performSegueWithIdentifier("tapSegue", sender: nil)
                 
             }
             else if(minigameChoice == 1){
-                //minigame1
+                performSegueWithIdentifier("diceSegue", sender: nil)
                 
             }
             else if(minigameChoice == 2){
-                //minigame2
+                performSegueWithIdentifier("brickSegue", sender: nil)
                 
             }
             else {
@@ -99,31 +101,48 @@ class WaitingViewController: UIViewController {
     
     @IBAction func onTappedTrainHealth(sender: AnyObject) {
         player.health += 1
+        player.statToUpgrade = "health"
         helper1()
     }
     
     @IBAction func onTappedTrainMana(sender: AnyObject) {
         player.mana += 1
+        player.statToUpgrade = "mana"
         helper1()
     }
     
     @IBAction func onTappedTrainAttack(sender: AnyObject) {
         player.attack += 1
+        player.statToUpgrade = "attack"
         helper1()
     }
     
     @IBAction func onTappedTrainMagic(sender: AnyObject) {
         player.magic += 1
+        player.statToUpgrade = "magic"
         helper1()
     }
     
     @IBAction func onTappedTrainDefense(sender: AnyObject) {
         player.defense += 1
+        player.statToUpgrade = "defense"
         helper1()
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "goToBattle"){
             let dvc = segue.destinationViewController as! ViewController
+            dvc.player = self.player
+        }
+        else if (segue.identifier == "tapSegue"){
+            let dvc = segue.destinationViewController as! TapViewController
+            dvc.player = self.player
+        }
+        else if (segue.identifier == "diceSegue"){
+            let dvc = segue.destinationViewController as! DiceViewController
+            dvc.player = self.player
+        }
+        else if (segue.identifier == "brickSegue"){
+            let dvc = segue.destinationViewController as! BrickViewController
             dvc.player = self.player
         }
         else{
