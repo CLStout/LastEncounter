@@ -6,6 +6,65 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--About Game View Controller-->
+        <scene sceneID="6Gd-r9-1Hz">
+            <objects>
+                <viewController id="ZHP-Lb-fta" customClass="AboutGameViewController" customModule="Last_Encounter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3qK-q5-T5e"/>
+                        <viewControllerLayoutGuide type="bottom" id="DUx-cr-cIA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="urV-58-ctV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This game was developed by Christian, Alex and Zak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82e-GF-WRB">
+                                <rect key="frame" x="99" y="559" width="402" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="kPc-d7-Abm"/>
+                                    <constraint firstAttribute="width" constant="402" id="qUI-tD-0l9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnZ-sB-hdM">
+                                <rect key="frame" x="0.0" y="0.0" width="61" height="39"/>
+                                <state key="normal" title="&lt;-- Back">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="31r-xl-fcP" kind="show" id="sxT-Uh-xYy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tni-OB-Lxp">
+                                <rect key="frame" x="20" y="246" width="560" height="108"/>
+                                <string key="text">Last Encounter is based off of some of the original RPGs, like Final Fantasy, and Dragon Quest. These older games have inspired and influenced many game styles today. Our lack of images is due to the limited use of graphics and more focus on the gameplay and mechanincs.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tni-OB-Lxp" firstAttribute="centerX" secondItem="urV-58-ctV" secondAttribute="centerX" id="7vV-tW-PUl"/>
+                            <constraint firstItem="tni-OB-Lxp" firstAttribute="centerX" secondItem="urV-58-ctV" secondAttribute="centerX" id="8OO-gr-aWC"/>
+                            <constraint firstItem="tni-OB-Lxp" firstAttribute="trailing" secondItem="urV-58-ctV" secondAttribute="trailingMargin" id="EdZ-yp-JuP"/>
+                            <constraint firstItem="tni-OB-Lxp" firstAttribute="centerY" secondItem="urV-58-ctV" secondAttribute="centerY" id="JFR-yD-ed6"/>
+                            <constraint firstItem="DnZ-sB-hdM" firstAttribute="top" secondItem="urV-58-ctV" secondAttribute="topMargin" id="JiL-ms-prb"/>
+                            <constraint firstItem="DnZ-sB-hdM" firstAttribute="leading" secondItem="urV-58-ctV" secondAttribute="leadingMargin" constant="-20" id="LwI-aL-aqf"/>
+                            <constraint firstItem="82e-GF-WRB" firstAttribute="centerX" secondItem="urV-58-ctV" secondAttribute="centerX" id="P3z-Px-CnH"/>
+                            <constraint firstItem="DUx-cr-cIA" firstAttribute="top" secondItem="82e-GF-WRB" secondAttribute="bottom" constant="20" id="UGJ-i5-rJr"/>
+                            <constraint firstItem="tni-OB-Lxp" firstAttribute="centerY" secondItem="urV-58-ctV" secondAttribute="centerY" id="b2e-df-ckC"/>
+                            <constraint firstItem="DUx-cr-cIA" firstAttribute="top" secondItem="82e-GF-WRB" secondAttribute="bottom" constant="20" id="bbj-do-PSo"/>
+                            <constraint firstItem="tni-OB-Lxp" firstAttribute="leading" secondItem="urV-58-ctV" secondAttribute="leadingMargin" id="qEZ-lO-w5P"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEu-Rf-xI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743" y="-761"/>
+        </scene>
         <!--Title View Controller-->
         <scene sceneID="ieN-G1-am1">
             <objects>
@@ -33,7 +92,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8C-ZS-f0m">
-                                <rect key="frame" x="217" y="394" width="167" height="75"/>
+                                <rect key="frame" x="217" y="344" width="167" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="UfP-mw-jDC"/>
                                     <constraint firstAttribute="width" constant="167" id="zR8-HB-mSC"/>
@@ -66,9 +125,25 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAZ-f1-ELA">
+                                <rect key="frame" x="217" y="427" width="167" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="3dN-8b-Xrn"/>
+                                    <constraint firstAttribute="height" constant="75" id="w7o-E5-lrV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="30"/>
+                                <state key="normal" title="About">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="aboutButton:" destination="31r-xl-fcP" eventType="touchUpInside" id="R2V-Ho-pzq"/>
+                                    <action selector="howToPlayButton:" destination="31r-xl-fcP" eventType="touchUpInside" id="1w1-f9-iAr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="LAZ-f1-ELA" firstAttribute="centerX" secondItem="dZa-GY-XXJ" secondAttribute="centerX" id="88L-nB-wS3"/>
                             <constraint firstItem="Bdk-Rg-eM2" firstAttribute="centerX" secondItem="dZa-GY-XXJ" secondAttribute="centerX" id="I8Z-6a-tX1"/>
                             <constraint firstItem="e8C-ZS-f0m" firstAttribute="centerX" secondItem="dZa-GY-XXJ" secondAttribute="centerX" id="Nol-8N-x0R"/>
                             <constraint firstItem="sNG-8n-d0r" firstAttribute="centerX" secondItem="dZa-GY-XXJ" secondAttribute="centerX" id="VEF-gX-er7"/>
@@ -79,6 +154,7 @@
                     <connections>
                         <segue destination="6C7-EK-eot" kind="show" identifier="begin" id="jYI-Np-Ek4"/>
                         <segue destination="AjB-W5-MS4" kind="show" identifier="howToPlay" id="WPg-no-hjb"/>
+                        <segue destination="ZHP-Lb-fta" kind="show" identifier="about" id="Ymx-7H-esC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecw-bW-5Z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,7 +164,7 @@
         <!--About Game View Controller-->
         <scene sceneID="1eV-qz-MP4">
             <objects>
-                <viewController title="About Game View Controller" id="AjB-W5-MS4" customClass="AboutGameViewController" customModule="Last_Encounter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About Game View Controller" id="AjB-W5-MS4" customClass="HowToPLayViewController" customModule="Last_Encounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C8O-ei-W7H"/>
                         <viewControllerLayoutGuide type="bottom" id="ecg-eN-ahT"/>
@@ -1655,9 +1731,9 @@
         <image name="trump-the-knight" width="724" height="819"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VNG-R1-vuk"/>
+        <segue reference="sxT-Uh-xYy"/>
+        <segue reference="WPg-no-hjb"/>
         <segue reference="xhe-oO-apt"/>
-        <segue reference="bXU-FO-ooj"/>
         <segue reference="4vN-CU-Qp5"/>
         <segue reference="7ld-wp-Vah"/>
         <segue reference="EPy-Rg-1XY"/>

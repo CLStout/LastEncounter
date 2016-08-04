@@ -42,6 +42,10 @@ class TitleViewController: UIViewController {
     @IBAction func howToPlayButton(sender: AnyObject) {
         performSegueWithIdentifier("howToPlay", sender: nil)
     }
+
+    @IBAction func aboutButton(sender: AnyObject) {
+        performSegueWithIdentifier("about", sender: nil)
+    }
     
     
     
@@ -50,6 +54,10 @@ class TitleViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "begin"){
             let dvc = segue.destinationViewController as! AllocationViewController
+            dvc.background = self.background
+        }
+        else if (segue.identifier == "howToPlay") {
+            let dvc = segue.destinationViewController as! HowToPLayViewController
             dvc.background = self.background
         }
         else{

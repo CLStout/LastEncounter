@@ -25,6 +25,7 @@
 		45C0E98F1D5279C500CE1B3B /* Battle7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45C0E98B1D5279C500CE1B3B /* Battle7.mp3 */; };
 		45C0E9911D53941300CE1B3B /* Battle8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45C0E9901D53941300CE1B3B /* Battle8.mp3 */; };
 		45C0E9931D53958800CE1B3B /* Victory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45C0E9921D53958800CE1B3B /* Victory.mp3 */; };
+		45C0E9951D53A6FE00CE1B3B /* HowToPLayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0E9941D53A6FE00CE1B3B /* HowToPLayViewController.swift */; };
 		57C1097E1D4BA7BF009AE2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C1097D1D4BA7BF009AE2D8 /* AppDelegate.swift */; };
 		57C109801D4BA7BF009AE2D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C1097F1D4BA7BF009AE2D8 /* ViewController.swift */; };
 		57C109831D4BA7BF009AE2D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57C109811D4BA7BF009AE2D8 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		45C0E98B1D5279C500CE1B3B /* Battle7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Battle7.mp3; path = Music/Battle7.mp3; sourceTree = "<group>"; };
 		45C0E9901D53941300CE1B3B /* Battle8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Battle8.mp3; path = Music/Battle8.mp3; sourceTree = "<group>"; };
 		45C0E9921D53958800CE1B3B /* Victory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Victory.mp3; path = Music/Victory.mp3; sourceTree = "<group>"; };
+		45C0E9941D53A6FE00CE1B3B /* HowToPLayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPLayViewController.swift; sourceTree = "<group>"; };
 		57C1097A1D4BA7BF009AE2D8 /* Last Encounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Last Encounter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C1097D1D4BA7BF009AE2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57C1097F1D4BA7BF009AE2D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				57C1097D1D4BA7BF009AE2D8 /* AppDelegate.swift */,
 				57C1097F1D4BA7BF009AE2D8 /* ViewController.swift */,
 				57C109811D4BA7BF009AE2D8 /* Main.storyboard */,
+				45C0E9941D53A6FE00CE1B3B /* HowToPLayViewController.swift */,
 				45C0E9801D52620900CE1B3B /* AboutGameViewController.swift */,
 				CDD425271D524F2C004B44EE /* BrickViewController.swift */,
 				CDD425251D524EF8004B44EE /* TapViewController.swift */,
@@ -242,6 +245,7 @@
 				57C109801D4BA7BF009AE2D8 /* ViewController.swift in Sources */,
 				45C0E9811D52620900CE1B3B /* AboutGameViewController.swift in Sources */,
 				57C109981D4FC72C009AE2D8 /* VictoryViewController.swift in Sources */,
+				45C0E9951D53A6FE00CE1B3B /* HowToPLayViewController.swift in Sources */,
 				57C109941D4EE851009AE2D8 /* AllocationViewController.swift in Sources */,
 				57C1099A1D4FC766009AE2D8 /* GameOverViewController.swift in Sources */,
 				45C0E9241D504B2900CE1B3B /* TitleViewController.swift in Sources */,
