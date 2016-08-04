@@ -17,7 +17,7 @@ class TapViewController: UIViewController {
     @IBOutlet weak var enemyImage: UIButton!
     var seconds = 6
     var player = villain()
-    var trump = 10
+    var trump = 18
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class TapViewController: UIViewController {
         trump -= 1
         print(trump)
         
-        let fractionalProgress = Float(trump) / 10
+        let fractionalProgress = Float(trump) / 18
         let animated = trump != 0
         
         progressViewHealth.setProgress(fractionalProgress, animated: animated)
