@@ -105,7 +105,7 @@ class ViewController: UIViewController {
         enemyDescriptionLabel.text = "\(player.enemyName) has challenged you to a duel!"
         playerDescriptionLabel.text = "You ready yourself for \(player.enemyName)"
         
-        let songSelect = arc4random_uniform(7)
+        let songSelect = arc4random_uniform(8)
         
         let path = NSBundle.mainBundle().pathForResource("Battle\(Int(songSelect)).mp3", ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
