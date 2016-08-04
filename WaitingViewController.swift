@@ -23,7 +23,6 @@ class WaitingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if background != nil {
             background!.stop()
             background = nil
@@ -56,6 +55,10 @@ class WaitingViewController: UIViewController {
         if player.tillNextHero == 0 {
             //player.tillNextHero = resetHeroTimer()
             //this is old. Calculation is now handled in the VictoryViewController due to errors reguarding minigames
+            
+            //or not, idk
+            
+            //checkIfBattle()
         }
         updateTurnLabel()
     }
@@ -101,8 +104,7 @@ class WaitingViewController: UIViewController {
     }
     
     func decideMinigame(){
-        var minigameChoice = arc4random_uniform(2)
-       //  var minigameChoice = 2
+        var minigameChoice = arc4random_uniform(3)
             if(minigameChoice == 0){
                 performSegueWithIdentifier("tapSegue", sender: nil)
                 stopMusic()
@@ -117,6 +119,8 @@ class WaitingViewController: UIViewController {
             }
             else {
                 //Dan and Yasoob both deserve a raise
+                performSegueWithIdentifier("brickSegue", sender: nil)
+                stopMusic()
         }
     }
     
