@@ -10,16 +10,21 @@ import UIKit
 import AVFoundation
 
 class VictoryViewController: UIViewController {
-
-    var player = villain()
-    
     
     @IBOutlet weak var continueLabel: UILabel!
     @IBOutlet weak var victoryView: UIView!
     
+  
+    var player = villain()
+    var Villain = villain()
+    var tillNextHero = 0
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        player.heroesMassacred += 1
+        player.heroesKilled += 1
+        player.tillNextHero = Int(arc4random_uniform(3)) + 1
     }
     
     @IBAction func tapContinueButton(sender: AnyObject) {

@@ -10,13 +10,14 @@ import UIKit
 
 class villain: NSObject {
     
-    var heroesMassacred = 0
+    var heroesKilled = 0
+    var statToUpgrade = ""
     var name = ""
     var health = 10;
     var attack = 10;
     var mana = 10
     var magic  = 10;
     var defense = 10;
-    var tillNextHero = 0;
+    var tillNextHero = 3;
     
 }

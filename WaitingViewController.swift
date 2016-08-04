@@ -16,6 +16,7 @@ class WaitingViewController: UIViewController {
     var player = villain()
     @IBOutlet weak var warningLabel: UILabel!
     var Villain = villain()
+    var statToUpgrade = ""
     
     
     override func viewDidLoad() {
@@ -36,8 +37,8 @@ class WaitingViewController: UIViewController {
         }
         
         if player.tillNextHero == 0 {
-            player.tillNextHero = resetHeroTimer()
-            print(Villain.health)
+            //player.tillNextHero = resetHeroTimer()
+            //this is old. Calculation is now handled in the VictoryViewController due to errors reguarding minigames
         }
         updateTurnLabel()
     }
@@ -62,68 +63,103 @@ class WaitingViewController: UIViewController {
     func checkIfBattle(){
         if (player.tillNextHero == 0){
                 performSegueWithIdentifier("goToBattle", sender: nil)
-            if background != nil {
-                background!.stop()
-                background = nil
-            }
+            stopMusic()
         }
+    }
+    func stopMusic() {
+        if background != nil {
+            background!.stop()
+            background = nil
+        }
+    }
+    
+    @IBAction func onTappedToBattle(sender: AnyObject) {
+        performSegueWithIdentifier("goToBattle", sender: nil)
     }
     
     func decideMinigame(){
         var minigameChoice = arc4random_uniform(2)
+        //var minigameChoice = 0
             if(minigameChoice == 0){
-                //minigame0
-                
+                performSegueWithIdentifier("tapSegue", sender: nil)
+                stopMusic()
             }
             else if(minigameChoice == 1){
-                //minigame1
-                
+                performSegueWithIdentifier("diceSegue", sender: nil)
+                stopMusic()
             }
             else if(minigameChoice == 2){
-                //minigame2
-                
+                performSegueWithIdentifier("brickSegue", sender: nil)
+                stopMusic()
             }
             else {
-                //fallback?
-                print("NORMIES ON MY BOARD REEEEE")
+                //Dan and Yasoob both deserve a raise
         }
     }
     
     func helper1(){
         player.tillNextHero -= 1
         updateTurnLabel()
-        checkIfBattle()
-        updateLevelLabel()
         decideMinigame()
+        updateLevelLabel()
+        
+        //checkIfBattle() this is old. It used to send you into a battle instantly when the hero was 0 turns away but it would cause issues with the minigames.
     }
     
     @IBAction func onTappedTrainHealth(sender: AnyObject) {
+        if (player.tillNextHero > 0){
         player.health += 1
+        player.statToUpgrade = "health"
         helper1()
+        }
     }
     
     @IBAction func onTappedTrainMana(sender: AnyObject) {
+        if (player.tillNextHero > 0){
         player.mana += 1
+        player.statToUpgrade = "mana"
         helper1()
+        }
     }
     
     @IBAction func onTappedTrainAttack(sender: AnyObject) {
+        if (player.tillNextHero > 0){
         player.attack += 1
+        player.statToUpgrade = "attack"
         helper1()
+        }
     }
     
     @IBAction func onTappedTrainMagic(sender: AnyObject) {
+        if (player.tillNextHero > 0){
         player.magic += 1
+        player.statToUpgrade = "magic"
         helper1()
+        }
     }
     
     @IBAction func onTappedTrainDefense(sender: AnyObject) {
+        if (player.tillNextHero > 0){
         player.defense += 1
+        player.statToUpgrade = "defense"
         helper1()
+        }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "goToBattle"){
             let dvc = segue.destinationViewController as! ViewController
+            dvc.player = self.player
+        }
+        else if (segue.identifier == "tapSegue"){
+            let dvc = segue.destinationViewController as! TapViewController
+            dvc.player = self.player
+        }
+        else if (segue.identifier == "diceSegue"){
+            let dvc = segue.destinationViewController as! DiceViewController
+            dvc.player = self.player
+        }
+        else if (segue.identifier == "brickSegue"){
+            let dvc = segue.destinationViewController as! BrickViewController
             dvc.player = self.player
         }
         else{

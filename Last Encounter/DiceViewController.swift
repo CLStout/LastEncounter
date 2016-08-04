@@ -9,6 +9,8 @@
 import UIKit
 
 class DiceViewController: UIViewController {
+
+    var player = villain()
     
     
     
