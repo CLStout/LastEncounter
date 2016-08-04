@@ -1455,6 +1455,9 @@
                                 <state key="normal" title="&lt;-- Back">
                                     <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="31r-xl-fcP" kind="show" id="VNG-R1-vuk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XH-kR-i6y">
                                 <rect key="frame" x="143" y="325" width="315" height="215"/>
@@ -1485,7 +1488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPu-Ma-6ln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79" y="1444"/>
+            <point key="canvasLocation" x="-49" y="1324"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="K6T-1c-8z7">
@@ -1552,6 +1555,9 @@
                                 <state key="normal" title="&lt;-- Back">
                                     <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="31r-xl-fcP" kind="show" id="Afu-Uk-1WG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1571,7 +1577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6C-8l-0iD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="2260"/>
+            <point key="canvasLocation" x="571" y="2062"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wFF-O3-h9O">
@@ -1745,11 +1751,11 @@
         <image name="trump-the-knight" width="724" height="819"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n3s-mP-5OY"/>
-        <segue reference="px7-xR-zUS"/>
-        <segue reference="7ld-wp-Vah"/>
-        <segue reference="v2E-Gc-iZp"/>
+        <segue reference="VNG-R1-vuk"/>
+        <segue reference="xhe-oO-apt"/>
         <segue reference="bXU-FO-ooj"/>
-        <segue reference="EPy-Rg-1XY"/>
+        <segue reference="4vN-CU-Qp5"/>
+        <segue reference="7ld-wp-Vah"/>
+        <segue reference="byp-yw-rNa"/>
     </inferredMetricsTieBreakers>
 </document>
