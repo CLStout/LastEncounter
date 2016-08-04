@@ -101,8 +101,7 @@ class WaitingViewController: UIViewController {
     }
     
     func decideMinigame(){
-        var minigameChoice = 2
-       //  var minigameChoice = 2
+       var minigameChoice = arc4random_uniform(2)
             if(minigameChoice == 0){
                 performSegueWithIdentifier("tapSegue", sender: nil)
                 stopMusic()
