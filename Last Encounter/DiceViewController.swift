@@ -56,7 +56,7 @@ class DiceViewController: UIViewController {
             six = six + 1
         }
         if chance > 2 {
-            performSegueWithIdentifier("diceToWaitingSegue", sender: nil)
+            win()
         }
         if count == 3{
             performSegueWithIdentifier("diceToWaitingSegue", sender: nil)
@@ -64,7 +64,26 @@ class DiceViewController: UIViewController {
     }
 
     
-    
+    func win(){
+        if (player.statToUpgrade == "health"){
+            player.health += 1
+        }
+        else if(player.statToUpgrade == "mana"){
+            player.mana += 1
+        }
+        else if(player.statToUpgrade == "attack"){
+            player.attack += 1
+        }
+        else if(player.statToUpgrade == "magic"){
+            player.magic += 1
+        }
+        else if(player.statToUpgrade == "defense"){
+            player.defense += 1
+        }
+
+            performSegueWithIdentifier("diceToWaitingSegue", sender: nil)
+        
+    }
     
 
     
