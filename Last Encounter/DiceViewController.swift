@@ -10,17 +10,13 @@ import UIKit
 
 class DiceViewController: UIViewController {
 
-    var player = villain()
     
     
     
-    @IBOutlet weak var sixCount: UILabel!
-    @IBOutlet weak var fiveCount: UILabel!
-    @IBOutlet weak var fourCount: UILabel!
-    @IBOutlet weak var threeCount: UILabel!
-    @IBOutlet weak var twoCount: UILabel!
-    @IBOutlet weak var oneCount: UILabel!
+    @IBOutlet weak var toddUIImage: UIImageView!
     @IBOutlet weak var resultImageView: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,21 +27,21 @@ class DiceViewController: UIViewController {
     var four = 0
     var five = 0
     var six = 0
+    var player = villain()
+    var count = 0
     
     
     func toss (){
-        let chance = Int(arc4random_uniform(6))
+        count += count
+        var chance = Int(arc4random_uniform(6))
         if chance == 0{
             resultImageView.image = UIImage (named: ("one face"))
-            one = one + 1
         }
         else if chance == 1{
             resultImageView.image = UIImage (named: ("two face"))
-            two = two + 1
         }
         else if chance == 2{
             resultImageView.image = UIImage (named: ("three face"))
-            three = three + 1
         }
         else if chance == 3{
             resultImageView.image = UIImage (named: ("four face"))
@@ -59,18 +55,34 @@ class DiceViewController: UIViewController {
             resultImageView.image = UIImage (named: ("four face 6"))
             six = six + 1
         }
+        if chance > 2 {
+            performSegueWithIdentifier("diceToWaitingSegue", sender: nil)
+        }
+        if count == 3{
+            performSegueWithIdentifier("diceToWaitingSegue", sender: nil)
+        }
     }
+
     
+    
+    
+
+    
+    
+    
+    
+    
+
     @IBAction func onTappedRollButton(sender: AnyObject) {
         toss()
-        oneCount.text = "\(one)"
-        twoCount.text = "\(two)"
-        threeCount.text = "\(three)"
-        fourCount.text = "\(four)"
-        fiveCount.text = "\(five)"
-        sixCount.text = "\(six)"
-        
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        let dvc = segue.destinationViewController as! WaitingViewController
+        dvc.player = self.player
+    }
+    
+    
 }
 
 
