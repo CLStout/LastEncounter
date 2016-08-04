@@ -797,24 +797,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8u-ZO-mjN">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8u-ZO-mjN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Quick! Slay the enemy by tapping on it!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcN-ay-DJW">
-                                        <rect key="frame" x="151" y="8" width="298" height="58"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick! Slay the knight by tapping on him!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcN-ay-DJW">
+                                        <rect key="frame" x="144" y="8" width="313" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="dMF-gz-BYL"/>
+                                            <constraint firstAttribute="width" constant="313" id="dZZ-2O-SL2"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="You only have 6 seconds!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gq-Zu-IbQ">
-                                        <rect key="frame" x="217" y="74" width="195" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You only have 6 seconds!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gq-Zu-IbQ">
+                                        <rect key="frame" x="203" y="74" width="195" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="gV5-4d-lMe"/>
+                                            <constraint firstAttribute="width" constant="195" id="iIB-sV-Ssa"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3d-xJ-I08">
-                                        <rect key="frame" x="150" y="150" width="300" height="300"/>
-                                        <state key="normal" image="tapOff"/>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="dhh-va-pmB">
+                                        <rect key="frame" x="225" y="145" width="150" height="2.5"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1.5" id="6HH-tv-xb7"/>
+                                            <constraint firstAttribute="width" constant="150" id="h8Q-HZ-dXd"/>
+                                        </constraints>
+                                        <color key="progressTintColor" red="1" green="0.078934807440000004" blue="0.063451723530000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </progressView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3d-xJ-I08">
+                                        <rect key="frame" x="172" y="154" width="257" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="9Wg-UO-6id"/>
+                                            <constraint firstAttribute="width" constant="257" id="p08-d3-3VD"/>
+                                        </constraints>
+                                        <state key="normal" image="trump-the-knight"/>
                                         <connections>
                                             <action selector="onTappedEnemy:" destination="oMM-z3-kTZ" eventType="touchUpInside" id="7Vn-uB-wNr"/>
                                         </connections>
@@ -822,23 +843,29 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="I3d-xJ-I08" firstAttribute="centerX" secondItem="q8u-ZO-mjN" secondAttribute="centerX" id="2PD-Bw-TPp"/>
-                                    <constraint firstItem="1gq-Zu-IbQ" firstAttribute="centerX" secondItem="q8u-ZO-mjN" secondAttribute="centerX" id="I5a-pr-44U"/>
-                                    <constraint firstItem="I3d-xJ-I08" firstAttribute="centerY" secondItem="q8u-ZO-mjN" secondAttribute="centerY" id="bJ6-zf-4Qj"/>
-                                    <constraint firstItem="I3d-xJ-I08" firstAttribute="centerX" secondItem="q8u-ZO-mjN" secondAttribute="centerX" id="kwV-Sc-OfN"/>
-                                    <constraint firstItem="DcN-ay-DJW" firstAttribute="centerX" secondItem="q8u-ZO-mjN" secondAttribute="centerX" id="tCv-ef-yfP"/>
+                                    <constraint firstItem="I3d-xJ-I08" firstAttribute="top" secondItem="dhh-va-pmB" secondAttribute="bottom" constant="7.5" id="FSz-Sf-Snt"/>
+                                    <constraint firstItem="1gq-Zu-IbQ" firstAttribute="centerX" secondItem="q8u-ZO-mjN" secondAttribute="centerX" id="FiP-0Y-hkf"/>
+                                    <constraint firstItem="dhh-va-pmB" firstAttribute="top" secondItem="1gq-Zu-IbQ" secondAttribute="bottom" constant="50" id="O1c-NQ-LB7"/>
+                                    <constraint firstItem="1gq-Zu-IbQ" firstAttribute="top" secondItem="DcN-ay-DJW" secondAttribute="bottom" constant="8" id="bKN-WM-tMn"/>
+                                    <constraint firstItem="I3d-xJ-I08" firstAttribute="centerX" secondItem="q8u-ZO-mjN" secondAttribute="centerX" id="fmq-jQ-hJn"/>
+                                    <constraint firstItem="DcN-ay-DJW" firstAttribute="top" secondItem="q8u-ZO-mjN" secondAttribute="top" constant="8" id="jej-6Y-EhU"/>
+                                    <constraint firstItem="dhh-va-pmB" firstAttribute="centerX" secondItem="q8u-ZO-mjN" secondAttribute="centerX" id="miH-kF-4NB"/>
+                                    <constraint firstItem="DcN-ay-DJW" firstAttribute="centerX" secondItem="q8u-ZO-mjN" secondAttribute="centerX" id="s5Q-aE-TPC"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="q8u-ZO-mjN" firstAttribute="centerX" secondItem="RxO-m2-e0P" secondAttribute="centerX" id="9aU-0d-OjP"/>
-                            <constraint firstItem="q8u-ZO-mjN" firstAttribute="centerY" secondItem="RxO-m2-e0P" secondAttribute="centerY" id="hvE-fO-WJU"/>
+                            <constraint firstItem="q8u-ZO-mjN" firstAttribute="leading" secondItem="RxO-m2-e0P" secondAttribute="leadingMargin" constant="-20" id="6xJ-LL-y7G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q8u-ZO-mjN" secondAttribute="trailing" constant="-20" id="dyS-jH-7fB"/>
+                            <constraint firstItem="Vun-ND-zKf" firstAttribute="top" secondItem="q8u-ZO-mjN" secondAttribute="bottom" id="hbR-TL-oji"/>
+                            <constraint firstItem="q8u-ZO-mjN" firstAttribute="top" secondItem="RxO-m2-e0P" secondAttribute="topMargin" id="n2W-JE-ugU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="enemyImage" destination="I3d-xJ-I08" id="kzX-AX-b0W"/>
                         <outlet property="enemyLabel" destination="DcN-ay-DJW" id="8jb-z6-x54"/>
+                        <outlet property="progressViewHealth" destination="dhh-va-pmB" id="LW7-jr-ebF"/>
                         <outlet property="timeLabel" destination="1gq-Zu-IbQ" id="5FU-iz-RKa"/>
                         <segue destination="f6e-tB-Sov" kind="show" identifier="tapToWaitingSegue" id="J2F-4J-Q7n"/>
                     </connections>
@@ -965,6 +992,12 @@
                                     <action selector="onTappedToBattle:" destination="f6e-tB-Sov" eventType="touchUpInside" id="Dzg-kD-hOL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Heroes Slain: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emb-iH-VW6">
+                                <rect key="frame" x="463" y="20" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1054,7 +1087,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ae0-Ju-Ldw" id="S4t-lM-Yrl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1223,10 +1256,10 @@
         <image name="health" width="200" height="100"/>
         <image name="magic" width="200" height="100"/>
         <image name="mana" width="200" height="100"/>
-        <image name="tapOff" width="300" height="300"/>
+        <image name="trump-the-knight" width="724" height="819"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jVK-dA-ySD"/>
-        <segue reference="sv6-NM-0bC"/>
+        <segue reference="J2F-4J-Q7n"/>
     </inferredMetricsTieBreakers>
 </document>

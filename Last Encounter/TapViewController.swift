@@ -11,12 +11,13 @@ import Foundation
 
 class TapViewController: UIViewController {
     
+    @IBOutlet weak var progressViewHealth: UIProgressView!
     @IBOutlet weak var enemyLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var enemyImage: UIButton!
-    var timesClicked = 0
     var seconds = 6
     var player = villain()
+    var trump = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +26,15 @@ class TapViewController: UIViewController {
     }
     
     @IBAction func onTappedEnemy(sender: AnyObject) {
-        timesClicked += 1
-        print(timesClicked)
+        trump -= 1
+        print(trump)
         
-        if (timesClicked > 4){
+        let fractionalProgress = Float(trump) / 10
+        let animated = trump != 0
+        
+        progressViewHealth.setProgress(fractionalProgress, animated: animated)
+        
+        if trump == 0{
             winMinigame()
         }
     }
@@ -61,6 +67,7 @@ class TapViewController: UIViewController {
         }
         else{
             returnToWait()
+            //something somewhere went horribly wrong
         }
         
     }

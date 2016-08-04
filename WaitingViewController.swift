@@ -44,7 +44,12 @@ class WaitingViewController: UIViewController {
     }
     
     func updateTurnLabel(){
+        if player.tillNextHero > 0{
         warningLabel.text = "The Next Hero Will Be Here In \(player.tillNextHero) Turn(s)!"
+        }
+        else{
+            warningLabel.text = "The Heroes Are Here Prepare For Battle!"
+        }
     }
     
     func updateLevelLabel(){
@@ -78,7 +83,7 @@ class WaitingViewController: UIViewController {
     }
     
     func decideMinigame(){
-        var minigameChoice = arc4random_uniform(2)
+        var minigameChoice = 0
        //  var minigameChoice = 2
             if(minigameChoice == 0){
                 performSegueWithIdentifier("tapSegue", sender: nil)
