@@ -24,6 +24,11 @@ class WaitingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if background != nil {
+            background!.stop()
+            background = nil
+        }
+        
         if player.tillNextHero == 0{
             var image = UIImage(named: "Battle-sml")
             battleButton.setImage(image, forState: .Normal)

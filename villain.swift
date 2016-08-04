@@ -10,6 +10,7 @@ import UIKit
 
 class villain: NSObject {
     
+    var enemyName = ""
     var level = 0
     var heroesKilled = 0
     var statToUpgrade = ""

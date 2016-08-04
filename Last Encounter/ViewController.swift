@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     //Outlets for labels in the action menu and status labels
     
+    @IBOutlet weak var playerDescriptionLabel: UILabel!
+    @IBOutlet weak var enemyDescriptionLabel: UILabel!
     @IBOutlet weak var progressViewHealthE: UIProgressView!
     @IBOutlet weak var progressViewHealthP: UIProgressView!
     @IBOutlet weak var progressViewManaP: UIProgressView!
@@ -86,6 +88,8 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        enemyDescriptionLabel.text = "\(player.enemyName) has challenged you to a duel!"
+        playerDescriptionLabel.text = "You ready yourself for \(player.enemyName)"
         
         playerNameLabel.text = player.name
         
@@ -98,6 +102,9 @@ class ViewController: UIViewController {
         
         let setEnemyName = enemyNameAdj[adjChoice] + " " + enemyNameNoun[nounChoice]
         enemyNameLabel.text = setEnemyName
+        player.enemyName = setEnemyName
+        enemyDescriptionLabel.text = "\(player.enemyName) has challenged you to a duel!"
+        playerDescriptionLabel.text = "You ready yourself for \(player.enemyName)"
         
         let songSelect = arc4random_uniform(7)
         
@@ -301,7 +308,7 @@ class ViewController: UIViewController {
                     status = "Not doing so hot"
                 }
                 else{
-                    status = "Dude, Your Screwed"
+                    status = "You're Screwed"
                 }
                 
                 
@@ -446,26 +453,26 @@ class ViewController: UIViewController {
         //addition
         if player.health < changeP{
             let damage = changeP - player.health
-            print("Enemy hit you for \(damage) health")
+            playerDescriptionLabel.text = "\(player.enemyName) hit you for \(damage) health"
         }
         else if player.health == changeP{
-            print("You blocked the attack")
+            playerDescriptionLabel.text = "You blocked the attack"
         }
         else if player.health > changeP{
             let heal = player.health - changeP
-            print("You healed for \(heal) health")
+            playerDescriptionLabel.text = "You healed for \(heal) health"
         }
         
         if enemy.health < changeE{
             let damage = changeE - enemy.health
-            print("You hit enemy for \(damage) health")
+            enemyDescriptionLabel.text = "\(player.enemyName) got hit for \(damage) health"
         }
         else if player.health == changeP{
-            print("Enemy blocked the attack")
+            enemyDescriptionLabel.text = "\(player.enemyName) blocked the attack"
         }
         else if player.health > changeP{
             let heal = enemy.health - changeE
-            print("Enemy healed for \(heal) health")
+            enemyDescriptionLabel.text = "\(player.enemyName) healed for \(heal) health"
         }
         //end
         
@@ -499,6 +506,8 @@ class ViewController: UIViewController {
     func playerLose() {
         print("You lose")
         performSegueWithIdentifier("lossSegue", sender: nil)
+        player.health = Int(totalHealthP)
+        player.mana = Int(totalManaP)
         if background != nil {
             background!.stop()
             background = nil
