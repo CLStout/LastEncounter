@@ -18,10 +18,25 @@ class VictoryViewController: UIViewController {
     var player = villain()
     var Villain = villain()
     var tillNextHero = 0
+    var background : AVAudioPlayer?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            let path = NSBundle.mainBundle().pathForResource("Victory.mp3", ofType:nil)!
+            let url = NSURL(fileURLWithPath: path)
+            
+            do {
+                let sound = try AVAudioPlayer(contentsOfURL: url)
+                background = sound
+                sound.play()
+                sound.volume = 0.5
+            } catch {
+                // couldn't load file :(
+            }
+
+    
         player.heroesKilled += 1
         player.tillNextHero = Int(arc4random_uniform(3)) + 1
         
@@ -34,6 +49,10 @@ class VictoryViewController: UIViewController {
     @IBAction func tapContinueButton(sender: AnyObject) {
         if CGRectContainsPoint(continueLabel.frame, sender.locationInView(victoryView)){
             performSegueWithIdentifier("returnToWaitingSegue", sender: nil)
+            if background != nil {
+                background!.stop()
+                background = nil
+            }
         }
     }
     
