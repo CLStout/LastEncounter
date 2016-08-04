@@ -102,7 +102,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="Toz-wl-BWP">
                                         <rect key="frame" x="101" y="46" width="399" height="357"/>
-                                        <string key="text">You are the recently promoted dungeon boss, though there is no rest even for newbs. Heroes are approaching and they will keep trying to defeat you until they get that sweet sweet lemonade that sits on the slightly ornate wooden table behind you. Your job as dungeon boss is to crush these pesky heroes after your lemonade, you must become strong and defeat heroes and become strong from defeating heroes, it's an endless loop. Lets see how long you last newbie, ofcourse I will provide basic instructions. </string>
+                                        <string key="text">You are the recently promoted dungeon boss, though there is no rest even for noobs. Heroes are approaching and they will keep trying to defeat you until they get that sweet sweet lemonade that sits on the slightly ornate wooden table behind you. Your job as dungeon boss is to crush these pesky heroes after your lemonade, you must become strong and defeat heroes and become strong from defeating heroes, it's an endless loop. Lets see how long you last newbie, ofcourse I will provide basic instructions. </string>
                                         <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="23"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -125,6 +125,9 @@
                                         <state key="normal" title="&lt;-- Mini Games">
                                             <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="9tA-Fc-Vst" kind="show" id="xhe-oO-apt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-oQ-kXs">
                                         <rect key="frame" x="484" y="553" width="108" height="39"/>
@@ -135,6 +138,9 @@
                                         <state key="normal" title="Battles --&gt;">
                                             <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="1gN-8R-T6t" kind="show" id="4vN-CU-Qp5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -828,14 +834,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwK-SK-fXd">
-                                <rect key="frame" x="233" y="498" width="135" height="82"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="Roll"/>
-                                <connections>
-                                    <action selector="onTappedRollButton:" destination="zw9-Ir-Wu6" eventType="touchUpInside" id="am6-2c-bR6"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4y-Q3-KXV">
                                 <rect key="frame" x="200" y="290" width="200" height="200"/>
                             </imageView>
@@ -857,12 +855,21 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwK-SK-fXd">
+                                <rect key="frame" x="233" y="518" width="135" height="82"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Roll"/>
+                                <connections>
+                                    <action selector="onTappedRollButton:" destination="zw9-Ir-Wu6" eventType="touchUpInside" id="am6-2c-bR6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="o7v-sv-A6k" firstAttribute="top" secondItem="rgJ-Mn-a1T" secondAttribute="bottom" id="1nU-xj-rek"/>
                             <constraint firstItem="o7v-sv-A6k" firstAttribute="leading" secondItem="v9m-fC-9Zi" secondAttribute="leadingMargin" id="3dk-2g-e2F"/>
                             <constraint firstItem="TwK-SK-fXd" firstAttribute="centerX" secondItem="v9m-fC-9Zi" secondAttribute="centerX" id="GJb-yW-iTf"/>
+                            <constraint firstItem="aPf-3s-ilj" firstAttribute="top" secondItem="TwK-SK-fXd" secondAttribute="bottom" id="Glp-E2-HI5"/>
                             <constraint firstItem="SAp-EZ-FRC" firstAttribute="trailing" secondItem="v9m-fC-9Zi" secondAttribute="trailingMargin" id="MCg-Ah-sgd"/>
                             <constraint firstItem="U4y-Q3-KXV" firstAttribute="centerX" secondItem="v9m-fC-9Zi" secondAttribute="centerX" id="pep-9K-Q0Y"/>
                             <constraint firstItem="SAp-EZ-FRC" firstAttribute="top" secondItem="rgJ-Mn-a1T" secondAttribute="bottom" id="sX0-NO-TdF"/>
@@ -1395,6 +1402,60 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1323" y="597"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e8Z-Oz-NB3">
+            <objects>
+                <viewController id="9tA-Fc-Vst" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LvS-an-EKd"/>
+                        <viewControllerLayoutGuide type="bottom" id="uap-SY-Uqa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M2E-iu-GCG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CPu-Ma-6ln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="1358"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="K6T-1c-8z7">
+            <objects>
+                <viewController id="fMy-EM-Soz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xim-wm-1Ik"/>
+                        <viewControllerLayoutGuide type="bottom" id="GU0-zu-OT8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bzn-Pq-okL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P6C-8l-0iD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="700" y="1885"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wFF-O3-h9O">
+            <objects>
+                <viewController id="1gN-8R-T6t" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n2r-sf-iwo"/>
+                        <viewControllerLayoutGuide type="bottom" id="v95-F1-hi8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xan-uq-e7A">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cad-b4-ypp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357" y="1358"/>
         </scene>
         <!--Victory View Controller-->
         <scene sceneID="ZU3-dJ-6iP">
