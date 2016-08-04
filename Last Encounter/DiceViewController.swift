@@ -56,7 +56,7 @@ class DiceViewController: UIViewController {
             six = six + 1
         }
         if chance > 2 {
-            win()
+            NSTimer.scheduledTimerWithTimeInterval(0.7, target: self, selector: #selector(DiceViewController.win), userInfo: nil, repeats: false)
         }
     }
 

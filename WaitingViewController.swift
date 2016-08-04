@@ -22,6 +22,7 @@ class WaitingViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        NSTimer.scheduledTimerWithTimeInterval(0.08, target: self, selector: #selector(WaitingViewController.checkIfBattle), userInfo: nil, repeats: false)
         super.viewDidLoad()
         if background != nil {
             background!.stop()
@@ -52,14 +53,6 @@ class WaitingViewController: UIViewController {
             // couldn't load file :(
         }
         
-        if player.tillNextHero == 0 {
-            //player.tillNextHero = resetHeroTimer()
-            //this is old. Calculation is now handled in the VictoryViewController due to errors reguarding minigames
-            
-            //or not, idk
-            
-            //checkIfBattle()
-        }
         updateTurnLabel()
     }
     
@@ -90,6 +83,7 @@ class WaitingViewController: UIViewController {
         if (player.tillNextHero == 0){
                 performSegueWithIdentifier("goToBattle", sender: nil)
             stopMusic()
+            print("WEEEOOOOWWEEEEEOOOWWEEEEOOO")
         }
     }
     func stopMusic() {
