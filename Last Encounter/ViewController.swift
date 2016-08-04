@@ -35,9 +35,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var enemyHealthLabel: UILabel!
     @IBOutlet weak var enemyManaLabel: UILabel!
     
-    let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "verry dum", "Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Gender Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous", "Nasty", "/b/tard", "Rare", "Nice", "Dank", "Crummy", "Lonely", "Giant", "Cheeky", "Memey", "Canadian"]
+    let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "verry dum", "Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Gender Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous", "Nasty", "/b/tard", "Rare", "Nice", "Dank", "Crummy", "Lonely", "Giant", "Cheeky", "Memey", "Canadian", "Lewd", "Perverted", "Orange", "Short", "Magical", "One Punch"]
     
-    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Heli", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Memer", "Suh Dude", "Dragon", "Feminist", "Pokemanz", "Blogger", "Pope",  "Pedobear", "Reuben", "Waifu", "Merchant", "Potter", "Death", "Harish", "Monkey", "Mask Salesman", "Breadfish", "Landshark", "Body pillow", "Big Mac", "MatPat", "Commie", "Russian", "Meme", "Redditor", "Admin", "133t h4x0r", "Edgelord", "Lord Gaben", "Middleschooler", "Ankelshanker", "Sandwich", "Giant", "Skelaton", "Shia LeBouf"]
+    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Heli", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Memer", "Suh Dude", "Dragon", "Feminist", "Pokemanz", "Blogger", "Pope",  "Pedobear", "Reuben", "Waifu", "Merchant", "Potter", "Death", "Harish", "Monkey", "Mask Salesman", "Breadfish", "Landshark", "Body Pillow", "Big Mac", "MatPat", "Commie", "Russian", "Meme", "Redditor", "Admin", "133t h4x0r", "Edgelord", "Lord Gaben", "Middleschooler", "Ankelshanker", "Sandwich", "Giant", "Skelaton", "Shia LeBouf", "Hippie", "Girl", "Man", "Saitama"]
     
     
     //variables for
@@ -310,7 +310,7 @@ class ViewController: UIViewController {
                             sublabelState = 1
                         case magicLabel:
                             print("Magic submenu to open")
-                            submenuLabel0.text = "Zombie-2"
+                            submenuLabel0.text = "Twister-2"
                             submenuLabel1.text = "Lightning-4"
                             submenuLabel2.text = "Fire Ball-6"
                             submenuLabel3.text = "Heal-4"

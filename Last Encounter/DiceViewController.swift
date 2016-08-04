@@ -32,7 +32,7 @@ class DiceViewController: UIViewController {
     
     
     func toss (){
-        count += count
+        
         var chance = Int(arc4random_uniform(6))
         if chance == 0{
             resultImageView.image = UIImage (named: ("one face"))
@@ -57,9 +57,6 @@ class DiceViewController: UIViewController {
         }
         if chance > 2 {
             win()
-        }
-        if count == 3{
-            performSegueWithIdentifier("diceToWaitingSegue", sender: nil)
         }
     }
 
@@ -93,7 +90,11 @@ class DiceViewController: UIViewController {
     
 
     @IBAction func onTappedRollButton(sender: AnyObject) {
+        count += count
         toss()
+        if count == 3{
+            performSegueWithIdentifier("diceToWaitingSegue", sender: nil)
+        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
