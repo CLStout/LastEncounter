@@ -63,10 +63,13 @@ class WaitingViewController: UIViewController {
     func checkIfBattle(){
         if (player.tillNextHero == 0){
                 performSegueWithIdentifier("goToBattle", sender: nil)
-            if background != nil {
-                background!.stop()
-                background = nil
-            }
+            stopMusic()
+        }
+    }
+    func stopMusic() {
+        if background != nil {
+            background!.stop()
+            background = nil
         }
     }
     
@@ -79,15 +82,15 @@ class WaitingViewController: UIViewController {
         //var minigameChoice = 0
             if(minigameChoice == 0){
                 performSegueWithIdentifier("tapSegue", sender: nil)
-                
+                stopMusic()
             }
             else if(minigameChoice == 1){
                 performSegueWithIdentifier("diceSegue", sender: nil)
-                
+                stopMusic()
             }
             else if(minigameChoice == 2){
                 performSegueWithIdentifier("brickSegue", sender: nil)
-                
+                stopMusic()
             }
             else {
                 //Dan and Yasoob both deserve a raise

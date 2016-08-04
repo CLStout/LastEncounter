@@ -951,13 +951,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veZ-S6-kmo">
-                                <rect key="frame" x="445" y="500" width="80" height="50"/>
-                                <state key="normal" title="To Battle!"/>
-                                <connections>
-                                    <action selector="onTappedToBattle:" destination="f6e-tB-Sov" eventType="touchUpInside" id="Dzg-kD-hOL"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="The Next Hero Will Be Here In 3 Turns" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="Mqb-Q5-qYE">
                                 <rect key="frame" x="58" y="558" width="485" height="38"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -965,27 +958,32 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veZ-S6-kmo">
+                                <rect key="frame" x="463" y="465" width="80" height="50"/>
+                                <state key="normal" title="To Battle!"/>
+                                <connections>
+                                    <action selector="onTappedToBattle:" destination="f6e-tB-Sov" eventType="touchUpInside" id="Dzg-kD-hOL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="APe-DM-XR2" firstAttribute="centerX" secondItem="Wx7-fg-VxN" secondAttribute="centerX" id="1mJ-o1-dHr"/>
                             <constraint firstItem="Mqb-Q5-qYE" firstAttribute="leading" secondItem="Wx7-fg-VxN" secondAttribute="leadingMargin" constant="38" id="3uq-oY-jxb"/>
                             <constraint firstItem="Mqb-Q5-qYE" firstAttribute="centerX" secondItem="Wx7-fg-VxN" secondAttribute="centerX" id="4eJ-6g-GNM"/>
+                            <constraint firstItem="Mqb-Q5-qYE" firstAttribute="top" secondItem="veZ-S6-kmo" secondAttribute="bottom" constant="43" id="56s-gN-A8f"/>
                             <constraint firstItem="NX8-oZ-azg" firstAttribute="leading" secondItem="Wx7-fg-VxN" secondAttribute="leadingMargin" id="7dk-5c-MN6"/>
                             <constraint firstItem="NX8-oZ-azg" firstAttribute="top" secondItem="5sx-S0-TaV" secondAttribute="bottom" id="7kx-Hi-ElM"/>
-                            <constraint firstItem="Mqb-Q5-qYE" firstAttribute="top" secondItem="5sx-S0-TaV" secondAttribute="bottom" constant="198" id="7lb-Un-MBE"/>
                             <constraint firstItem="Mqb-Q5-qYE" firstAttribute="centerX" secondItem="Wx7-fg-VxN" secondAttribute="centerX" id="AeE-yO-I0f"/>
                             <constraint firstItem="Mqb-Q5-qYE" firstAttribute="trailing" secondItem="Wx7-fg-VxN" secondAttribute="trailingMargin" id="Fi4-mV-nWJ"/>
                             <constraint firstItem="GKu-Kc-bbX" firstAttribute="leading" secondItem="Wx7-fg-VxN" secondAttribute="leadingMargin" id="M6R-ON-BCW"/>
                             <constraint firstItem="GKu-Kc-bbX" firstAttribute="top" secondItem="5sx-S0-TaV" secondAttribute="bottom" id="MUm-Ka-PG5"/>
                             <constraint firstItem="OFo-LD-dmd" firstAttribute="top" secondItem="Mqb-Q5-qYE" secondAttribute="bottom" constant="4" id="ONa-ij-gl4"/>
-                            <constraint firstItem="veZ-S6-kmo" firstAttribute="top" secondItem="Mqb-Q5-qYE" secondAttribute="bottom" constant="141" id="PVY-l2-hjY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mqb-Q5-qYE" secondAttribute="trailing" constant="-13" id="Q72-fW-kCe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mqb-Q5-qYE" secondAttribute="trailing" constant="37" id="UQW-N1-czR"/>
                             <constraint firstItem="NX8-oZ-azg" firstAttribute="leading" secondItem="Wx7-fg-VxN" secondAttribute="leadingMargin" id="hcE-j4-TJH"/>
                             <constraint firstItem="Mqb-Q5-qYE" firstAttribute="trailing" secondItem="Wx7-fg-VxN" secondAttribute="trailingMargin" id="mEk-ay-7vx"/>
                             <constraint firstItem="NX8-oZ-azg" firstAttribute="leading" secondItem="Wx7-fg-VxN" secondAttribute="leadingMargin" id="nK3-Di-2Hf"/>
-                            <constraint firstItem="OFo-LD-dmd" firstAttribute="top" secondItem="veZ-S6-kmo" secondAttribute="bottom" constant="73" id="sPL-ye-ROb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="veZ-S6-kmo" secondAttribute="trailing" constant="55" id="yvF-bk-MPr"/>
                         </constraints>
                     </view>
@@ -1113,15 +1111,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gx5-jD-3xW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LK-M3-Z7t">
-                                        <rect key="frame" x="195" y="274" width="210" height="51"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0W-MR-S1w">
+                                        <rect key="frame" x="200" y="270" width="200" height="100"/>
+                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="35"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="31r-xl-fcP" kind="show" id="jVK-dA-ySD"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXm-Li-CcZ">
-                                        <rect key="frame" x="195" y="215" width="210" height="51"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <rect key="frame" x="150" y="157" width="300" height="100"/>
+                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="36"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1129,8 +1131,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="9LK-M3-Z7t" firstAttribute="centerX" secondItem="gx5-jD-3xW" secondAttribute="centerX" id="5Gi-Hc-3zR"/>
                                     <constraint firstItem="gXm-Li-CcZ" firstAttribute="centerX" secondItem="gx5-jD-3xW" secondAttribute="centerX" id="YrC-QD-J1C"/>
+                                    <constraint firstItem="a0W-MR-S1w" firstAttribute="centerX" secondItem="gx5-jD-3xW" secondAttribute="centerX" id="ZbI-s6-qRF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1142,11 +1144,6 @@
                             <constraint firstItem="gx5-jD-3xW" firstAttribute="top" secondItem="yf8-eR-Lx7" secondAttribute="topMargin" id="qnG-l1-Vl4"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="gameOverViewController" destination="gx5-jD-3xW" id="iCr-Ka-hbg"/>
-                        <outlet property="resetButton" destination="9LK-M3-Z7t" id="BxT-ff-gKt"/>
-                        <segue destination="31r-xl-fcP" kind="showDetail" identifier="titleScreenSegue" id="cTc-7O-7sJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bz-Bf-Gl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="fFz-NH-oJ3">
@@ -1155,7 +1152,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1362" y="755"/>
+            <point key="canvasLocation" x="1323" y="597"/>
         </scene>
         <!--Victory View Controller-->
         <scene sceneID="ZU3-dJ-6iP">
@@ -1229,7 +1226,7 @@
         <image name="tapOff" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="jVK-dA-ySD"/>
         <segue reference="J2F-4J-Q7n"/>
-        <segue reference="cTc-7O-7sJ"/>
     </inferredMetricsTieBreakers>
 </document>
