@@ -629,12 +629,6 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4d-md-Uhn">
-                                        <rect key="frame" x="25" y="153" width="139" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Y-qw-qYy">
                                         <rect key="frame" x="25" y="221" width="139" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -671,7 +665,6 @@
                                 <constraints>
                                     <constraint firstItem="Y2Y-qw-qYy" firstAttribute="leading" secondItem="kZY-gT-vGS" secondAttribute="leading" constant="25" id="15l-33-1bj"/>
                                     <constraint firstAttribute="trailing" secondItem="MLs-EK-XdF" secondAttribute="trailing" constant="25" id="3cW-Jr-C1K"/>
-                                    <constraint firstItem="R4d-md-Uhn" firstAttribute="leading" secondItem="kZY-gT-vGS" secondAttribute="leading" constant="25" id="Tvm-5K-De4"/>
                                     <constraint firstItem="qrQ-QM-qiL" firstAttribute="leading" secondItem="kZY-gT-vGS" secondAttribute="leading" constant="25" id="WB1-C4-VcZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Tpf-kk-8R1" secondAttribute="trailing" constant="25" id="ai6-pM-IJF"/>
                                     <constraint firstAttribute="trailing" secondItem="rAX-hX-YVZ" secondAttribute="trailing" constant="25" id="mr4-Ae-sDB"/>
@@ -788,7 +781,6 @@
                         <outlet property="enemyHealthLabel" destination="GK2-qy-VAi" id="EL4-31-05j"/>
                         <outlet property="enemyManaLabel" destination="oTl-Ys-o92" id="xVf-xW-Htc"/>
                         <outlet property="enemyNameLabel" destination="5uI-q7-iAo" id="32l-7d-V67"/>
-                        <outlet property="itemLabel" destination="R4d-md-Uhn" id="NNI-tZ-Sy2"/>
                         <outlet property="magicLabel" destination="qrQ-QM-qiL" id="IMI-oL-E6s"/>
                         <outlet property="menuView" destination="kZY-gT-vGS" id="jwy-Qv-D9Z"/>
                         <outlet property="playerDescriptionLabel" destination="Ysr-0r-R3o" id="Alx-tv-8w9"/>
@@ -921,7 +913,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="dhh-va-pmB">
-                                        <rect key="frame" x="225" y="145" width="150" height="2.5"/>
+                                        <rect key="frame" x="225" y="145" width="150" height="3"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="6HH-tv-xb7"/>
@@ -1197,7 +1189,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ae0-Ju-Ldw" id="S4t-lM-Yrl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
