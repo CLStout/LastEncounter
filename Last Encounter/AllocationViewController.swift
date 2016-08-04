@@ -58,9 +58,13 @@ class AllocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action : "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
-    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     @IBAction func onTappedIncreaseHealth(sender: AnyObject) {
         health = increase(health, display: healthPoints)
     }
@@ -106,7 +110,7 @@ class AllocationViewController: UIViewController {
                 }
             }
             else{
-                print("Still Points Left Or ")
+                print("Still Points Left Or No Name")
             }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

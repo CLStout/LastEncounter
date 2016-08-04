@@ -320,10 +320,10 @@ class ViewController: UIViewController {
                             sublabelState = 1
                         case magicLabel:
                             print("Magic submenu to open")
-                            submenuLabel0.text = "Wind-2"
-                            submenuLabel1.text = "Light-4"
-                            submenuLabel2.text = "Fire-6"
-                            submenuLabel3.text = "Water-4"
+                            submenuLabel0.text = "Zombie-2"
+                            submenuLabel1.text = "Lightning-4"
+                            submenuLabel2.text = "Fire Ball-6"
+                            submenuLabel3.text = "Heal-4"
                             sublabelState = 2
                         case itemLabel:
                             print("Item submenu to open")

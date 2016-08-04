@@ -11,6 +11,8 @@ import AVFoundation
 
 class WaitingViewController: UIViewController {
     
+    @IBOutlet weak var battleButton: UIButton!
+    @IBOutlet weak var slainLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     var background : AVAudioPlayer?
     var player = villain()
@@ -22,6 +24,16 @@ class WaitingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if player.tillNextHero == 0{
+            var image = UIImage(named: "Battle-sml")
+            battleButton.setImage(image, forState: .Normal)
+        }
+        else{
+            var image = UIImage(named: "Black")
+            battleButton.setImage(image, forState: .Normal)
+        }
+        
+        slainLabel.text = "Heroes Slain: \(player.heroesKilled)"
         updateLevelLabel()
         
         let path = NSBundle.mainBundle().pathForResource("Waiting.wav", ofType:nil)!
@@ -54,7 +66,8 @@ class WaitingViewController: UIViewController {
     
     func updateLevelLabel(){
         var currentLevel = (player.health + player.mana + player.attack + player.magic + player.defense) - 69
-        levelLabel.text = "Level " + String(currentLevel)
+        levelLabel.text = "Level \(currentLevel)"
+        player.level = currentLevel
     }
     
     func resetHeroTimer()->Int{
@@ -83,7 +96,7 @@ class WaitingViewController: UIViewController {
     }
     
     func decideMinigame(){
-        var minigameChoice = 0
+        var minigameChoice = 2
        //  var minigameChoice = 2
             if(minigameChoice == 0){
                 performSegueWithIdentifier("tapSegue", sender: nil)
