@@ -311,7 +311,7 @@ class ViewController: UIViewController {
                             sublabelState = 1
                         case magicLabel:
                             print("Magic submenu to open")
-                            submenuLabel0.text = "Zombie-2"
+                            submenuLabel0.text = "Twister-2"
                             submenuLabel1.text = "Lightning-4"
                             submenuLabel2.text = "Fire Ball-6"
                             submenuLabel3.text = "Heal-4"

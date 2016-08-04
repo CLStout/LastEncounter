@@ -98,6 +98,7 @@ class WaitingViewController: UIViewController {
     
     @IBAction func onTappedToBattle(sender: AnyObject) {
         performSegueWithIdentifier("goToBattle", sender: nil)
+        stopMusic()
     }
     
     func decideMinigame(){

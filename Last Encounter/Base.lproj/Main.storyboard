@@ -97,7 +97,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9PX-YO-LSe">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9PX-YO-LSe">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="Toz-wl-BWP">
@@ -107,7 +107,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRf-eY-h57">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRf-eY-h57">
                                         <rect key="frame" x="8" y="8" width="61" height="39"/>
                                         <state key="normal" title="&lt;-- Back">
                                             <color key="titleColor" red="1" green="0.49976036127203183" blue="0.32540882848954278" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,7 +116,7 @@
                                             <segue destination="31r-xl-fcP" kind="show" id="dgT-jz-yEV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dc-5n-ag7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dc-5n-ag7">
                                         <rect key="frame" x="8" y="553" width="108" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="IPW-Df-tYI"/>
@@ -129,7 +129,7 @@
                                             <segue destination="9tA-Fc-Vst" kind="show" id="xhe-oO-apt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-oQ-kXs">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-oQ-kXs">
                                         <rect key="frame" x="484" y="553" width="108" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="cJx-8D-p6y"/>
@@ -156,6 +156,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9PX-YO-LSe" secondAttribute="trailing" constant="-20" id="NwF-Yu-ODJ"/>
+                            <constraint firstItem="9PX-YO-LSe" firstAttribute="top" secondItem="OD8-7Y-MrS" secondAttribute="topMargin" id="WPE-3K-kVW"/>
+                            <constraint firstItem="ecg-eN-ahT" firstAttribute="top" secondItem="9PX-YO-LSe" secondAttribute="bottom" id="whf-ZV-6tP"/>
+                            <constraint firstItem="9PX-YO-LSe" firstAttribute="leading" secondItem="OD8-7Y-MrS" secondAttribute="leadingMargin" constant="-20" id="z7b-3O-4cm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Roz-Od-eiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1189,7 +1195,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ae0-Ju-Ldw" id="S4t-lM-Yrl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1406,12 +1412,46 @@
                     <view key="view" contentMode="scaleToFill" id="M2E-iu-GCG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyT-Hb-AeA">
+                                <rect key="frame" x="484" y="541" width="108" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="L7n-LZ-M6a"/>
+                                    <constraint firstAttribute="width" constant="108" id="bPo-9f-bse"/>
+                                </constraints>
+                                <state key="normal" title="Intro --&gt;">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="AjB-W5-MS4" kind="show" id="bXU-FO-ooj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ub-YB-Kgg">
+                                <rect key="frame" x="8" y="541" width="108" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="oBd-Ih-YQo"/>
+                                    <constraint firstAttribute="height" constant="39" id="x0m-6X-YvN"/>
+                                </constraints>
+                                <state key="normal" title="&lt;-- Waiting">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fMy-EM-Soz" kind="show" id="7ld-wp-Vah"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3ub-YB-Kgg" firstAttribute="leading" secondItem="M2E-iu-GCG" secondAttribute="leadingMargin" constant="-12" id="8H2-hf-cui"/>
+                            <constraint firstItem="uap-SY-Uqa" firstAttribute="top" secondItem="3ub-YB-Kgg" secondAttribute="bottom" constant="20" id="ONM-EG-cnl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KyT-Hb-AeA" secondAttribute="trailing" constant="-12" id="fXP-7t-gK5"/>
+                            <constraint firstItem="uap-SY-Uqa" firstAttribute="top" secondItem="KyT-Hb-AeA" secondAttribute="bottom" constant="20" id="y2g-oo-75C"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPu-Ma-6ln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32" y="1358"/>
+            <point key="canvasLocation" x="-79" y="1444"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="K6T-1c-8z7">
@@ -1424,12 +1464,80 @@
                     <view key="view" contentMode="scaleToFill" id="bzn-Pq-okL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCM-3B-jdS">
+                                <rect key="frame" x="8" y="541" width="108" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="qCv-X4-vEX"/>
+                                    <constraint firstAttribute="height" constant="39" id="reb-uK-neu"/>
+                                </constraints>
+                                <state key="normal" title="&lt;-- Battles">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1gN-8R-T6t" kind="show" id="px7-xR-zUS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dr-Iy-HvW">
+                                <rect key="frame" x="484" y="541" width="108" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="P5y-2j-APQ"/>
+                                    <constraint firstAttribute="width" constant="108" id="VuB-H5-4CZ"/>
+                                </constraints>
+                                <state key="normal" title="Mini Games --&gt;">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9tA-Fc-Vst" kind="show" id="v2E-Gc-iZp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5l-D2-4qw">
+                                <rect key="frame" x="0.0" y="0.0" width="61" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="LkD-p4-Tdb"/>
+                                    <constraint firstAttribute="width" constant="61" id="jNj-sR-CXd"/>
+                                </constraints>
+                                <state key="normal" title="&lt;-- Back">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="How To Wait" translatesAutoresizingMaskIntoConstraints="NO" id="l9U-Hp-QKf">
+                                <rect key="frame" x="195" y="28" width="211" height="361"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="211" id="6Ak-lW-EEq"/>
+                                    <constraint firstAttribute="height" constant="361" id="W6f-1P-4ce"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="111-JC-Zcj">
+                                <rect key="frame" x="112" y="342" width="377" height="190.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190.5" id="JGa-oy-prW"/>
+                                    <constraint firstAttribute="width" constant="377" id="WKb-GR-poX"/>
+                                </constraints>
+                                <string key="text">While you wait for the next hero to arrive you should choose a stat to train, of course you must work hard and complete training to improve. Once the hero has arrived you may go to battle and use all the results of your training.</string>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3dr-Iy-HvW" secondAttribute="trailing" constant="-12" id="0YP-aB-f6j"/>
+                            <constraint firstItem="3dr-Iy-HvW" firstAttribute="top" secondItem="111-JC-Zcj" secondAttribute="bottom" constant="8.5" id="3P2-nB-W5B"/>
+                            <constraint firstItem="l9U-Hp-QKf" firstAttribute="centerX" secondItem="bzn-Pq-okL" secondAttribute="centerX" id="Ahu-9G-65V"/>
+                            <constraint firstItem="V5l-D2-4qw" firstAttribute="top" secondItem="bzn-Pq-okL" secondAttribute="topMargin" id="DqG-Rp-MIj"/>
+                            <constraint firstItem="GU0-zu-OT8" firstAttribute="top" secondItem="iCM-3B-jdS" secondAttribute="bottom" constant="20" id="Gqu-CB-jZL"/>
+                            <constraint firstItem="l9U-Hp-QKf" firstAttribute="top" secondItem="xim-wm-1Ik" secondAttribute="bottom" constant="8" id="UTx-ur-j3W"/>
+                            <constraint firstItem="111-JC-Zcj" firstAttribute="centerX" secondItem="bzn-Pq-okL" secondAttribute="centerX" id="WRu-PR-9Ey"/>
+                            <constraint firstItem="iCM-3B-jdS" firstAttribute="leading" secondItem="bzn-Pq-okL" secondAttribute="leadingMargin" constant="-12" id="WU7-BC-a23"/>
+                            <constraint firstItem="V5l-D2-4qw" firstAttribute="leading" secondItem="bzn-Pq-okL" secondAttribute="leadingMargin" constant="-20" id="ZBA-F1-AA0"/>
+                            <constraint firstItem="GU0-zu-OT8" firstAttribute="top" secondItem="3dr-Iy-HvW" secondAttribute="bottom" constant="20" id="p21-y4-NWW"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6C-8l-0iD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="1885"/>
+            <point key="canvasLocation" x="648" y="2260"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wFF-O3-h9O">
@@ -1442,12 +1550,88 @@
                     <view key="view" contentMode="scaleToFill" id="xan-uq-e7A">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="How To Battle1" translatesAutoresizingMaskIntoConstraints="NO" id="KCj-dc-P4R">
+                                <rect key="frame" x="0.0" y="47" width="165" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="lPG-ix-SHj"/>
+                                    <constraint firstAttribute="width" constant="165" id="nDv-gb-vGh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="How To Battle2" translatesAutoresizingMaskIntoConstraints="NO" id="FbY-2P-ztS">
+                                <rect key="frame" x="438" y="47" width="162" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="RfZ-Ej-fE5"/>
+                                    <constraint firstAttribute="width" constant="162" id="oiF-HN-TEO"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrr-av-UcN">
+                                <rect key="frame" x="0.0" y="0.0" width="61" height="39"/>
+                                <state key="normal" title="&lt;-- Back">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="31r-xl-fcP" kind="show" id="n3s-mP-5OY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aW-vQ-XJX">
+                                <rect key="frame" x="8" y="541" width="108" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="sqF-UF-gb6"/>
+                                    <constraint firstAttribute="width" constant="108" id="tta-J2-Oj2"/>
+                                </constraints>
+                                <state key="normal" title="&lt;-- Intro">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="AjB-W5-MS4" kind="show" id="omA-WS-bJC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AH-cJ-v8o">
+                                <rect key="frame" x="484" y="541" width="108" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="Z9N-ET-gWC"/>
+                                    <constraint firstAttribute="height" constant="39" id="oRF-gB-VHe"/>
+                                </constraints>
+                                <state key="normal" title="Waiting --&gt;">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fMy-EM-Soz" kind="show" id="xDR-y1-QS8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkM-9v-Dal">
+                                <rect key="frame" x="98" y="205" width="405" height="349"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="349" id="aJ7-Ne-ong"/>
+                                    <constraint firstAttribute="width" constant="405" id="w0L-PZ-RZv"/>
+                                </constraints>
+                                <string key="text">In battle you can use either physical or magical attacks, which is more powerful depends on your stats. Different magical attacks will do more damage, but will also cost more mana, while physical attacks get less accurate the more damage they do. You can chack your current stats to see what you need to improve on in future battles.</string>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2aW-vQ-XJX" firstAttribute="leading" secondItem="xan-uq-e7A" secondAttribute="leadingMargin" constant="-12" id="2bg-TN-6rf"/>
+                            <constraint firstItem="FbY-2P-ztS" firstAttribute="top" secondItem="n2r-sf-iwo" secondAttribute="bottom" constant="27" id="Pw5-Tj-jKy"/>
+                            <constraint firstItem="v95-F1-hi8" firstAttribute="top" secondItem="GkM-9v-Dal" secondAttribute="bottom" constant="46" id="V7X-VA-vAq"/>
+                            <constraint firstItem="Vrr-av-UcN" firstAttribute="top" secondItem="xan-uq-e7A" secondAttribute="topMargin" id="Xrk-Vv-yVs"/>
+                            <constraint firstItem="Vrr-av-UcN" firstAttribute="leading" secondItem="xan-uq-e7A" secondAttribute="leadingMargin" constant="-20" id="YeC-Xt-NM3"/>
+                            <constraint firstItem="v95-F1-hi8" firstAttribute="top" secondItem="7AH-cJ-v8o" secondAttribute="bottom" constant="20" id="coa-ao-uEV"/>
+                            <constraint firstItem="v95-F1-hi8" firstAttribute="top" secondItem="2aW-vQ-XJX" secondAttribute="bottom" constant="20" id="rif-ij-6Y3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7AH-cJ-v8o" secondAttribute="trailing" constant="-12" id="uRU-RY-fpv"/>
+                            <constraint firstItem="KCj-dc-P4R" firstAttribute="leading" secondItem="xan-uq-e7A" secondAttribute="leadingMargin" constant="-20" id="umq-FU-ye2"/>
+                            <constraint firstItem="KCj-dc-P4R" firstAttribute="top" secondItem="Vrr-av-UcN" secondAttribute="bottom" constant="8" id="vE0-Uc-8Sk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FbY-2P-ztS" secondAttribute="trailing" constant="-20" id="vXp-ht-rf8"/>
+                            <constraint firstItem="GkM-9v-Dal" firstAttribute="centerX" secondItem="xan-uq-e7A" secondAttribute="centerX" id="vvl-5X-va8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cad-b4-ypp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357" y="1358"/>
+            <point key="canvasLocation" x="1269" y="1432"/>
         </scene>
         <!--Victory View Controller-->
         <scene sceneID="ZU3-dJ-6iP">
@@ -1515,6 +1699,9 @@
     <resources>
         <image name="Battle-sml" width="243" height="106"/>
         <image name="DOpp" width="808" height="544"/>
+        <image name="How To Battle1" width="621" height="1104"/>
+        <image name="How To Battle2" width="621" height="1104"/>
+        <image name="How To Wait" width="621" height="1104"/>
         <image name="attack" width="200" height="100"/>
         <image name="defense" width="200" height="100"/>
         <image name="health" width="200" height="100"/>
@@ -1523,7 +1710,11 @@
         <image name="trump-the-knight" width="724" height="819"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dgT-jz-yEV"/>
+        <segue reference="n3s-mP-5OY"/>
+        <segue reference="px7-xR-zUS"/>
+        <segue reference="xDR-y1-QS8"/>
+        <segue reference="v2E-Gc-iZp"/>
+        <segue reference="omA-WS-bJC"/>
         <segue reference="EPy-Rg-1XY"/>
     </inferredMetricsTieBreakers>
 </document>
