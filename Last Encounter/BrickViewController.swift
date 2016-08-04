@@ -36,9 +36,9 @@ class BrickViewController: UIViewController, UICollisionBehaviorDelegate{
         //ball physics
         dynamicAnimator = UIDynamicAnimator(referenceView: view)
         let ballDynamicBehavior = UIDynamicItemBehavior(items: [ball])
-        ballDynamicBehavior.friction = -40
+        ballDynamicBehavior.friction = 0
         ballDynamicBehavior.resistance = 0
-        ballDynamicBehavior.elasticity = 1
+        ballDynamicBehavior.elasticity = 1.04
         ballDynamicBehavior.allowsRotation = false
         dynamicAnimator.addBehavior(ballDynamicBehavior)
         

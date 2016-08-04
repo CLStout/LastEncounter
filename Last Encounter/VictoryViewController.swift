@@ -20,11 +20,15 @@ class VictoryViewController: UIViewController {
     var tillNextHero = 0
 
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         player.heroesKilled += 1
         player.tillNextHero = Int(arc4random_uniform(3)) + 1
+        
+        var danYasoobMessageChance = arc4random_uniform(19)
+        if (danYasoobMessageChance == 19){
+            continueLabel.text = "Dan and Yasoob deserve a raise"
+        }
     }
     
     @IBAction func tapContinueButton(sender: AnyObject) {
