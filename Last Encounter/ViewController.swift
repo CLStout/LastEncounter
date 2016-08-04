@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressViewManaE: UIProgressView!
     @IBOutlet weak var attackLabel: UILabel!
     @IBOutlet weak var magicLabel: UILabel!
-    @IBOutlet weak var itemLabel: UILabel!
     @IBOutlet weak var statsLabel: UILabel!
     @IBOutlet weak var submenuLabel0: UILabel!
     @IBOutlet weak var submenuLabel1: UILabel!
@@ -38,7 +37,7 @@ class ViewController: UIViewController {
     
     let enemyNameAdj = ["Angry", "Skinny", "Overweight", "Obese", "Fat AF", "Pissed", "verry dum", "Stupid", "Geeky", "Nerdy", "Angsty", "Edgy", "Young", "Old", "Jewish", "Indian", "Gender Confused", "Based", "Ugly", "Hot af", "Dry", "Moist", "Very Moist", "Shy", "Smelly", "Dirty", "Zealous", "Nasty", "/b/tard", "Rare", "Nice", "Dank", "Crummy", "Lonely", "Giant", "Cheeky", "Memey", "Canadian"]
     
-    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Heli", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Memer", "Suh Dude", "Dragon", "Feminist", "Pokemanz", "Blogger", "Pope",  "Pedobear", "Reuben", "Waifu", "Merchant", "Potter", "Death", "Harish", "Monkey", "Mask Salesman", "Breadfish", "Landshark", "Body pillow", "Big Mac", "MatPat", "Commie", "Russian", "Meme", "Redditor", "Admin", "133t h4x0r", "Edgelord", "Lord Gaben", "Middleschooler", "Ankelshanker", "Sandwich", "Giant", "Skelaton"]
+    let enemyNameNoun = ["Goblin", "Child", "Teen", "Adult", "Old Person", "Dan (MM)", "Panda", "Orc", "Attack Heli", "Obama", "Naruto", "Weeaboo", "Chapstick", "Yasoob", "Camper", "Hiker", "PokeTrainer", "Warrior", "Knight", "Rubber Duck", "Muppet", "Other-kin", "Robot", "Undertale Fan", "Pepe", "Memer", "Suh Dude", "Dragon", "Feminist", "Pokemanz", "Blogger", "Pope",  "Pedobear", "Reuben", "Waifu", "Merchant", "Potter", "Death", "Harish", "Monkey", "Mask Salesman", "Breadfish", "Landshark", "Body pillow", "Big Mac", "MatPat", "Commie", "Russian", "Meme", "Redditor", "Admin", "133t h4x0r", "Edgelord", "Lord Gaben", "Middleschooler", "Ankelshanker", "Sandwich", "Giant", "Skelaton", "Shia LeBouf"]
     
     
     //variables for
@@ -125,8 +124,8 @@ class ViewController: UIViewController {
         totalManaP = Float(player.mana)
         totalManaE = Float(enemy.mana)
         subMenuArray = [submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
-        mainMenuArray = [attackLabel, magicLabel, itemLabel, statsLabel]
-        labelsArray = [attackLabel, magicLabel, itemLabel, statsLabel, submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
+        mainMenuArray = [attackLabel, magicLabel, statsLabel]
+        labelsArray = [attackLabel, magicLabel, statsLabel, submenuLabel0, submenuLabel1, submenuLabel2, submenuLabel3]
         
         var rounds = player.health + player.mana + player.attack + player.defense + player.magic - 50
         if rounds <= 0{
@@ -191,10 +190,6 @@ class ViewController: UIViewController {
                                 case 2 :
                                     print("Magic 0")
                                     magicAction(player, attacked: enemy, type: 0)
-                                case 3:
-                                    print("Item 0")
-                                case 4:
-                                    print("Stat 0")
                                 default:
                                     print("Something went wrong - sub 0 switch")
                                 }
@@ -208,10 +203,6 @@ class ViewController: UIViewController {
                                 case 2 :
                                     print("Magic 1")
                                     magicAction(player, attacked: enemy, type: 1)
-                                case 3:
-                                    print("Item 1")
-                                case 4:
-                                    print("Stat 1")
                                 default:
                                     print("Something went wrong - sub 1 switch")
                                 }
@@ -224,10 +215,6 @@ class ViewController: UIViewController {
                                 case 2 :
                                     print("Magic 2")
                                     magicAction(player, attacked: enemy, type: 2)
-                                case 3:
-                                    print("Item 2")
-                                case 4:
-                                    print("Stat 2")
                                 default:
                                     print("Something went wrong - sub 2 switch")
                                 }
@@ -240,10 +227,6 @@ class ViewController: UIViewController {
                                 case 2 :
                                     print("Magic 3")
                                     magicAction(player, attacked: enemy, type: 3)
-                                case 3:
-                                    print("Item 3")
-                                case 4:
-                                    print("Stat 3")
                                 default:
                                     print("Something went wrong - sub 3 switch")
                                 }
@@ -332,13 +315,6 @@ class ViewController: UIViewController {
                             submenuLabel2.text = "Fire Ball-6"
                             submenuLabel3.text = "Heal-4"
                             sublabelState = 2
-                        case itemLabel:
-                            print("Item submenu to open")
-                            submenuLabel0.text = ""
-                            submenuLabel1.text = ""
-                            submenuLabel2.text = ""
-                            submenuLabel3.text = ""
-                            sublabelState = 3
                         case statsLabel:
                             print("Stats submenu to open")
                             submenuLabel0.text = "Att: \(player.attack)"
