@@ -1413,19 +1413,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyT-Hb-AeA">
-                                <rect key="frame" x="484" y="541" width="108" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="L7n-LZ-M6a"/>
-                                    <constraint firstAttribute="width" constant="108" id="bPo-9f-bse"/>
-                                </constraints>
-                                <state key="normal" title="Intro --&gt;">
-                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="AjB-W5-MS4" kind="show" id="bXU-FO-ooj"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ub-YB-Kgg">
                                 <rect key="frame" x="8" y="541" width="108" height="39"/>
                                 <constraints>
@@ -1439,11 +1426,58 @@
                                     <segue destination="fMy-EM-Soz" kind="show" id="7ld-wp-Vah"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyT-Hb-AeA">
+                                <rect key="frame" x="484" y="541" width="108" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="L7n-LZ-M6a"/>
+                                    <constraint firstAttribute="width" constant="108" id="bPo-9f-bse"/>
+                                </constraints>
+                                <state key="normal" title="Intro --&gt;">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="AjB-W5-MS4" kind="show" id="bXU-FO-ooj"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="How To Mini" translatesAutoresizingMaskIntoConstraints="NO" id="t6r-tV-Htw">
+                                <rect key="frame" x="195" y="28" width="211" height="361"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="361" id="Y0p-2i-1HA"/>
+                                    <constraint firstAttribute="width" constant="211" id="gcx-fj-IzL"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txw-rw-rz5">
+                                <rect key="frame" x="0.0" y="0.0" width="61" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="c3X-aw-XVG"/>
+                                    <constraint firstAttribute="height" constant="39" id="egX-a5-bGK"/>
+                                </constraints>
+                                <state key="normal" title="&lt;-- Back">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XH-kR-i6y">
+                                <rect key="frame" x="143" y="325" width="315" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="0xF-tG-9B9"/>
+                                    <constraint firstAttribute="width" constant="315" id="vMt-s5-5aS"/>
+                                </constraints>
+                                <string key="text">During your training to improve your skills you will have to undergo trials that will test your strength, reaction, and mind. If you complete these trials you will become stronger, but if you do not the heroes might surpass you.</string>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="0XH-kR-i6y" firstAttribute="centerX" secondItem="M2E-iu-GCG" secondAttribute="centerX" id="4yb-v3-e5c"/>
                             <constraint firstItem="3ub-YB-Kgg" firstAttribute="leading" secondItem="M2E-iu-GCG" secondAttribute="leadingMargin" constant="-12" id="8H2-hf-cui"/>
+                            <constraint firstItem="txw-rw-rz5" firstAttribute="leading" secondItem="M2E-iu-GCG" secondAttribute="leadingMargin" constant="-20" id="8xr-N4-F2d"/>
+                            <constraint firstItem="t6r-tV-Htw" firstAttribute="centerX" secondItem="M2E-iu-GCG" secondAttribute="centerX" id="JHN-jK-taX"/>
                             <constraint firstItem="uap-SY-Uqa" firstAttribute="top" secondItem="3ub-YB-Kgg" secondAttribute="bottom" constant="20" id="ONM-EG-cnl"/>
+                            <constraint firstItem="txw-rw-rz5" firstAttribute="top" secondItem="M2E-iu-GCG" secondAttribute="topMargin" id="TQ5-vY-Ahi"/>
+                            <constraint firstItem="t6r-tV-Htw" firstAttribute="top" secondItem="LvS-an-EKd" secondAttribute="bottom" constant="8" id="TYi-9I-VCV"/>
+                            <constraint firstItem="uap-SY-Uqa" firstAttribute="top" secondItem="0XH-kR-i6y" secondAttribute="bottom" constant="60" id="b2M-Qn-3bL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KyT-Hb-AeA" secondAttribute="trailing" constant="-12" id="fXP-7t-gK5"/>
                             <constraint firstItem="uap-SY-Uqa" firstAttribute="top" secondItem="KyT-Hb-AeA" secondAttribute="bottom" constant="20" id="y2g-oo-75C"/>
                         </constraints>
@@ -1491,16 +1525,6 @@
                                     <segue destination="9tA-Fc-Vst" kind="show" id="v2E-Gc-iZp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5l-D2-4qw">
-                                <rect key="frame" x="0.0" y="0.0" width="61" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="LkD-p4-Tdb"/>
-                                    <constraint firstAttribute="width" constant="61" id="jNj-sR-CXd"/>
-                                </constraints>
-                                <state key="normal" title="&lt;-- Back">
-                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="How To Wait" translatesAutoresizingMaskIntoConstraints="NO" id="l9U-Hp-QKf">
                                 <rect key="frame" x="195" y="28" width="211" height="361"/>
                                 <constraints>
@@ -1519,6 +1543,16 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5l-D2-4qw">
+                                <rect key="frame" x="0.0" y="0.0" width="61" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="LkD-p4-Tdb"/>
+                                    <constraint firstAttribute="width" constant="61" id="jNj-sR-CXd"/>
+                                </constraints>
+                                <state key="normal" title="&lt;-- Back">
+                                    <color key="titleColor" red="1" green="0.49976036130000001" blue="0.32540882850000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1701,6 +1735,7 @@
         <image name="DOpp" width="808" height="544"/>
         <image name="How To Battle1" width="621" height="1104"/>
         <image name="How To Battle2" width="621" height="1104"/>
+        <image name="How To Mini" width="621" height="1104"/>
         <image name="How To Wait" width="621" height="1104"/>
         <image name="attack" width="200" height="100"/>
         <image name="defense" width="200" height="100"/>
@@ -1712,9 +1747,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="n3s-mP-5OY"/>
         <segue reference="px7-xR-zUS"/>
-        <segue reference="xDR-y1-QS8"/>
+        <segue reference="7ld-wp-Vah"/>
         <segue reference="v2E-Gc-iZp"/>
-        <segue reference="omA-WS-bJC"/>
+        <segue reference="bXU-FO-ooj"/>
         <segue reference="EPy-Rg-1XY"/>
     </inferredMetricsTieBreakers>
 </document>
